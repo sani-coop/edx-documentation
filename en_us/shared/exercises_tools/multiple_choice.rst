@@ -15,6 +15,9 @@ give learners guidance and help when they work on a problem.
   :local:
   :depth: 2
 
+For more information about the core problem types, see
+:ref:`Working with Problem Components`.
+
 **********
 Overview
 **********
@@ -191,9 +194,9 @@ problem, follow these steps.
 #. From the list of **Common Problem Types**, select one of these problem
    types.
 
-  * *Multiple Choice**.
+  * **Multiple Choice**
 
-  * **Multiple Choice with Hints and Feedback**.
+  * **Multiple Choice with Hints and Feedback**
 
     Studio adds a problem of the selected type to the unit.
 
