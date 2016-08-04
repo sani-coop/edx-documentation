@@ -230,7 +230,8 @@ this command.
      - ``--from-email=notifications@example.com``
    * - ``--enable-enrollment-codes``
      - No
-     - Enabling the creation of enrollment codes for seats.
+     - Indication that specifies whether enrollment codes for seats can be
+       created.
      - ``--enable-enrollment-codes=True``
 
 
