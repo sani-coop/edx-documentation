@@ -20,17 +20,17 @@ Overview
 **********
 
 In multiple choice problems, learners select one option from a list of answer
-options. Unlike :ref:`dropdown<Dropdown>` problems, whose answer choices
-do not appear until the learner clicks the dropdown arrow, answer choices for
+options. Unlike :ref:`dropdown<Dropdown>` problems, where the answer choices
+do not appear until the learner selects the dropdown arrow, answer choices for
 multiple choice problems are always visible directly below the question.
 
 Multiple choice problems can also have several advanced options, such as
 reordering, or shuffling, the set of answer choices for each learner. For more
 information about these options, see :ref:`Multiple Choice Advanced Options`.
 
-=============================
-Example Checkbox Problem
-=============================
+================================
+Example Multiple Choice Problem
+================================
 
 In the LMS, learners select a single answer option to complete a multiple
 choice problem. An example of a completed multiple choice problem follows.
@@ -44,10 +44,9 @@ choice problem. An example of a completed multiple choice problem follows.
 To add the example problem illustrated above, you enter the following text
 and Markdown formatting in the simple editor in Studio.
 
-
 ::
 
-    >>Lateral inhibition, as was first discovered in the horsehoe crab:<<
+    >>Lateral inhibition, as was first discovered in the horseshoe crab:<<
 
     ( ) is a property of touch sensation, referring to the ability of crabs
     to detect nearby predators.
@@ -106,7 +105,6 @@ The OLX markup for this example problem follows.
   </multiplechoiceresponse>
   </problem>
 
-
 ====================================================
 Analyzing Performance on Multiple Choice Problems
 ====================================================
@@ -132,7 +130,7 @@ Multiple choice questions do have these helpful uses.
 
 * For many subject areas, authentic assessments are either unavailable or
   prohibitively complex to use. In such courses, multiple choice questions can
-  act as the only available fallback.
+  act as the only available fall back.
 
 Fortunately, multiple choice questions are among the best studied in assessment
 literature. A few guidelines for the creation of such questions follow.
@@ -246,7 +244,7 @@ a Problem`. For multiple choice problems, you can add feedback for each of the
 answer options you provide in the problem. Use the following guidelines when
 providing feedback.
 
-* Add feedback to incorrect answers to target common misperceptions and
+* Add feedback to incorrect answers to target common misconceptions and
   mistakes.
 
 * Ensure feedback provides some guidance to the learner about how to arrive at
@@ -277,7 +275,7 @@ For example, the following problem has feedback for every answer option.
 
 ::
 
-  >>Which of the following is an example of a vegetable?<<
+  >>Which of the following is an example of a vegetable?||You can select only one option.<<
 
   ( ) apple {{An apple is the fertilized ovary that comes from an apple tree
   and contains seeds classifying it as a fruit.}}
@@ -288,7 +286,6 @@ For example, the following problem has feedback for every answer option.
   ( ) tomato {{Many people mistakenly think a tomato is a vegetable. However,
   because a tomato is the fertilized ovary of a tomato plant and contains
   seeds it is classified as a fruit.}}
-
 
 ============================================
 Configuring Feedback in the Advanced Editor
@@ -313,16 +310,16 @@ For example, the following problem has feedback for each answer.
   <problem>
   <multiplechoiceresponse>
     <label="Which of the following is an example of a vegetable?"</label>
+    <description>You can select only one option.</description>
     <choicegroup type="MultipleChoice">
        <choice correct="false">apple
-         <choicehint>An apple is the fertilized
-          ovary that comes from an apple tree and contains seeds classifying
-          it as a fruit.
+         <choicehint>An apple is the fertilized ovary that comes from an apple
+          tree and contains seeds classifying it as a fruit.
          </choicehint>
        </choice>
        <choice correct="false">pumpkin
-        <choicehint>A pumpkin is the fertilized
-          ovary of a squash plant and contains seeds classifying it as a fruit.
+        <choicehint>A pumpkin is the fertilized ovary of a squash plant
+          and contains seeds classifying it as a fruit.
         </choicehint>
       </choice>
       <choice correct="true">potato
@@ -624,6 +621,9 @@ Indicates the beginning of the list of options.
      * - ``type`` (required)
        - Must be set to ``"MultipleChoice"``.
 
+  Additional attributes are available to support
+  :ref:`advanced options<Multiple Choice Advanced Options>`.
+
   Children
 
   * ``<choice>``
@@ -658,6 +658,9 @@ Lists an answer option.
          used by default.
      * - ``name``
        - A unique name that is used internally to refer to the choice.
+
+  Additional attributes are available to support
+  :ref:`advanced options<Multiple Choice Advanced Options>`.
 
   Children
 
@@ -744,7 +747,8 @@ Use the Simple Editor to Shuffle Answers
 
 You can configure the problem to shuffle answers in the
 :ref:`simple editor<Simple Editor>`. To add shuffling to this problem, you add
-``!`` between the parentheses formatting for the first answer.
+an exclamation point character ``!`` between the parentheses formatting for
+the first answer option.
 
 ::
 
@@ -780,7 +784,7 @@ After you complete problem setup in the simple editor, select **Edit** and then
 Use the Advanced Editor to Shuffle Answers
 *********************************************
 
-You can configure the problem to shuffle answers by editing XML in the
+You can configure the problem to shuffle answers by editing the OLX in the
 :ref:`advanced editor<Advanced Editor>`.
 
 To add shuffling to a problem, you add ``shuffle="true"`` to the
@@ -800,15 +804,14 @@ To add shuffling to a problem, you add ``shuffle="true"`` to the
   </multiplechoiceresponse>
  </problem>
 
-
 To make the location of an answer fixed in a shuffled list, add
 ``fixed="true"`` to the ``choice`` element for the answer.
 
-.. rerandomize doesn't show up in the sandbox. check in edge
+.. I removed the "rerandomize" attribute as it does not get added to the OLX when changed in settings (but it does work). Tested on Edge as well as the  sandbox. - Alison 4 Aug 2016
 
 .. code-block:: xml
 
- <problem rerandomize="always">
+ <problem>
   <p>What Apple device competed with the portable CD player?</p>
   <multiplechoiceresponse>
    <choicegroup type="MultipleChoice" shuffle="true">
@@ -821,9 +824,8 @@ To make the location of an answer fixed in a shuffled list, add
   </multiplechoiceresponse>
  </problem>
 
-You can set value randomization as an attribute of the ``problem`` element, as
-shown in this example, or select **Edit** and then **Settings** to specify an
-option other than **Never** for the **Randomization** setting.
+Then, you select **Settings** to specify an option other than **Never** for the
+**Randomization** setting.
 
 .. _Targeted Feedback in a Multiple Choice Problem:
 
@@ -831,34 +833,40 @@ option other than **Never** for the **Randomization** setting.
 Targeted Feedback in a Multiple Choice Problem
 ===============================================
 
-You can configure a multiple choice problem so that explanations for incorrect
+You can configure a multiple choice problem so that explanations for specific
 answers are automatically shown to learners. You can use these explanations to
 guide learners towards the right answer. Therefore, targeted feedback is most
 useful for multiple choice problems for which learners are allowed multiple
 attempts.
 
-
 Use the Advanced Editor to Configure Targeted Feedback
 ********************************************************
 
-You configure the problem to provide targeted feedback by editing XML in the
-:ref:`advanced editor<Advanced Editor>`.
-
-Follow these XML guidelines.
+You configure the problem to provide targeted feedback by editing the OLX in
+the :ref:`advanced editor<Advanced Editor>`.
 
 * Add a ``targeted-feedback`` attribute to the ``<multiplechoiceresponse>``
   element, with no value: ``<multiplechoiceresponse targeted-feedback="">``.
+
+* Add an ``explanation-id`` attribute with a unique value to each of the
+  ``<choice>`` tags: ``<choice correct="false" explanation-id="feedback1">``.
+
 * Add a ``<targetedfeedbackset>`` element before the ``<solution>`` element.
+
 * Within ``<targetedfeedbackset>``, add one or more ``<targetedfeedback>``
   elements.
-* Within each ``<targetedfeedback>`` element, enter your explanation for the
-  incorrect answer in HTML as markup described below.
-* Connect the ``<targetedfeedback>`` element with a specific incorrect answer
-  by using the same ``explanation-id`` attribute value for each.
-* Use the ``<solution>`` element for the correct answer, with the same
-  ``explanation-id`` attribute value as the correct ``<choice>`` element.
 
-For example, the XML for the multiple choice problem follows.
+* Within each ``<targetedfeedback>`` element, add one of the unique identifying
+  ``explanation-id`` attributes to map that feedback to a specific answer
+  choice.
+
+* Within each ``<targetedfeedback>`` element use HTML formatting, such as
+  ``<p></p>`` tags, to enter your explanation for the specified answer option.
+
+* You can use the ``<solution>`` element for the correct answer.
+
+For example, the OLX for a multiple choice problem follows, showing a unique ID
+for each answer choice.
 
 .. code-block:: xml
 
@@ -872,13 +880,11 @@ For example, the XML for the multiple choice problem follows.
       <choice correct="false" explanation-id="feedback3">The vegetable peeler</choice>
     </choicegroup>
    </multiplechoiceresponse>
-   ...
 
-This is followed by XML that defines the targeted feedback.
+This is immediately followed by OLX that defines the targeted feedback.
 
 .. code-block:: xml
 
-   ...
    <targetedfeedbackset>
      <targetedfeedback explanation-id="feedback1">
        <div class="detailed-targeted-feedback">
@@ -900,7 +906,6 @@ This is followed by XML that defines the targeted feedback.
        </div>
      </targetedfeedback>
     </targetedfeedbackset>
-
     <solution explanation-id="correct">
      <div class="detailed-solution">
       <p>The iPod directly competed with portable CD players.</p>
@@ -927,22 +932,23 @@ learner views.
 Use the Advanced Editor to Configure Answer Pools
 **************************************************
 
-You configure the problem to provide answer pools by editing XML in the
-:ref:`advanced editor<Advanced Editor>`.
+You configure the problem to provide answer pools by editing the OLX for the
+problem in the :ref:`advanced editor<Advanced Editor>`.
 
-Follow these XML guidelines.
-
-* In the ``<choicegroup>`` element, add the ``answer-pool`` attribute, with
-  the numerical value indicating the number of possible answers in the set.
+* In the ``<choicegroup>`` element, add the ``answer-pool`` attribute, with the
+  numerical value indicating the number of answer options to show to learners.
   For example, ``<choicegroup answer-pool="4">``.
 
-* For each correct answer, to the ``<choice>`` element, add an ``explanation-
-  id`` attribute and value that maps to a solution. For example, ``<choice
-  correct="true" explanation-id="iPod">The iPod</choice>``.
+* If you include more than one correct answer among the options, for each
+  correct answer add an ``explanation-id`` attribute with a unique value to the
+  ``<choice>`` tag: ``<choice correct="false" explanation-id="correct1">``.
 
-* For each ``<solution>`` element, add an ``explanation-id`` attribute and
-  value that maps back to a correct answer. For example, ``<solution
-  explanation-id="iPod">``.
+* If you include more than one correct answer among the options, for each
+  ``<solution>`` element, add an ``explanation-id`` attribute and a value that
+  maps back to a specific correct answer. For example, ``<solution explanation-
+  id="correct1">``.
+
+* Place the ``<solution>`` elements within a ``<solutionset>`` element.
 
 .. note:: If the choices include only one correct answer, you do not have to
  use the ``explanation-id`` in either the ``choice`` or ``<solution>``
@@ -957,18 +963,17 @@ explanation ID.
 .. code-block:: xml
 
  <problem>
-  <p>What Apple devices let you carry your digital music library in your pocket?</p>
-   <multiplechoiceresponse>
-    <choicegroup type="MultipleChoice" answer-pool="4">
-      <choice correct="false">The iPad</choice>
-      <choice correct="false">Napster</choice>
-      <choice correct="true" explanation-id="iPod">The iPod</choice>
-      <choice correct="false">The vegetable peeler</choice>
-      <choice correct="false">The iMac</choice>
-      <choice correct="true" explanation-id="iPhone">The iPhone</choice>
-    </choicegroup>
-   </multiplechoiceresponse>
-
+  <multiplechoiceresponse>
+    <label>What Apple devices let you carry your digital music library in your pocket?</label>
+    <description>You can select only one opion.</description>
+      <choicegroup type="MultipleChoice" answer-pool="4">
+        <choice correct="false">The iPad</choice>
+        <choice correct="false">Napster</choice>
+        <choice correct="true" explanation-id="iPod">The iPod</choice>
+        <choice correct="false">The vegetable peeler</choice>
+        <choice correct="false">The iMac</choice>
+        <choice correct="true" explanation-id="iPhone">The iPhone</choice>
+      </choicegroup>
     <solutionset>
         <solution explanation-id="iPod">
         <div class="detailed-solution">
@@ -979,11 +984,11 @@ explanation ID.
         <solution explanation-id="iPhone">
         <div class="detailed-solution">
             <p>Explanation</p>
-            <p>In addition to being a cell phone, the iPhone can store and play your
-               digital music.</p>
+            <p>In addition to being a cell phone, the iPhone can store and play your digital music.</p>
         </div>
         </solution>
     </solutionset>
+  </multiplechoiceresponse>
  </problem>
 
-
+.. FWIW I couldn't get this to work with two correct answers. Only the first correct answer was identified as being correct on check, and both explanations showed up on Show Answer. In addition, both correct answers were included among the set of 4 shown. Should this advanced option be deprecated? - Alison 4 Aug 2016
