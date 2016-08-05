@@ -481,7 +481,7 @@ answer, you add the following attributes to the problem OLX.
   understanding of the concept. If you do not add the ``point_value``
   attribute, the system uses the default of 50%.
 
-For example, the following XML shows a multiple choice problem that
+For example, the following OLX shows a multiple choice problem that
 provides partial credit of 25% for an answer option.
 
 .. code-block:: xml
@@ -500,7 +500,7 @@ provides partial credit of 25% for an answer option.
 .. _Multiple Choice Problem XML:
 
 ******************************
-Multiple Choice Problem XML
+Multiple Choice Problem OLX
 ******************************
 
 ================
