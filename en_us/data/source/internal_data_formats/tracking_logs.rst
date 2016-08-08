@@ -2885,15 +2885,10 @@ successfully.
 
 .. return Logger.log('problem_graded', [_this.answers, response.contents], _this.id);
 
-The server emits a ``problem_graded`` event each time a user selects **Check**
+The browser emits a ``problem_graded`` event each time a user selects **Check**
 for a problem and it is graded successfully.
 
-**Event Source**: Server
-
-Both browser interactions and server requests produce ``problem_graded``
-events, so your data package can also contain events with an event source of
-browser. Events emitted by the browser contain all of the GET parameters. Only
-events emitted by the server are useful for most purposes.
+**Event Source**: Browser
 
 ``event`` **Member Fields**:
 
@@ -2996,18 +2991,12 @@ successfully rescored.
 ``problem_reset``
 *********************************
 
-The server emits ``problem_reset`` events after a user selects **Reset** and
+The browser emits ``problem_reset`` events after a user selects **Reset** and
 the answer to a problem is reset.
 
 .. return Logger.log('problem_reset', [_this.answers, response.contents], _this.id);
 
-**Event Source**: Server
-
-Both browser interactions and server requests produce ``problem_reset``
-events, so your data package can also contain events with an event source of
-browser. Events emitted by the browser contain all of the GET parameters. Only
-events emitted by the server are useful for most purposes.
-
+**Event Source**: Browser
 
 ``event`` **Member Fields**:
 
@@ -3028,14 +3017,9 @@ events emitted by the server are useful for most purposes.
 
 .. no sample to check
 
-The server emits ``problem_save`` events after a user saves a problem.
+The browser emits ``problem_save`` events after a user saves a problem.
 
-**Event Source**: Server
-
-Both browser interactions and server requests produce ``problem_save``
-events, so your data package can also contain events with an event source of
-browser. Events emitted by the browser contain all of the GET parameters. Only
-events emitted by the server are useful for most purposes.
+**Event Source**: Browser
 
 ``event`` **Member Fields**: None
 
@@ -3200,9 +3184,9 @@ successfully.
 
 .. no sample to check
 
-The server emits ``showanswer`` events when the answer to a problem is shown.
+The browser emits ``showanswer`` events when the answer to a problem is shown.
 
-**Event Source**: Server
+**Event Source**: Browser
 
 ``event`` **Member Fields**:
 
