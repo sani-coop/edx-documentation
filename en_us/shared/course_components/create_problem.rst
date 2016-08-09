@@ -602,10 +602,8 @@ To design an assignment that includes several questions, you add one problem
 component and then edit it to add every question and its answer options, one
 after the other, in that component. Be sure to identify the text of every
 question or prompt with the appropriate Markdown formatting (``>> <<``) or OLX
-tag, and include all of the other required elements for
-each question you include.
-
-.. ``<label></label>`` insert after OLX above
+``<label> </label>`` element, and include all of the other required elements
+for each question you include.
 
 The questions that you include can all be of the same problem type, such as a
 series of text input questions, or you can include questions that use different
@@ -616,34 +614,40 @@ problem types, such as both numerical input and math expression input.
   contains more than one question. Each custom JavaScript problem must be in
   its own component.
 
-.. An example of a problem component with two text input questions follows. In the
-.. simple editor, the problem has the following Markdown formatting.
+An example of a problem component with a text input question and a numerical
+input question follows. In the simple editor, the problem has the following
+Markdown formatting.
 
-.. ::
+::
 
-..  >>Who invented the Caesar salad?||Be sure to check your spelling.<<
+  >>Who invented the Caesar salad?||Be sure to check your spelling.<<
 
-..  = Caesar Cardini
+  = Caesar Cardini
 
-..  >>In what year?<<
+  ---
 
-..  = 1924
+  >>In what year?<<
 
-.. In the advanced editor, the problem has the following OLX markup.
+  = 1924
 
-.. ::
+That is, you include three hyphen characters (---) to separate the problems.
 
-..   <problem>
-..   <stringresponse answer="Caesar Cardini">
-..   <label>Who invented the Caesar salad?</label>
-..   <description>Be sure to check your spelling.</description>
-..   </stringresponse>
-..   <numericalresponse answer="1924">
-..   <label>In what year?</label>
-..   </numericalresponse>
-..   </problem>
+In the advanced editor, the problem has the following OLX markup.
 
-.. ^^placeholder, need to verify in the sandbox. - Alison 4 Aug 2016
+::
+
+  <problem>
+  <stringresponse answer="Caesar Cardini" type="ci">
+    <label>Who invented the Caesar salad?</label>
+  <description>Be sure to check your spelling.</description>
+  <textline size="20"/>
+  </stringresponse>
+
+  <numericalresponse answer="1924">
+    <label>In what year?</label>
+  <formulaequationinput/>
+  </numericalresponse>
+  </problem>
 
 .. include:: ../../../shared/exercises_tools/Section_adding_hints.rst
 
