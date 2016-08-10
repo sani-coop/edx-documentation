@@ -499,9 +499,9 @@ provides partial credit of 25% for an answer option.
 
 .. _Multiple Choice Problem XML:
 
-******************************
-Multiple Choice Problem OLX
-******************************
+*************************************
+Multiple Choice Problem OLX Reference
+*************************************
 
 ================
 Template
