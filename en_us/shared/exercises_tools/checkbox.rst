@@ -36,7 +36,8 @@ learners, especially if the problems have a limited number of attempts.
 Example Checkbox Problem
 =============================
 
-In the LMS, learners check answer options and leave answer options unchecked to
+In the LMS, learners both check answer options that they believe are correct
+and leave unchecked the answer options that they believe are incorrect to
 complete a checkbox problem. An example of a completed checkbox problem
 follows.
 
@@ -52,7 +53,7 @@ editor to enter the following text and Markdown formatting.
 
 ::
 
-  >>Learning about the benefits of preventative health care can be particularly difficult.||Check all of the reasons below why this may be the case.<<
+  >>Learning about the benefits of preventative health care can be particularly difficult.||Check all of the options below that might be reasons why.<<
 
   [x] A large amount of time passes between undertaking a preventative measure and seeing the result.
   [ ] Non-immunized people will always fall sick.
@@ -60,7 +61,7 @@ editor to enter the following text and Markdown formatting.
   [x] Trust in health care professionals and government officials is fragile.
 
   [explanation]
-  People who are not immunized against a disease may still not fall sick from the disease. If someone is trying to learn whether or not preventative measures against the disease have any impact, he or she may see these people and conclude, since they have remained healthy despite not being immunized, that immunizations have no effect. Consequently, he or she would tend to believe that immunization (or other preventative measures) have fewer benefits than they actually do.
+  People who are not immunized against a disease might still not fall sick from the disease. If someone is trying to learn whether or not preventative measures against the disease have any impact, he or she might see these people and conclude, since they have remained healthy despite not being immunized, that immunizations have no effect. Consequently, he or she would tend to believe that immunization (or other preventative measures) have fewer benefits than they actually do.
   [explanation]
 
 The OLX (open learning XML) markup for this example checkbox problem follows.
@@ -70,7 +71,7 @@ The OLX (open learning XML) markup for this example checkbox problem follows.
   <problem>
     <choiceresponse>
     <label>Learning about the benefits of preventative health care can be particularly difficult.</label>
-    <description>Check all of the reasons below why this may be the case.</description>
+    <description>Check all of the options below that might be reasons why.</description>
       <checkboxgroup>
         <choice correct="true">A large amount of time passes between undertaking a preventative measure and seeing the result.</choice>
         <choice correct="false">Non-immunized people will always fall sick.</choice>
@@ -80,9 +81,7 @@ The OLX (open learning XML) markup for this example checkbox problem follows.
     <solution>
       <div class="detailed-solution">
       <p>Explanation</p>
-
-      <p>People who are not immunized against a disease may still not fall sick from the disease. If someone is trying to learn whether or not preventative measures against the disease have any impact, he or she may see these people and conclude, since they have remained healthy despite not being immunized, that immunizations have no effect. Consequently, he or she would tend to believe that immunization (or other preventative measures) have fewer benefits than they actually do.</p>
-
+      <p>People who are not immunized against a disease might still not fall sick from the disease. If someone is trying to learn whether or not preventative measures against the disease have any impact, he or she might see these people and conclude, since they have remained healthy despite not being immunized, that immunizations have no effect. Consequently, he or she would tend to believe that immunization (or other preventative measures) have fewer benefits than they actually do.</p>
       </div>
     </solution>
     </choiceresponse>
@@ -711,9 +710,9 @@ halves.
 
 .. _Checkbox Problem XML:
 
-****************************
-Checkbox Problem OLX
-****************************
+******************************
+Checkbox Problem OLX Reference
+******************************
 
 ============
 Template
@@ -724,7 +723,7 @@ Template
   <problem>
   <choiceresponse>
     <label>Question or prompt text</label>
-    <description>information about how to answer the question</description>
+    <description>Information about how to answer the question</description>
       <checkboxgroup>
         <choice correct="false">Answer option A (incorrect)</choice>
         <choice correct="true">Answer option B (correct)</choice>
@@ -826,7 +825,7 @@ Indicates the beginning of the list of options.
 
 **Tag:** ``<choice>``
 
-Lists an answer option.
+Designates an answer option.
 
   Attributes
 
