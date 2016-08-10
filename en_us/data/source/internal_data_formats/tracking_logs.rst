@@ -25,121 +25,89 @@ Reviewing a Sample Event
 
 A sample event from an edX.log file follows. This sample was edited to remove
 personally identifiable information. Events are stored in JSON documents, which
-can be difficult to read before standard formatting is applied.
-
-.. code-block:: none
-
-    {"agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
-    Chrome/30.0.1599.101 Safari/537.36", "context": {"course_id": "edx/AN101/2014_T1",
-    "module": {"display_name": "Multiple Choice Questions"}, "org_id": "edx", "user_id":
-    9999999}, "event": {"answers": {"i4x-edx-AN101-problem-a0effb954cca4759994f1ac9e9434bf4_2_1":
-    "yellow", "i4x-edx-AN101-problem-a0effb954cca4759994f1ac9e9434bf4_4_1": ["choice_0", "choice_2"]},
-    "attempts": 1, "correct_map": {"i4x-edx-AN101-problem-a0effb954cca4759994f1ac9e9434bf4_2_1":
-    {"correctness": "incorrect", "hint": "", "hintmode": null, "msg": "", "npoints": null,
-    "queuestate": null}, "i4x-edx-AN101-problem-a0effb954cca4759994f1ac9e9434bf4_4_1":
-    {"correctness": "correct", "hint": "", "hintmode": null, "msg": "", "npoints": null,
-    "queuestate": null}}, "grade": 2, "max_grade": 3, "problem_id": "i4x://edx/AN101/problem/
-    a0effb954cca4759994f1ac9e9434bf4", "state": {"correct_map": {}, "done": null, "input_state":
-    {"i4x-edx-AN101-problem-a0effb954cca4759994f1ac9e9434bf4_2_1": {}, "i4x-edx-AN101-problem-
-    a0effb954cca4759994f1ac9e9434bf4_4_1": {}}, "seed": 1, "student_answers": {}}, "submission":
-    {"i4x-edx-AN101-problem-a0effb954cca4759994f1ac9e9434bf4_2_1": {"answer": "yellow", "correct":
-    false, "input_type": "optioninput", "question": "What color is the open ocean on a sunny day?",
-    "response_type": "optionresponse", "variant": ""}, "i4x-edx-AN101-problem-
-    a0effb954cca4759994f1ac9e9434bf4_4_1": {"answer": ["a piano", "a guitar"], "correct": true,
-    "input_type": "checkboxgroup", "question": "Which of the following are musical instruments?",
-    "response_type": "choiceresponse", "variant": ""}}, "success": "incorrect"}, "event_source":
-    "server", "event_type": "problem_check", "host": "precise64", "referer": "http:\/\/localhost:8001\/
-    container\/i4x:\/\/edX\/DemoX\/vertical\/69dedd38233a46fc89e4d7b5e8da1bf4?action=new",
-    "accept_language": "en-US,en;q=0.8","ip": "NN.N.N.N", "page": "x_module",
-    "time": 2014-03-03T16:19:05.584523+00:00", "username": "AAAAAAAAAA"}
-
-If you use a JSON formatter to "pretty print" this event, a version that is
-more readable is produced.
+can be difficult to read before standard formatting is applied. If you use a
+JSON formatter to "pretty print" this event, a version that is more readable is
+produced.
 
 .. code-block:: json
 
  {
-    "agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.101 Safari/537.36",
-    "context": {
-        "course_id": "edx/AN101/2014_T1",
-        "module": {
-            "display_name": "Multiple Choice Questions"
-        },
-        "org_id": "edx",
-        "user_id": 9999999
-    },
-    "event": {
-        "answers": {
-            "i4x-edx-AN101-problem-a0effb954cca4759994f1ac9e9434bf4_2_1": "yellow",
-            "i4x-edx-AN101-problem-a0effb954cca4759994f1ac9e9434bf4_4_1": [
-                "choice_0",
-                "choice_2"
-            ]
-        },
-        "attempts": 1,
-        "correct_map": {
-            "i4x-edx-AN101-problem-a0effb954cca4759994f1ac9e9434bf4_2_1": {
-                "correctness": "incorrect",
-                "hint": "",
-                "hintmode": null,
-                "msg": "",
-                "npoints": null,
-                "queuestate": null
-            },
-            "i4x-edx-AN101-problem-a0effb954cca4759994f1ac9e9434bf4_4_1": {
-                "correctness": "correct",
-                "hint": "",
-                "hintmode": null,
-                "msg": "",
-                "npoints": null,
-                "queuestate": null
-            }
-        },
-        "grade": 2,
-        "max_grade": 3,
-        "problem_id": "i4x://edx/AN101/problem/a0effb954cca4759994f1ac9e9434bf4",
-        "state": {
-            "correct_map": {},
-            "done": null,
-            "input_state": {
-                "i4x-edx-AN101-problem-a0effb954cca4759994f1ac9e9434bf4_2_1": {},
-                "i4x-edx-AN101-problem-a0effb954cca4759994f1ac9e9434bf4_4_1": {}
-            },
-            "seed": 1,
-            "student_answers": {}
-        },
-        "submission": {
-            "i4x-edx-AN101-problem-a0effb954cca4759994f1ac9e9434bf4_2_1": {
-                "answer": "yellow",
-                "correct": false,
-                "input_type": "optioninput",
-                "question": "What color is the open ocean on a sunny day?",
-                "response_type": "optionresponse",
-                "variant": ""
-            },
-            "i4x-edx-AN101-problem-a0effb954cca4759994f1ac9e9434bf4_4_1": {
-                "answer": [
-                    "a piano",
-                    "a guitar"
-                ],
-                "correct": true,
-                "input_type": "checkboxgroup",
-                "question": "Which of the following are musical instruments?",
-                "response_type": "choiceresponse",
-                "variant": ""
-            }
-        },
-        "success": "incorrect"
-    },
-    "event_source": "server",
-    "event_type": "problem_check",
-    "host": "precise64",
-    "referer": "http:\/\/localhost:8001\/container\/i4x:\/\/edX\/DemoX\/vertical\/69dedd38233a46fc89e4d7b5e8da1bf4?action=new",
-    "accept_language": "en-US,en;q=0.8",
-    "ip": "NN.N.N.N",
-    "page": "x_module",
-    "time": "2014-03-03T16:19:05.584523+00:00",
-    "username": "AAAAAAAAAA"
+   "username": "staff",
+   "event_type": "problem_check",
+   "ip": "10.0.1.1",
+   "agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36",
+   "host": "precise64",
+   "referer": "http://localhost:8000/courses/course-v1:edX+DemoX+Demo_Course/courseware/d8a6192ade314473a78242dfeedfbf5b/330cf4d0c87b4bddbbd2eb4a466ff9f4/1?activate_block_id=block-v1%3AedX%2BDemoX%2BDemo_Course%2Btype%40vertical%2Bblock%40541e3597470c4c0d8ab11f6ac443fd5d",
+   "accept_language": "en;q=1.0, en;q=0.8",
+   "event": {
+     "submission": {
+       "29c5cbd840324d94be8ba51db1864277_2_1": {
+         "input_type": "checkboxgroup",
+         "question": "Which of the following is a fruit?",
+         "response_type": "choiceresponse",
+         "answer": [
+           "apple\n      <choicehint selected=\"true\">You are correct that an apple is a fruit because it is the fertilized ovary that comes from an apple tree and contains seeds.</choicehint>\n      <choicehint selected=\"false\">Remember that an apple is also a fruit.</choicehint>\n"
+         ],
+         "variant": "",
+         "correct": false
+       }
+     },
+     "success": "incorrect",
+     "grade": 0,
+     "correct_map": {
+       "29c5cbd840324d94be8ba51db1864277_2_1": {
+         "hint": "",
+         "hintmode": null,
+         "correctness": "incorrect",
+         "npoints": null,
+         "answervariable": null,
+         "msg": "<div class=\"feedback-hint-incorrect\"><div class=\"hint-label\">Incorrect: </div><div class=\"feedback-hint-multi\"><div class=\"hint-text\">You are correct that an apple is a fruit because it is the fertilized ovary that comes from an apple tree and contains seeds.</div><div class=\"hint-text\">Remember that a pumpkin is also a fruit.</div><div class=\"hint-text\">You are correct that a potato is a vegetable because it is an edible part of a plant in tuber form.</div><div class=\"hint-text\">Many people mistakenly think a tomato is a vegetable. However, because a tomato is the fertilized ovary of a tomato plant and contains seeds, it is a fruit.</div></div></div>",
+         "queuestate": null
+       }
+     },
+     "state": {
+       "student_answers": {
+
+       },
+       "seed": 1,
+       "done": null,
+       "correct_map": {
+
+       },
+       "input_state": {
+         "29c5cbd840324d94be8ba51db1864277_2_1": {
+
+         }
+       }
+     },
+     "answers": {
+       "29c5cbd840324d94be8ba51db1864277_2_1": [
+         "choice_0"
+       ]
+     },
+     "attempts": 1,
+     "max_grade": 1,
+     "problem_id": "block-v1:edX+DemoX+Demo_Course+type@problem+block@29c5cbd840324d94be8ba51db1864277"
+   },
+   "event_source": "server",
+   "context": {
+     "course_user_tags": {
+
+     },
+     "user_id": 3,
+     "org_id": "edX",
+     "asides": {
+
+     },
+     "module": {
+       "usage_key": "block-v1:edX+DemoX+Demo_Course+type@problem+block@29c5cbd840324d94be8ba51db1864277",
+       "display_name": "Checkboxes with Hints and Feedback"
+     },
+     "course_id": "course-v1:edX+DemoX+Demo_Course",
+     "path": "/courses/course-v1:edX+DemoX+Demo_Course/xblock/block-v1:edX+DemoX+Demo_Course+type@problem+block@29c5cbd840324d94be8ba51db1864277/handler/xmodule_handler/problem_check"
+   },
+   "time": "2016-08-04T13:43:34.967980+00:00",
+   "page": "x_module"
  }
 
 For more information about fields that are included in every event, see
@@ -2749,8 +2717,6 @@ selects **Check**.
 ``problem_check``
 *********************************
 
-.. no sample to check
-
 The server emits ``problem_check`` events when a problem is successfully
 checked.
 
@@ -3182,11 +3148,14 @@ successfully.
 ``showanswer``
 *********************************
 
-.. no sample to check
+The server emits ``showanswer`` events when the answer to a problem is shown.
 
-The browser emits ``showanswer`` events when the answer to a problem is shown.
+**Event Source**: Server
 
-**Event Source**: Browser
+``context`` **Member Fields**:
+
+This event type includes the :ref:`common<context>` ``context.module`` member
+field.
 
 ``event`` **Member Fields**:
 
@@ -3200,16 +3169,6 @@ The browser emits ``showanswer`` events when the answer to a problem is shown.
    * - ``problem_id``
      - string
      - EdX ID of the problem being shown.
-   * - ``[answers, contents]``
-     - array
-     - The array includes each problem in a problem component that has multiple
-       problems.
-
-       * ``answers`` provides the value checked by the user.
-
-       * ``contents`` delivers HTML using data entered for the problem in
-         Studio, including the display name, problem text, and choices or
-         response field labels.
 
 .. Including the special exam (timed and proctored) events doc in a separate
 .. file because it is very long. - Peter March 2016
