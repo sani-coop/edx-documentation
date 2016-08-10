@@ -605,6 +605,10 @@ question or prompt with the appropriate Markdown formatting (``>> <<``) or OLX
 ``<label> </label>`` element, and include all of the other required elements
 for each question you include.
 
+As a best practive, edX recommends that you avoid including text between the
+questions. Screen readers can skip over text that is inserted among multiple
+questions.
+
 The questions that you include can all be of the same problem type, such as a
 series of text input questions, or you can include questions that use different
 problem types, such as both numerical input and math expression input.
@@ -639,13 +643,13 @@ In the advanced editor, the problem has the following OLX markup.
   <problem>
   <stringresponse answer="Caesar Cardini" type="ci">
     <label>Who invented the Caesar salad?</label>
-  <description>Be sure to check your spelling.</description>
-  <textline size="20"/>
+    <description>Be sure to check your spelling.</description>
+    <textline size="20"/>
   </stringresponse>
 
   <numericalresponse answer="1924">
     <label>In what year?</label>
-  <formulaequationinput/>
+    <formulaequationinput/>
   </numericalresponse>
   </problem>
 
