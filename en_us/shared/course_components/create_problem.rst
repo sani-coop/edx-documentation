@@ -178,7 +178,7 @@ follow.
    formatting, so you add two pairs of inward-pointing angle brackets (``>>
    <<``) around the question text. For example, ``>>Is this the question?<<``.
 
-.. Optionally, you can add guidance that helps learners answer the question as
+   Optionally, you can add guidance that helps learners answer the question as
    part of the accessible label. For example, when you add a checkbox problem
    that is only correct when learners select three of the answer options, you
    might include the tip "Be sure to select all that apply." To add this
@@ -625,32 +625,28 @@ Markdown formatting.
 ::
 
   >>Who invented the Caesar salad?||Be sure to check your spelling.<<
-
   = Caesar Cardini
-
   ---
-
   >>In what year?<<
-
   = 1924
 
 That is, you include three hyphen characters (---) to separate the problems.
 
 In the advanced editor, the problem has the following OLX markup.
 
-::
+.. code-block:: xml
 
   <problem>
-  <stringresponse answer="Caesar Cardini" type="ci">
-    <label>Who invented the Caesar salad?</label>
-    <description>Be sure to check your spelling.</description>
-    <textline size="20"/>
-  </stringresponse>
+    <stringresponse answer="Caesar Cardini" type="ci">
+      <label>Who invented the Caesar salad?</label>
+      <description>Be sure to check your spelling.</description>
+      <textline size="20"/>
+    </stringresponse>
 
-  <numericalresponse answer="1924">
-    <label>In what year?</label>
-    <formulaequationinput/>
-  </numericalresponse>
+    <numericalresponse answer="1924">
+      <label>In what year?</label>
+      <formulaequationinput/>
+    </numericalresponse>
   </problem>
 
 .. include:: ../../../shared/exercises_tools/Section_adding_hints.rst
