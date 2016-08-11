@@ -71,16 +71,14 @@ and Markdown formatting in the simple editor in Studio.
     lateral inhibition using horseshoe crabs.
     [Explanation]
 
-
-The OLX markup for this example problem follows.
+The OLX (open learning XML) markup for this example problem follows.
 
 .. code-block:: xml
 
   <problem>
   <multiplechoiceresponse>
     <label>Lateral inhibition, as was first discovered in the horseshoe crab:</label>
-  <description></description>
-  <choicegroup type="MultipleChoice">
+    <choicegroup type="MultipleChoice">
       <choice correct="false">is a property of touch sensation, referring to the ability
       of crabs to detect nearby predators.</choice>
       <choice correct="false">is a property of hearing, referring to the ability of crabs
@@ -91,20 +89,18 @@ The OLX markup for this example problem follows.
       fellow horseshoe crabs nearby.</choice>
       <choice correct="false">has to do with a weighting system in the crab's skeleton
       that allows it to balance in turbulent water.</choice>
-  </choicegroup>
-  <solution>
-    <div class="detailed-solution">
+    </choicegroup>
+    <solution>
+      <div class="detailed-solution">
       <p>Explanation</p>
-
       <p>Horseshoe crabs were essential to the discovery of lateral inhibition,
        a property of vision present in horseshoe crabs as well as humans that
        enables enhancement of contrast at edges of objects as was demonstrated in class.
        In 1967, Haldan Hartline received the Nobel prize for his research on vision
        and in particular his research investigating lateral inhibition using
        horseshoe crabs.</p>
-
-    </div>
-  </solution>
+      </div>
+    </solution>
   </multiplechoiceresponse>
   </problem>
 
@@ -126,7 +122,7 @@ courses tend to lead to better learning outcomes. In addition, authentic
 assessments allow for infinite attempts, mastery learning, and more
 intellectual risk taking, which lead to substantially better learning outcomes.
 
-Multiple choice questions do have these helpful uses.
+Multiple choice questions do have these uses.
 
 * Ungraded multiple choice questions can help students think about a concept in
   the context of knowledge transfer.
@@ -222,11 +218,10 @@ problem, follow these steps.
    the Simple Editor to Create a Multiple Choice Problem>`.
 
 #. Select **Advanced Editor**. The advanced editor opens to a template that
-   shows the OLX (open learning XML) markup that you can use for this problem
-   type.
+   shows the OLX markup that you can use for this problem type.
 
 #. Replace the guidance provided by the template to add your own text for the
-   prompt, answer options, explanation, and so on.
+   label, answer options, solution, and so on.
 
 #. Update the OLX to use any additional tags and attributes in your problem.
    For more information, see :ref:`Multiple Choice Problem XML`.
@@ -243,9 +238,8 @@ Adding Feedback to a Multiple Choice Problem
 ********************************************
 
 For an overview of feedback in problems, see :ref:`Adding Feedback and Hints to
-a Problem`. For multiple choice problems, you can add feedback for each of the
-answer options you provide in the problem. Use the following guidelines when
-providing feedback.
+a Problem`. You can add feedback for each of the answer options you provide in
+the problem. Use the following guidelines when providing feedback.
 
 * Add feedback to incorrect answers to target common misconceptions and
   mistakes.
@@ -266,7 +260,7 @@ Configuring Feedback in the Simple Editor
 ==========================================
 
 You can configure feedback in the :ref:`simple editor<Simple Editor>`.  When
-you create a new multiple choice problem, select the template **Multiple Choice
+you add a multiple choice problem, select the template **Multiple Choice
 with Hints and Feedback**. This template has example feedback syntax that you
 can replace.
 
@@ -340,9 +334,9 @@ For example, the following problem has feedback for each answer.
   </multiplechoiceresponse>
   </problem>
 
-=========================
-Customize Feedback Labels
-=========================
+===========================
+Customizing Feedback Labels
+===========================
 
 By default, the feedback labels shown to learners are **Correct** and
 **Incorrect**. If you do not define feedback labels, learners see these terms
@@ -487,7 +481,7 @@ provides partial credit of 25% for an answer option.
 .. code-block:: xml
 
   <multiplechoiceresponse partial_credit="points">
-  <label>Which of the following is a vegetable?</label>
+    <label>Which of the following is a vegetable?</label>
     <choicegroup type="MultipleChoice">
       .
       .
@@ -511,8 +505,8 @@ Template
 
   <problem>
   <multiplechoiceresponse>
-  <label>Question or prompt text</label>
-  <description>Optional information about how to answer the question</description>
+    <label>Question or prompt text</label>
+    <description>Optional information about how to answer the question</description>
     <choicegroup type="MultipleChoice">
       <choice correct="false" name="a">
         Incorrect choice
@@ -527,12 +521,12 @@ Template
         </choicehint>
       </choice>
     </choicegroup>
-  <solution>
-    <div class="detailed-solution">
-      <p>Optional header for the explanation or solution</p>
-      <p>Optional explanation or solution text</p>
-    </div>
-  </solution>
+    <solution>
+      <div class="detailed-solution">
+        <p>Optional header for the explanation or solution</p>
+        <p>Optional explanation or solution text</p>
+      </div>
+    </solution>
   </multiplechoiceresponse>
   <demandhint>
     <hint>Hint 1</hint>
@@ -584,6 +578,8 @@ Indicates that the problem is a multiple choice problem.
   * ``<description>``
   * ``<choicegroup>``
   * All standard HTML tags (can be used to format text).
+
+.. label and description might be children of problem rather than multiplechoiceresponse...
 
 **Tag:** ``<label>``
 
@@ -700,9 +696,9 @@ order of answers in the problem, include explanations that appear when a
 learner selects a specific incorrect answer, or present a random set of
 choices to each learner. For more information, see the following sections.
 
-* :ref:`Shuffle Answers in a Multiple Choice Problem`
-* :ref:`Targeted Feedback in a Multiple Choice Problem`
-* :ref:`Answer Pools in a Multiple Choice Problem`
+.. contents::
+  :local:
+  :depth: 1
 
 .. _Shuffle Answers in a Multiple Choice Problem:
 
@@ -795,17 +791,17 @@ To add shuffling to a problem, you add ``shuffle="true"`` to the
 
 .. code-block:: xml
 
- <problem>
+  <problem>
   <multiplechoiceresponse>
-  <label>What Apple device competed with the portable CD player?</label>
-   <choicegroup type="MultipleChoice" shuffle="true">
-     <choice correct="false">The iPad</choice>
-     <choice correct="false">Napster</choice>
-     <choice correct="true">The iPod</choice>
-     <choice correct="false">The vegetable peeler</choice>
-   </choicegroup>
+    <label>What Apple device competed with the portable CD player?</label>
+    <choicegroup type="MultipleChoice" shuffle="true">
+      <choice correct="false">The iPad</choice>
+      <choice correct="false">Napster</choice>
+      <choice correct="true">The iPod</choice>
+      <choice correct="false">The vegetable peeler</choice>
+    </choicegroup>
   </multiplechoiceresponse>
- </problem>
+  </problem>
 
 To make the location of an answer fixed in a shuffled list, add
 ``fixed="true"`` to the ``choice`` element for the answer.
@@ -814,18 +810,17 @@ To make the location of an answer fixed in a shuffled list, add
 
 .. code-block:: xml
 
- <problem>
-  <p>What Apple device competed with the portable CD player?</p>
+  <problem>
   <multiplechoiceresponse>
-   <choicegroup type="MultipleChoice" shuffle="true">
-     <choice correct="false">The iPad</choice>
-     <choice correct="false">Napster</choice>
-     <choice correct="true">The iPod</choice>
-     <choice correct="false">The vegetable peeler</choice>
-     <choice correct="false" fixed="true">All of the above</choice>
-   </choicegroup>
+    <label>What Apple device competed with the portable CD player?</label>
+    <choicegroup type="MultipleChoice" shuffle="true">
+      .
+      .
+      .
+      <choice correct="false" fixed="true">All of the above</choice>
+    </choicegroup>
   </multiplechoiceresponse>
- </problem>
+  </problem>
 
 Then, you select **Settings** to specify an option other than **Never** for the
 **Randomization** setting.
@@ -873,16 +868,17 @@ for each answer choice.
 
 .. code-block:: xml
 
-   <problem>
-   <p>What Apple device competed with the portable CD player?</p>
-   <multiplechoiceresponse targeted-feedback="">
+  <problem>
+  <label>What Apple device competed with the portable CD player?</label>
+  <multiplechoiceresponse targeted-feedback="">
     <choicegroup type="MultipleChoice">
       <choice correct="false" explanation-id="feedback1">The iPad</choice>
       <choice correct="false" explanation-id="feedback2">Napster</choice>
       <choice correct="true" explanation-id="correct">The iPod</choice>
       <choice correct="false" explanation-id="feedback3">The vegetable peeler</choice>
     </choicegroup>
-   </multiplechoiceresponse>
+    </multiplechoiceresponse>
+
 
 This is immediately followed by OLX that defines the targeted feedback.
 
@@ -954,7 +950,7 @@ problem in the :ref:`advanced editor<Advanced Editor>`.
 * Place the ``<solution>`` elements within a ``<solutionset>`` element.
 
 .. note:: If the choices include only one correct answer, you do not have to
- use the ``explanation-id`` in either the ``choice`` or ``<solution>``
+ use the ``explanation-id`` in either the ``<choice>`` or ``<solution>``
  element. You do still use the ``<solutionset>`` element to wrap the
  ``<solution>`` element.
 
@@ -965,33 +961,33 @@ explanation ID.
 
 .. code-block:: xml
 
- <problem>
+  <problem>
   <multiplechoiceresponse>
     <label>What Apple devices let you carry your digital music library in your pocket?</label>
-    <description>You can select only one opion.</description>
-      <choicegroup type="MultipleChoice" answer-pool="4">
-        <choice correct="false">The iPad</choice>
-        <choice correct="false">Napster</choice>
-        <choice correct="true" explanation-id="iPod">The iPod</choice>
-        <choice correct="false">The vegetable peeler</choice>
-        <choice correct="false">The iMac</choice>
-        <choice correct="true" explanation-id="iPhone">The iPhone</choice>
-      </choicegroup>
-    <solutionset>
-        <solution explanation-id="iPod">
-        <div class="detailed-solution">
-            <p>Explanation</p>
-            <p>Yes, the iPod is Apple's portable digital music player.</p>
-        </div>
-        </solution>
-        <solution explanation-id="iPhone">
-        <div class="detailed-solution">
-            <p>Explanation</p>
-            <p>In addition to being a cell phone, the iPhone can store and play your digital music.</p>
-        </div>
-        </solution>
-    </solutionset>
+    <description>You can select only one option.</description>
+    <choicegroup type="MultipleChoice" answer-pool="4">
+      <choice correct="false">The iPad</choice>
+      <choice correct="false">Napster</choice>
+      <choice correct="true" explanation-id="iPod">The iPod</choice>
+      <choice correct="false">The vegetable peeler</choice>
+      <choice correct="false">The iMac</choice>
+      <choice correct="true" explanation-id="iPhone">The iPhone</choice>
+    </choicegroup>
   </multiplechoiceresponse>
- </problem>
+  <solutionset>
+    <solution explanation-id="iPod">
+      <div class="detailed-solution">
+        <p>Explanation</p>
+        <p>Yes, the iPod is Apple's portable digital music player.</p>
+      </div>
+    </solution>
+    <solution explanation-id="iPhone">
+      <div class="detailed-solution">
+        <p>Explanation</p>
+        <p>In addition to being a cell phone, the iPhone can store and play your digital music.</p>
+      </div>
+    </solution>
+  </solutionset>
+  </problem>
 
-.. FWIW I couldn't get this to work with two correct answers. Only the first correct answer was identified as being correct on check, and both explanations showed up on Show Answer. In addition, both correct answers were included among the set of 4 shown. Should this advanced option be deprecated? - Alison 4 Aug 2016
+.. I was not able to get this to work. - Alison 11 Aug 2016
