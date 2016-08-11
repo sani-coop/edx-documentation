@@ -30,7 +30,7 @@ recommends that you specify more than one correct answer for text input
 problems to allow for differences in capitalization and typographical errors.
 
 =============================
-Example Checkbox Problem
+Example Text Input Problem
 =============================
 
 In the LMS, learners enter a value into a response field to complete a text
