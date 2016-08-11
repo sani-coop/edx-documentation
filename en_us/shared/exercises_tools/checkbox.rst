@@ -72,12 +72,12 @@ The OLX (open learning XML) markup for this example checkbox problem follows.
     <choiceresponse>
     <label>Learning about the benefits of preventative health care can be particularly difficult.</label>
     <description>Check all of the options below that might be reasons why.</description>
-      <checkboxgroup>
-        <choice correct="true">A large amount of time passes between undertaking a preventative measure and seeing the result.</choice>
-        <choice correct="false">Non-immunized people will always fall sick.</choice>
-        <choice correct="true">If others are immunized, fewer people will fall sick regardless of a particular individual's choice to get immunized or not.</choice>
-        <choice correct="true">Trust in health care professionals and government officials is fragile.</choice>
-      </checkboxgroup>
+    <checkboxgroup>
+      <choice correct="true">A large amount of time passes between undertaking a preventative measure and seeing the result.</choice>
+      <choice correct="false">Non-immunized people will always fall sick.</choice>
+      <choice correct="true">If others are immunized, fewer people will fall sick regardless of a particular individual's choice to get immunized or not.</choice>
+      <choice correct="true">Trust in health care professionals and government officials is fragile.</choice>
+    </checkboxgroup>
     <solution>
       <div class="detailed-solution">
       <p>Explanation</p>
@@ -326,9 +326,6 @@ following syntax.
 
 .. code-block:: xml
 
-   .
-   .
-   .
     <choice correct="true">Choice label
       <choicehint selected="true">
         Feedback for when learner selects this answer.
@@ -337,9 +334,6 @@ following syntax.
         Feedback for when learner does not select this answer.
       </choicehint>
     </choice>
-   .
-   .
-   .
 
 For example, the following problem has feedback for each option, selected or
 unselected.
@@ -347,7 +341,7 @@ unselected.
 .. code-block:: xml
 
   <problem>
-  <choiceresponse>
+    <choiceresponse>
     <label>Which of the following is an example of a fruit?</label>
     <description>Check all that apply.</description>
     <checkboxgroup>
@@ -382,7 +376,7 @@ unselected.
           tomato plant and contains seeds it is classified as a fruit.</choicehint>
       </choice>
     </checkboxgroup>
-  </choiceresponse>
+    </choiceresponse>
   </problem>
 
 Configure Compound Feedback
@@ -522,16 +516,16 @@ updated to provide partial credit.
 .. code-block:: xml
 
   <problem>
-  <choiceresponse partial_credit="EDC">
+    <choiceresponse partial_credit="EDC">
     <label>Which of the following is a fruit?</label>
     <description>Check all that apply.</description>
-      <checkboxgroup>
-        <choice correct="true">apple</choice>
-        <choice correct="true">pumpkin</choice>
-        <choice correct="false">potato</choice>
-        <choice correct="true">tomato</choice>
-      </checkboxgroup>
-  </choiceresponse>
+    <checkboxgroup>
+      <choice correct="true">apple</choice>
+      <choice correct="true">pumpkin</choice>
+      <choice correct="false">potato</choice>
+      <choice correct="true">tomato</choice>
+    </checkboxgroup>
+    </choiceresponse>
   </problem>
 
 ==========================
@@ -696,16 +690,16 @@ halves.
 .. code-block:: xml
 
   <problem>
-  <choiceresponse partial_credit="halves">
+    <choiceresponse partial_credit="halves">
     <label>Which of the following is a fruit?</label>
     <description>Check all that apply.</description>
-      <checkboxgroup>
-        <choice correct="true">apple</choice>
-        <choice correct="true">pumpkin</choice>
-        <choice correct="false">potato</choice>
-        <choice correct="true">tomato</choice>
-      </checkboxgroup>
-  </choiceresponse>
+    <checkboxgroup>
+      <choice correct="true">apple</choice>
+      <choice correct="true">pumpkin</choice>
+      <choice correct="false">potato</choice>
+      <choice correct="true">tomato</choice>
+    </checkboxgroup>
+    </choiceresponse>
   </problem>
 
 .. _Checkbox Problem XML:
@@ -721,7 +715,7 @@ Template
 .. code-block:: xml
 
   <problem>
-  <choiceresponse>
+    <choiceresponse>
     <label>Question or prompt text</label>
     <description>Information about how to answer the question</description>
       <checkboxgroup>
@@ -730,17 +724,17 @@ Template
         <choice correct="true">Answer option C (correct)</choice>
       </checkboxgroup>
 
-  <solution>
+    <solution>
     <div class="detailed-solution">
       <p>Optional header for the explanation or solution</p>
       <p>Optional explanation or solution text</p>
      </div>
-  </solution>
-  </choiceresponse>
-  <demandhint>
-     <hint>Hint 1</hint>
-     <hint>Hint 2</hint>
-   </demandhint>
+    </solution>
+    </choiceresponse>
+    <demandhint>
+      <hint>Hint 1</hint>
+      <hint>Hint 2</hint>
+    </demandhint>
   </problem>
 
 ======
