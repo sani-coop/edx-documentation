@@ -648,7 +648,7 @@ Lists an answer option.
            selecting the answer.
 
          You can specify more than one correct or partially correct answer,
-         but learners can select only once choice to submit as their answer.
+         but learners can select only one choice to submit as their answer.
 
      * - ``point_value``
        - When ``correct="partial"``, indicates the percentage, as a decimal, of
