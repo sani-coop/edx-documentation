@@ -147,7 +147,7 @@ To use the advanced editor to edit a text input problem, follow these steps.
    shows the OLX markup that you can use for this problem type.
 
 #. Replace the guidance provided by the template to add your own text for the
-   prompt, answer or answers, explanation, and so on.
+   label, answer or answers, solution, and so on.
 
 #. Update the OLX to use any additional tags and attributes in your problem.
    For more information, see :ref:`Text Input Problem XML`.
@@ -173,8 +173,8 @@ simple editor or the advanced editor.
 Add Multiple Correct Responses in the Simple Editor
 ====================================================
 
-To specify additional correct responses in the simple editor, include ``or= ``
-before each additional correct response.
+To specify additional correct responses in the simple editor, include
+``or=`` before each additional correct response.
 
 ::
 
@@ -285,9 +285,9 @@ common incorrect answers.
     </stringresponse>
   </problem>
 
-=========================
-Customize Feedback Labels
-=========================
+===========================
+Customizing Feedback Labels
+===========================
 
 By default, the feedback labels shown to learners are **Correct** and
 **Incorrect**. If you do not define feedback labels, learners see these terms
