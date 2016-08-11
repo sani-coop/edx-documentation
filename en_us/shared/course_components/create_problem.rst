@@ -98,10 +98,8 @@ The Simple Editor
 ==================
 
 When you edit one of the :ref:`common problem types<Adding a Problem>`, the
-simple editor opens with an example problem that you can use as a template for
+simple editor opens with a template that you can use as a template for
 adding Markdown formatting.
-
-.. ...with a template that...^
 
 *  :ref:`Checkbox` and Checkboxes with Hints and Feedback
 
@@ -162,11 +160,11 @@ follow.
    ]]``) around the list. To identify the correct answer option, you add
    parentheses (``( )``) around that option.
 
-#. **Explanation**: Identifies the explanation for the
-   correct answer by adding an ``[explanation]`` tag to the lines before and
-   after the text. An explanation appears only after learners select **Show
-   Answer**. You define when the **Show Answer** option is available to
-   learners by using the :ref:`Show Answer` setting.
+#. **Explanation**: Identifies the explanation for the correct answer by adding
+   an ``[explanation]`` tag to the lines before and after the text. The
+   explanation appears only after learners select **Show Answer**. You define
+   when the **Show Answer** option is available to learners by using the
+   :ref:`Show Answer` setting.
 
 #. **Advanced Editor** link: Opens the problem in the :ref:`advanced
    editor<Advanced Editor>`, which shows the OLX markup for the problem.
@@ -586,7 +584,7 @@ that you define, including the display name and whether to show the **Reset**
 button, apply to all of the questions in that component. The answers to all of
 the questions are submitted when learners select **Check**, and the correct
 answers for all of the questions appear when learners select **Show Answer**.
-By default, learners receive one point for each question they answer correcty.
+By default, learners receive one point for each question they answer correctly.
 For more information about changing the default problem weight and other
 settings, see :ref:`Problem Settings`.
 
@@ -602,12 +600,23 @@ To design an assignment that includes several questions, you add one problem
 component and then edit it to add every question and its answer options, one
 after the other, in that component. Be sure to identify the text of every
 question or prompt with the appropriate Markdown formatting (``>> <<``) or OLX
-``<label> </label>`` element, and include all of the other required elements
-for each question you include.
+``<label>`` element, and include all of the other required elements
+for each question.
 
-As a best practive, edX recommends that you avoid including text between the
-questions. Screen readers can skip over text that is inserted among multiple
-questions.
+* In the simple editor, you use three hyphen characters (``---``) on a new line
+  to separate one question and its answer options from the next.
+
+* In the advanced editor, each question and its answer options are enclosed by
+  the element that identifies the type of problem, such as
+  ``<multiplechoiceresponse>`` for multiple choice question, or
+  ``<formularesponse>`` for a math expression input question.
+
+* You can provide an explanation for each of the questions with the appropriate
+  Markdown formatting (``[explanation]``) or OLX ``<solution>`` element.
+
+As a best practice, edX recommends that you avoid including unformatted
+paragraph text between the questions. Screen readers can skip over text that is
+inserted among multiple questions.
 
 The questions that you include can all be of the same problem type, such as a
 series of text input questions, or you can include questions that use different
@@ -618,19 +627,26 @@ problem types, such as both numerical input and math expression input.
   contains more than one question. Each custom JavaScript problem must be in
   its own component.
 
-An example of a problem component with a text input question and a numerical
-input question follows. In the simple editor, the problem has the following
-Markdown formatting.
+An example of a problem component that includes a text input question and a
+numerical input question follows. In the simple editor, the problem has the
+following Markdown formatting.
 
 ::
 
   >>Who invented the Caesar salad?||Be sure to check your spelling.<<
   = Caesar Cardini
+  [explanation]
+  Caesar Cardini is credited with inventing this salad and received a U.S. trademark for his salad dressing recipe.
+  [explanation]
   ---
   >>In what year?<<
   = 1924
+  [explanation]
+  Cardini invented the dish at his restaurant on 4 July 1924 after the rush of holiday business left the kitchen with fewer supplies than usual.
+  [explanation]
 
-That is, you include three hyphen characters (---) to separate the problems.
+That is, you include three hyphen characters (``---``) on a new line to
+separate the problems.
 
 In the advanced editor, the problem has the following OLX markup.
 
@@ -638,14 +654,26 @@ In the advanced editor, the problem has the following OLX markup.
 
   <problem>
     <stringresponse answer="Caesar Cardini" type="ci">
-      <label>Who invented the Caesar salad?</label>
-      <description>Be sure to check your spelling.</description>
+    <label>Who invented the Caesar salad?</label>
+    <description>Be sure to check your spelling.</description>
       <textline size="20"/>
+    <solution>
+      <div class="detailed-solution">
+      <p>Explanation</p>
+      <p>Caesar Cardini is credited with inventing this salad and received a U.S. trademark for his salad dressing recipe.</p>
+      </div>
+    </solution>
     </stringresponse>
 
     <numericalresponse answer="1924">
-      <label>In what year?</label>
+    <label>In what year?</label>
       <formulaequationinput/>
+    <solution>
+      <div class="detailed-solution">
+      <p>Explanation</p>
+      <p>Cardini invented the dish at his restaurant on 4 July 1924 after the rush of holiday business left the kitchen with fewer supplies than usual.</p>
+      </div>
+    </solution>
     </numericalresponse>
   </problem>
 
