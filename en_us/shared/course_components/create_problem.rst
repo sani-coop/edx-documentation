@@ -608,11 +608,12 @@ for each question.
 
 * In the advanced editor, each question and its answer options are enclosed by
   the element that identifies the type of problem, such as
-  ``<multiplechoiceresponse>`` for multiple choice question, or
+  ``<multiplechoiceresponse>`` for a multiple choice question or
   ``<formularesponse>`` for a math expression input question.
 
-* You can provide an explanation for each of the questions with the appropriate
-  Markdown formatting (``[explanation]``) or OLX ``<solution>`` element.
+* You can provide a different explanation for each question with the
+  appropriate Markdown formatting (``[explanation]``) or OLX ``<solution>``
+  element.
 
 As a best practice, edX recommends that you avoid including unformatted
 paragraph text between the questions. Screen readers can skip over text that is
