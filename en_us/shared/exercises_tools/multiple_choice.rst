@@ -76,32 +76,32 @@ The OLX (open learning XML) markup for this example problem follows.
 .. code-block:: xml
 
   <problem>
-  <multiplechoiceresponse>
-    <label>Lateral inhibition, as was first discovered in the horseshoe crab:</label>
-    <choicegroup type="MultipleChoice">
-      <choice correct="false">is a property of touch sensation, referring to the ability
-      of crabs to detect nearby predators.</choice>
-      <choice correct="false">is a property of hearing, referring to the ability of crabs
-      to detect low frequency noises.</choice>
-      <choice correct="false">is a property of vision, referring to the ability of crabs'
-      eyes to enhance contrasts.</choice>
-      <choice correct="true">has to do with the ability of crabs to use sonar to detect
-      fellow horseshoe crabs nearby.</choice>
-      <choice correct="false">has to do with a weighting system in the crab's skeleton
-      that allows it to balance in turbulent water.</choice>
-    </choicegroup>
-    <solution>
-      <div class="detailed-solution">
-      <p>Explanation</p>
-      <p>Horseshoe crabs were essential to the discovery of lateral inhibition,
-       a property of vision present in horseshoe crabs as well as humans that
-       enables enhancement of contrast at edges of objects as was demonstrated in class.
-       In 1967, Haldan Hartline received the Nobel prize for his research on vision
-       and in particular his research investigating lateral inhibition using
-       horseshoe crabs.</p>
-      </div>
-    </solution>
-  </multiplechoiceresponse>
+    <multiplechoiceresponse>
+      <label>Lateral inhibition, as was first discovered in the horseshoe crab:</label>
+      <choicegroup type="MultipleChoice">
+        <choice correct="false">is a property of touch sensation, referring to
+         the ability of crabs to detect nearby predators.</choice>
+        <choice correct="false">is a property of hearing, referring to the
+         ability of crabs to detect low frequency noises.</choice>
+        <choice correct="false">is a property of vision, referring to the
+         ability of crabs' eyes to enhance contrasts.</choice>
+        <choice correct="true">has to do with the ability of crabs to use
+         sonar to detect fellow horseshoe crabs nearby.</choice>
+        <choice correct="false">has to do with a weighting system in the
+         crab's skeleton that allows it to balance in turbulent water.</choice>
+      </choicegroup>
+      <solution>
+        <div class="detailed-solution">
+          <p>Explanation</p>
+          <p>Horseshoe crabs were essential to the discovery of lateral
+           inhibition, a property of vision present in horseshoe crabs as well
+           as humans that enables enhancement of contrast at edges of objects
+           as was demonstrated in class. In 1967, Haldan Hartline received the
+           Nobel prize for his research on vision and in particular his
+           research investigating lateral inhibition using horseshoe crabs.</p>
+        </div>
+      </solution>
+    </multiplechoiceresponse>
   </problem>
 
 ====================================================
@@ -293,11 +293,8 @@ with the following syntax.
 
 .. code-block:: xml
 
-    <choice correct="false">
-      Choice Label
-      <choicehint>
-        Feedback for when learner selects this answer.
-      </choicehint>
+    <choice correct="false">Choice Label
+      <choicehint>Feedback for when learner selects this answer.</choicehint>
     </choice>
 
 For example, the following problem has feedback for each answer.
@@ -305,33 +302,29 @@ For example, the following problem has feedback for each answer.
 .. code-block:: xml
 
   <problem>
-  <multiplechoiceresponse>
-    <label="Which of the following is an example of a vegetable?"</label>
-    <description>You can select only one option.</description>
-    <choicegroup type="MultipleChoice">
-       <choice correct="false">apple
-         <choicehint>An apple is the fertilized ovary that comes from an apple
-          tree and contains seeds classifying it as a fruit.
-         </choicehint>
-       </choice>
-       <choice correct="false">pumpkin
-        <choicehint>A pumpkin is the fertilized ovary of a squash plant
-          and contains seeds classifying it as a fruit.
-        </choicehint>
-      </choice>
-      <choice correct="true">potato
-        <choicehint>A potato is an edible part of a plant in tuber form and is
-          classified as a vegetable.
-        </choicehint>
-      </choice>
-      <choice correct="false">tomato
-        <choicehint>Many people mistakenly think a tomato is a vegetable.
-         However, because a tomato is the fertilized ovary of a tomato plant
-         and contains seeds it is classified as a fruit.
-        </choicehint>
-      </choice>
-    </choicegroup>
-  </multiplechoiceresponse>
+    <multiplechoiceresponse>
+      <label="Which of the following is an example of a vegetable?"</label>
+      <description>You can select only one option.</description>
+      <choicegroup type="MultipleChoice">
+        <choice correct="false">apple
+          <choicehint>An apple is the fertilized ovary that comes from an apple
+           tree and contains seeds classifying it as a fruit.</choicehint>
+        </choice>
+        <choice correct="false">pumpkin
+          <choicehint>A pumpkin is the fertilized ovary of a squash plant
+           and contains seeds classifying it as a fruit.</choicehint>
+        </choice>
+        <choice correct="true">potato
+          <choicehint>A potato is an edible part of a plant in tuber form and
+           is classified as a vegetable.</choicehint>
+        </choice>
+        <choice correct="false">tomato
+          <choicehint>Many people mistakenly think a tomato is a vegetable.
+           However, because a tomato is the fertilized ovary of a tomato plant
+           and contains seeds it is classified as a fruit.</choicehint>
+        </choice>
+      </choicegroup>
+    </multiplechoiceresponse>
   </problem>
 
 ===========================
@@ -391,9 +384,8 @@ labels with the following syntax.
 .. code-block:: xml
 
     <choice correct="true or false">Answer
-      <choicehint label="Custom Label">
-        Feedback for learners who select this answer.
-      </choicehint>
+      <choicehint label="Custom Label">Feedback for learners who select this
+       answer.</choicehint>
     </choice>
 
 For example, the feedback for the following answer option is configured to use
@@ -402,11 +394,9 @@ a custom label.
 .. code-block:: xml
 
   <choice correct="false">tomato
-    <choicehint label="Not Quite">
-      Many people mistakenly think a tomato is a vegetable. However, because
-      a tomato is the fertilized ovary of a tomato plant and contains seeds,
-      it is a fruit.
-    </choicehint>
+    <choicehint label="Not Quite">Many people mistakenly think a tomato is a
+     vegetable. However, because a tomato is the fertilized ovary of a tomato
+     plant and contains seeds, it is a fruit.</choicehint>
   </choice>
 
 .. _Use Hints in a Multiple Choice Problem:
@@ -480,16 +470,17 @@ provides partial credit of 25% for an answer option.
 
 .. code-block:: xml
 
-  <multiplechoiceresponse partial_credit="points">
-    <label>Which of the following is a vegetable?</label>
-    <choicegroup type="MultipleChoice">
-      .
-      .
-      .
-      <choice correct="partial" point_value="0.25">tomato </choice>
-    </choicegroup>
-  </multiplechoiceresponse>
-
+  <problem>
+    <multiplechoiceresponse partial_credit="points">
+      <label>Which of the following is a vegetable?</label>
+      <choicegroup type="MultipleChoice">
+        .
+        .
+        .
+        <choice correct="partial" point_value="0.25">tomato </choice>
+      </choicegroup>
+    </multiplechoiceresponse>
+  </problem>
 
 .. _Multiple Choice Problem XML:
 
@@ -504,63 +495,105 @@ Template
 .. code-block:: xml
 
   <problem>
-  <multiplechoiceresponse>
-    <label>Question or prompt text</label>
-    <description>Optional information about how to answer the question</description>
-    <choicegroup type="MultipleChoice">
-      <choice correct="false" name="a">
-        Incorrect choice
-        <choicehint>
-          Hint for incorrect choice.
-        </choicehint>
-      </choice>
-      <choice correct="true" name="b">
-        Correct choice
-        <choicehint>
-          Hint for correct choice.
-        </choicehint>
-      </choice>
-    </choicegroup>
-    <solution>
-      <div class="detailed-solution">
-        <p>Optional header for the explanation or solution</p>
-        <p>Optional explanation or solution text</p>
-      </div>
-    </solution>
-  </multiplechoiceresponse>
+    <multiplechoiceresponse>
+      <label>Question or prompt text</label>
+      <description>Optional information about how to answer the question</description>
+      <choicegroup type="MultipleChoice">
+        <choice correct="false" name="a">Incorrect choice
+          <choicehint>Hint for incorrect choice.</choicehint>
+        </choice>
+        <choice correct="true" name="b">Correct choice
+          <choicehint>Hint for correct choice.</choicehint>
+        </choice>
+      </choicegroup>
+      <solution>
+        <div class="detailed-solution">
+          <p>Optional header for the explanation or solution</p>
+          <p>Optional explanation or solution text</p>
+        </div>
+      </solution>
+    </multiplechoiceresponse>
   <demandhint>
     <hint>Hint 1</hint>
     <hint>Hint 2</hint>
   </demandhint>
   </problem>
 
-================
+======
 Tags
-================
+======
 
-* ``<multiplechoiceresponse>`` (required): Indicates that the problem is a
-  multiple choice problem.
+For multiple choice problems, the ``<problem>`` element has these child
+elements.
 
-* ``<label>`` (required): Identifies the question or prompt.
+* ``<multiplechoiceresponse>``
+* ``<demandhint>``
 
-* ``<description>`` (optional): Provides clarifying information about how to
-  answer the question.
+In addition, standard HTML tags can be used to format text.
 
-* ``<choicegroup>`` (required): Indicates the beginning of the list of
-  options.
+``<multiplechoiceresponse>``
+****************************
 
-* ``<choice>`` (required): Lists an answer option.
+Required. Indicates that the problem is a multiple choice problem.
 
-* ``<solution>`` (optional): Identifies the explanation or solution for the
-  problem.
+Attributes
+==========
 
-* ``<demandhint>`` (optional): Specifies hints for the learner.
+  .. list-table::
+    :widths: 20 80
+    :header-rows: 1
 
-**Tag:** ``<multiplechoiceresponse>``
+    * - Attribute
+      - Description
+    * - ``partial_credit``
+      - Optional. Specifies that the problem can award partial credit. If used,
+        must be set to ``"points"``.
 
-Indicates that the problem is a multiple choice problem.
+Children
+========
 
-  Attributes
+* ``<label>``
+* ``<description>``
+* ``<choicegroup>``
+* ``<solution>``
+
+``<label>``
+***********
+
+Required. Identifies the question or prompt.
+
+Attributes
+==========
+
+None.
+
+Children
+========
+
+None.
+
+``<description>``
+*****************
+
+Optional. Provides clarifying information about how to answer the question.
+
+Attributes
+==========
+
+None.
+
+Children
+========
+
+None.
+
+``<choicegroup>``
+*****************
+
+Required. Indicates the beginning of the list of answer options.
+
+Attributes
+==========
 
   .. list-table::
      :widths: 20 80
@@ -568,70 +601,24 @@ Indicates that the problem is a multiple choice problem.
 
      * - Attribute
        - Description
-     * - ``partial_credit`` (optional)
-       - Specifies that the problem can award partial credit. If used, must be
-         set to ``"points"``.
-
-  Children
-
-  * ``<label>``
-  * ``<description>``
-  * ``<choicegroup>``
-  * All standard HTML tags (can be used to format text).
-
-.. label and description might be children of problem rather than multiplechoiceresponse...
-
-**Tag:** ``<label>``
-
-  Identifies the question or prompt.
-
-  Attributes
-
-  (none)
-
-  Children
-
-  (none)
-
-**Tag:** ``<description>``
-
- Provides clarifying information about how to answer the question.
-
-  Attributes
-
-  (none)
-
-  Children
-
-  (none)
-
-**Tag:** ``<choicegroup>``
-
-Indicates the beginning of the list of options.
-
-  Attributes
-
-  .. list-table::
-     :widths: 20 80
-     :header-rows: 1
-
-     * - Attribute
-       - Description
-     * - ``type`` (required)
-       - Must be set to ``"MultipleChoice"``.
+     * - ``type``
+       - Required. Must be set to ``"MultipleChoice"``.
 
   Additional attributes are available to support
   :ref:`advanced options<Multiple Choice Advanced Options>`.
 
-  Children
+Children
+========
 
-  * ``<choice>``
+``<choice>``
 
-**Tag:** ``<choice>``
+``<choice>``
+************
 
-Lists an answer option.
+Required. Lists an answer option.
 
-  Attributes
+Attributes
+==========
 
   .. list-table::
      :widths: 20 80
@@ -639,10 +626,12 @@ Lists an answer option.
 
      * - Attribute
        - Description
-     * - ``correct`` (at least one required)
-       - Indicates a correct, incorrect, or partially correct answer.
+     * - ``correct``
+       - Indicates a correct, incorrect, or partially
+         correct answer.
 
-         * When set to ``"true"``, the choice is a correct answer.
+         * When set to ``"true"``, the choice is a correct answer. At least one
+           required.
          * When set to ``"false"``, the choice is an incorrect answer.
          * When set to ``"partial"``, the learner receives partial credit for
            selecting the answer.
@@ -661,29 +650,60 @@ Lists an answer option.
   Additional attributes are available to support
   :ref:`advanced options<Multiple Choice Advanced Options>`.
 
-  Children
+Children
+========
 
-  ``<choicehint>``
+``<choicehint>``
 
-**Tag:** ``<choicehint>``
+``<choicehint>``
+****************
 
-Specifies feedback for the answer.
+Optional. Specifies feedback for the answer.
 
-**Tag:** ``<demandhint>``
+Attributes
+==========
 
-Specifies hints for the learner.
+None.
 
-  Children
+Children
+========
 
-  ``<hint>``
+None.
 
-**Tag:** ``<hint>``
+``<solution>``
+**************
 
-Specifies a hint available to the learner.
+Optional. Identifies the explanation or solution for the problem, or for one of
+the questions in the problem.
 
-  Children
+This element contains an HTML divider ``<div>`` and one or more paragraphs
+``<p>`` of explanatory text.
 
-  (none)
+``<demandhint>``
+****************
+
+Optional. Specifies hints for the learner. For problems that include multiple
+questions, the hints apply to the entire problem.
+
+Attributes
+==========
+
+None.
+
+Children
+========
+
+``<hint>``
+
+``<hint>``
+**********
+
+Required. Specifies a hint available to the learner.
+
+Children
+========
+
+None.
 
 .. _Multiple Choice Advanced Options:
 
@@ -792,15 +812,15 @@ To add shuffling to a problem, you add ``shuffle="true"`` to the
 .. code-block:: xml
 
   <problem>
-  <multiplechoiceresponse>
-    <label>What Apple device competed with the portable CD player?</label>
-    <choicegroup type="MultipleChoice" shuffle="true">
-      <choice correct="false">The iPad</choice>
-      <choice correct="false">Napster</choice>
-      <choice correct="true">The iPod</choice>
-      <choice correct="false">The vegetable peeler</choice>
-    </choicegroup>
-  </multiplechoiceresponse>
+    <multiplechoiceresponse>
+      <label>What Apple device competed with the portable CD player?</label>
+      <choicegroup type="MultipleChoice" shuffle="true">
+        <choice correct="false">The iPad</choice>
+        <choice correct="false">Napster</choice>
+        <choice correct="true">The iPod</choice>
+        <choice correct="false">The vegetable peeler</choice>
+      </choicegroup>
+    </multiplechoiceresponse>
   </problem>
 
 To make the location of an answer fixed in a shuffled list, add
@@ -811,15 +831,15 @@ To make the location of an answer fixed in a shuffled list, add
 .. code-block:: xml
 
   <problem>
-  <multiplechoiceresponse>
-    <label>What Apple device competed with the portable CD player?</label>
-    <choicegroup type="MultipleChoice" shuffle="true">
-      .
-      .
-      .
-      <choice correct="false" fixed="true">All of the above</choice>
-    </choicegroup>
-  </multiplechoiceresponse>
+    <multiplechoiceresponse>
+      <label>What Apple device competed with the portable CD player?</label>
+      <choicegroup type="MultipleChoice" shuffle="true">
+        .
+        .
+        .
+        <choice correct="false" fixed="true">All of the above</choice>
+      </choicegroup>
+    </multiplechoiceresponse>
   </problem>
 
 Then, you select **Settings** to specify an option other than **Never** for the
@@ -869,14 +889,14 @@ for each answer choice.
 .. code-block:: xml
 
   <problem>
-  <label>What Apple device competed with the portable CD player?</label>
-  <multiplechoiceresponse targeted-feedback="">
-    <choicegroup type="MultipleChoice">
-      <choice correct="false" explanation-id="feedback1">The iPad</choice>
-      <choice correct="false" explanation-id="feedback2">Napster</choice>
-      <choice correct="true" explanation-id="correct">The iPod</choice>
-      <choice correct="false" explanation-id="feedback3">The vegetable peeler</choice>
-    </choicegroup>
+    <multiplechoiceresponse targeted-feedback="">
+      <label>What Apple device competed with the portable CD player?</label>
+      <choicegroup type="MultipleChoice">
+        <choice correct="false" explanation-id="feedback1">The iPad</choice>
+        <choice correct="false" explanation-id="feedback2">Napster</choice>
+        <choice correct="true" explanation-id="correct">The iPod</choice>
+        <choice correct="false" explanation-id="feedback3">The vegetable peeler</choice>
+      </choicegroup>
     </multiplechoiceresponse>
 
 
@@ -884,33 +904,33 @@ This is immediately followed by OLX that defines the targeted feedback.
 
 .. code-block:: xml
 
-   <targetedfeedbackset>
-     <targetedfeedback explanation-id="feedback1">
-       <div class="detailed-targeted-feedback">
-         <p>Targeted Feedback</p>
-         <p>The iPad came out later and did not directly compete with portable
+    <targetedfeedbackset>
+      <targetedfeedback explanation-id="feedback1">
+        <div class="detailed-targeted-feedback">
+          <p>Targeted Feedback</p>
+          <p>The iPad came out later and did not directly compete with portable
             CD players.</p>
-       </div>
-     </targetedfeedback>
-     <targetedfeedback explanation-id="feedback2">
-       <div class="detailed-targeted-feedback">
-         <p>Targeted Feedback</p>
-         <p>Napster was not an Apple product.</p>
-       </div>
-     </targetedfeedback>
-     <targetedfeedback explanation-id="feedback3">
-       <div class="detailed-targeted-feedback">
-         <p>Targeted Feedback</p>
-         <p>Vegetable peelers do not play music.</p>
-       </div>
-     </targetedfeedback>
+        </div>
+      </targetedfeedback>
+      <targetedfeedback explanation-id="feedback2">
+        <div class="detailed-targeted-feedback">
+          <p>Targeted Feedback</p>
+          <p>Napster was not an Apple product.</p>
+        </div>
+      </targetedfeedback>
+      <targetedfeedback explanation-id="feedback3">
+        <div class="detailed-targeted-feedback">
+          <p>Targeted Feedback</p>
+          <p>Vegetable peelers do not play music.</p>
+        </div>
+      </targetedfeedback>
     </targetedfeedbackset>
     <solution explanation-id="correct">
-     <div class="detailed-solution">
-      <p>The iPod directly competed with portable CD players.</p>
-     </div>
+      <div class="detailed-solution">
+        <p>The iPod directly competed with portable CD players.</p>
+      </div>
     </solution>
-    </problem>
+  </problem>
 
 .. _Answer Pools in a Multiple Choice Problem:
 
@@ -962,32 +982,33 @@ explanation ID.
 .. code-block:: xml
 
   <problem>
-  <multiplechoiceresponse>
-    <label>What Apple devices let you carry your digital music library in your pocket?</label>
-    <description>You can select only one option.</description>
-    <choicegroup type="MultipleChoice" answer-pool="4">
-      <choice correct="false">The iPad</choice>
-      <choice correct="false">Napster</choice>
-      <choice correct="true" explanation-id="iPod">The iPod</choice>
-      <choice correct="false">The vegetable peeler</choice>
-      <choice correct="false">The iMac</choice>
-      <choice correct="true" explanation-id="iPhone">The iPhone</choice>
-    </choicegroup>
-  </multiplechoiceresponse>
-  <solutionset>
-    <solution explanation-id="iPod">
-      <div class="detailed-solution">
-        <p>Explanation</p>
-        <p>Yes, the iPod is Apple's portable digital music player.</p>
-      </div>
-    </solution>
-    <solution explanation-id="iPhone">
-      <div class="detailed-solution">
-        <p>Explanation</p>
-        <p>In addition to being a cell phone, the iPhone can store and play your digital music.</p>
-      </div>
-    </solution>
-  </solutionset>
+    <multiplechoiceresponse>
+      <label>What Apple devices let you carry your digital music library in your pocket?</label>
+      <description>You can select only one option.</description>
+      <choicegroup type="MultipleChoice" answer-pool="4">
+        <choice correct="false">The iPad</choice>
+        <choice correct="false">Napster</choice>
+        <choice correct="true" explanation-id="iPod">The iPod</choice>
+        <choice correct="false">The vegetable peeler</choice>
+        <choice correct="false">The iMac</choice>
+        <choice correct="true" explanation-id="iPhone">The iPhone</choice>
+      </choicegroup>
+    </multiplechoiceresponse>
+    <solutionset>
+      <solution explanation-id="iPod">
+        <div class="detailed-solution">
+          <p>Explanation</p>
+          <p>Yes, the iPod is Apple's portable digital music player.</p>
+        </div>
+      </solution>
+      <solution explanation-id="iPhone">
+        <div class="detailed-solution">
+          <p>Explanation</p>
+          <p>In addition to being a cell phone, the iPhone can store and play
+           your digital music.</p>
+        </div>
+      </solution>
+    </solutionset>
   </problem>
 
 .. I was not able to get this to work. - Alison 11 Aug 2016
