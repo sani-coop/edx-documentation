@@ -27,12 +27,12 @@ Unlike :ref:`multiple choice<Multiple Choice>` problems, where the answer
 choices are always visible directly below the question, the answer options for
 dropdown problems do not appear until the learner selects the dropdown arrow.
 
-
 ================================
 Example Multiple Choice Problem
 ================================
 
-In the LMS, learners select a single answer option to complete a dropdown problem. An example of a completed dropdown problem follows.
+In the LMS, learners select a single answer option to complete a dropdown
+problem. An example of a completed dropdown problem follows.
 
 .. image:: ../../../shared/images/DropdownExample.png
  :alt: A problem component that contains a series of three dropdown problems.
@@ -69,17 +69,16 @@ The OLX markup for this example problem follows.
 
   <problem>
     <p>What type of data are the following?</p>
-
-    <label>Age:</label>
     <optionresponse>
+      <label>Age:</label>
       <optioninput options="('Nominal','Discrete','Continuous')" correct="Continuous"></optioninput>
-      </optionresponse>
-    <label>Age, rounded to the nearest year:</label>
+    </optionresponse>
     <optionresponse>
+      <label>Age, rounded to the nearest year:</label>
       <optioninput options="('Nominal','Discrete','Continuous')" correct="Discrete"></optioninput>
       </optionresponse>
-    <label>Life stage - infant, child, and adult:</label>
     <optionresponse>
+      <label>Life stage - infant, child, and adult:</label>
       <optioninput options="('Nominal','Discrete','Continuous')" correct="Nominal"></optioninput>
     </optionresponse>
   </problem>
@@ -230,8 +229,8 @@ For example, the following problem has feedback for each possible answer.
 Configuring Feedback in the Advanced Editor
 ===========================================
 
-In the :ref:`advanced editor<Advanced Editor>`, you configure answer feedback
-with the following syntax.
+In the advanced editor, you configure answer feedback with the following
+syntax.
 
 .. code-block:: xml
 
@@ -244,27 +243,28 @@ For example, the following problem has feedback for each answer.
 .. code-block:: xml
 
   <problem>
-  <label>A/an ________ is an example of a vegetable.</label>
-  <optionresponse>
-    <optioninput>
-      <option correct="False">apple
-        <optionhint>An apple is the fertilized ovary that comes from an apple tree and contains seeds classifying it as a fruit.
-        </optionhint>
-      </option>
-      <option correct="False">pumpkin
-        <optionhint>A pumpkin is the fertilized ovary of a squash plant and contains seeds classifying it as a fruit.
-        </optionhint>
-      </option>
-      <option correct="True">potato
-        <optionhint>A potato is an edible part of a plant in tuber form and is classified as a vegetable.
-        </optionhint>
-      </option>
-      <option correct="False">tomato
-        <optionhint>Many people mistakenly think a tomato is a vegetable. However, because a tomato is the fertilized ovary of a tomato plant and contains seeds it is classified as a fruit.
-        </optionhint>
-      </option>
-    </optioninput>
-  </optionresponse>
+    <optionresponse>
+      <label>A/an ________ is an example of a vegetable.</label>
+      <optioninput>
+        <option correct="False">apple
+          <optionhint>An apple is the fertilized ovary that comes from an
+           apple tree and contains seeds classifying it as a fruit.</optionhint>
+        </option>
+        <option correct="False">pumpkin
+          <optionhint>A pumpkin is the fertilized ovary of a squash plant and
+           contains seeds classifying it as a fruit.</optionhint>
+        </option>
+        <option correct="True">potato
+          <optionhint>A potato is an edible part of a plant in tuber form and
+           is classified as a vegetable.</optionhint>
+        </option>
+        <option correct="False">tomato
+          <optionhint>Many people mistakenly think a tomato is a vegetable.
+           However, because a tomato is the fertilized ovary of a tomato plant
+           and contains seeds it is classified as a fruit.</optionhint>
+        </option>
+      </optioninput>
+    </optionresponse>
   </problem>
 
 ===========================
@@ -335,11 +335,8 @@ labels with the following syntax.
 
 .. code-block:: xml
 
-   <option correct="False">
-     Answer
-     <optionhint label="Custom Label">
-       Feedback for learners who select this answer.
-     </optionhint>
+   <option correct="False">Answer
+     <optionhint label="Custom Label">Feedback for learners who select this answer.</optionhint>
    </option>
 
 For example, the following feedback is configured to use a custom label.
@@ -347,8 +344,9 @@ For example, the following feedback is configured to use a custom label.
 .. code-block:: xml
 
   <option correct="False">tomato
-    <optionhint label="Not Quite">Many people mistakenly think a tomato is a vegetable. However, because a tomato is the fertilized ovary of a tomato plant and contains seeds it is classified as a fruit.
-    </optionhint>
+    <optionhint label="Not Quite">Many people mistakenly think a tomato is a
+     vegetable. However, because a tomato is the fertilized ovary of a tomato
+     plant and contains seeds it is classified as a fruit.</optionhint>
   </option>
 
 .. _Use Hints in a Dropdown Problem:
@@ -377,131 +375,168 @@ Template
 .. code-block:: xml
 
   <problem>
-  <optionresponse>
-    <label>Question or prompt text</label>
-    <description>Optional information about how to answer the question</description>
-    <option correct="False">Option Label
-      <optionhint>
-        Feedback for when learner selects this answer.
-      </optionhint>
-    </option>
-    <option correct="True">Option Label
-      <optionhint>
-        Feedback for when learner selects this answer.
-      </optionhint>
-    </option>
-  <solution>
-    <div class="detailed-solution">
-      <p>Explanation or Solution Header</p>
-      <p>Explanation or solution text</p>
-    </div>
-  </solution>
-  </optionresponse>
-  <demandhint>
-    <hint>Hint 1</hint>
-    <hint>Hint 2</hint>
-    <hint>Hint 3</hint>
-  </demandhint>
+    <optionresponse>
+      <label>Question or prompt text</label>
+      <description>Optional information about how to answer the question</description>
+      <option correct="False">Option Label
+        <optionhint>Feedback for when learner selects this answer.</optionhint>
+      </option>
+      <option correct="True">Option Label
+        <optionhint>Feedback for when learner selects this answer.</optionhint>
+      </option>
+      <solution>
+        <div class="detailed-solution">
+          <p>Explanation or Solution Header</p>
+          <p>Explanation or solution text</p>
+        </div>
+      </solution>
+      </optionresponse>
+    <demandhint>
+      <hint>Hint 1</hint>
+      <hint>Hint 2</hint>
+      <hint>Hint 3</hint>
+    </demandhint>
   </problem>
 
 ========
 Tags
 ========
 
-* ``<optionresponse>`` (required): Indicates that the problem is a dropdown
-  problem.
+For checkbox problems, the ``<problem>`` element has this hierarchy of child
+elements.
 
-* ``<label>`` (required): Identifies the question or prompt.
+.. code-block:: xml
 
-* ``<description>`` (optional): Provides clarifying information about how to
-  answer the question.
+  <optionresponse>
+      <label>
+      <description>
+      <option>
+            <optionhint>
+      <solution>
+  <demandhint>
+      <hint>
 
-* ``<option>`` (required): Lists an answer option.
+In addition, standard HTML tags can be used to format text.
 
-* ``<solution>`` (optional): Identifies the explanation or solution for the
-  problem.
+``<optionresponse>``
+*********************
 
-* ``<demandhint>`` (optional): Specifies hints for the learner.
+Required. Indicates that the problem is a dropdown problem.
 
-**Tag:** ``<optionresponse>``
+Attributes
+==========
 
-Indicates that the problem is a dropdown problem.
+None.
 
-  Attributes
+Children
+========
 
-  (none)
+* ``<label>``
+* ``<description>``
+* ``<option>``
+* ``<solution>``
 
-  Children
 
-  ``<option>``
+``<label>``
+***********
 
-**Tag:** ``<option>``
+Required. Identifies the question or prompt.
 
-Lists the answer options.
+Attributes
+==========
 
-  Attributes
+None.
+
+Children
+========
+
+None.
+
+``<description>``
+*****************
+
+Optional. Provides clarifying information about how to answer the question.
+
+Attributes
+==========
+
+None.
+
+Children
+========
+
+None.
+
+``<option>``
+*******************
+
+Required. Designates an answer option.
+
+Attributes
+==========
 
   .. list-table::
      :widths: 20 80
 
      * - Attribute
        - Description
-     * - ``correct``  (at least one required)
-       - Indicates whether an answer is correct. Possible values are ``"true"``
-         and ``"false"``. Only one ``correct`` attribute can be set to "true".
+     * - ``correct``
+       - Required. Indicates whether an answer is correct. Possible values are
+         ``"true"`` and ``"false"``. Only one ``correct`` attribute can be set
+         to ``"true"``.
 
-  Children
+Children
+========
 
-  ``<optionhint>``
+``<optionhint>``
 
-**Tag:** ``<optionhint>``
+``<optionhint>``
+****************
 
-Specifies feedback for the answer.
+Optional. Specifies feedback for the answer.
 
-  Attributes
+Attributes
+==========
 
-  (none)
+None.
 
-  Children
+Children
+========
 
-  (none)
+None.
 
-**Tag:** ``<label>``
+``<solution>``
+**************
 
-  Identifies the question or prompt.
+Optional. Identifies the explanation or solution for the problem, or for one of
+the questions in the problem.
 
-  Attributes
+This element contains an HTML divider ``<div>`` and one or more paragraphs
+``<p>`` of explanatory text.
 
-  (none)
+``<demandhint>``
+****************
 
-  Children
+Optional. Specifies hints for the learner. For problems that include multiple
+questions, the hints apply to the entire problem.
 
-  (none)
+Attributes
+==========
 
-**Tag:** ``<description>``
+None.
 
- Provides clarifying information about how to answer the question.
+Children
+========
 
-  Attributes
+``<hint>``
 
-  (none)
+``<hint>``
+**********
 
-  Children
+Required. Specifies a hint available to the learner.
 
-  (none)
+Children
+========
 
-**Tag:** ``<demandhint>``
+None.
 
-Specifies hints available to the learner.
-
-  Children
-
-  ``<hint>``
-
-**Tag:** ``<hint>``
-
-Specifies a hint available to the learner.
-
-  Children
-
-  (none)
