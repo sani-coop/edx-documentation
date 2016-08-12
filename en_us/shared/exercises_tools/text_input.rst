@@ -61,18 +61,20 @@ The OLX (open learning XML) markup for this example text input problem follows.
 .. code-block:: xml
 
   <problem>
-  <stringresponse answer="Nanjing Higher Normal Institute" type="ci" >
-    <label>What was the first post-secondary school in China to allow both male and female students?</label>
+    <stringresponse answer="Nanjing Higher Normal Institute" type="ci" >
+      <label>What was the first post-secondary school in China to allow both
+       male and female students?</label>
       <additional_answer answer="National Central University"/>
       <additional_answer answer="Nanjing University"/>
       <textline size="20"/>
-    <solution>
-      <div class="detailed-solution">
-        <p>Explanation</p>
-        <p>Nanjing Higher Normal Institute first admitted female students in  1920.</p>
-      </div>
-    </solution>
-  </stringresponse>
+      <solution>
+        <div class="detailed-solution">
+          <p>Explanation</p>
+          <p>Nanjing Higher Normal Institute first admitted female students
+           in 1920.</p>
+        </div>
+      </solution>
+    </stringresponse>
   </problem>
 
 ============================================
@@ -263,7 +265,7 @@ syntax.
 
   <problem>
     <stringresponse answer="Correct Answer" type="ci">
-    <label>Question text</label>
+      <label>Question text</label>
       <correcthint>Feedback for the correct answer</correcthint>
       <stringequalhint answer="Incorrect Answer">Hint for the incorrect answer</stringequalhint>
       <textline size="20"/>
@@ -277,11 +279,17 @@ common incorrect answers.
 
   <problem>
     <stringresponse answer="Alaska" type="ci">
-    <label>What is the largest state in the U.S. in terms of land area?</label>
-      <correcthint>Alaska is the largest state in the U.S. in terms of not only land area, but also total area and water area. Alaska is 576,400 square miles, more than double the land area of the second largest state, Texas.</correcthint>
-      <stringequalhint answer="Texas">While many people think Texas is the largest state in terms of land area, it is actually the second largest and contains 261,797 square miles.</stringequalhint>
-      <stringequalhint answer="California">California is the third largest state and contains 155,959 square miles.</stringequalhint>
-      <textline size="20"/>
+      <label>What is the largest state in the U.S. in terms of land area?</label>
+        <correcthint>Alaska is the largest state in the U.S. in terms of not
+         only land area, but also total area and water area. Alaska is 576,400
+         square miles, more than double the land area of the second largest
+         state, Texas.</correcthint>
+        <stringequalhint answer="Texas">While many people think Texas is the
+         largest state in terms of land area, it is actually the second
+         largest and contains 261,797 square miles.</stringequalhint>
+        <stringequalhint answer="California">California is the third largest
+         state and contains 155,959 square miles.</stringequalhint>
+        <textline size="20"/>
     </stringresponse>
   </problem>
 
@@ -384,7 +392,8 @@ element. An example follows.
 
     <problem>
       <stringresponse answer="Ashmun" type="ci">
-        <label>What Pennsylvania school was founded in 1854 to provide educational opportunities for African-Americans?</label>
+        <label>What Pennsylvania school was founded in 1854 to provide
+         educational opportunities for African-Americans?</label>
         <textline size="20"/>
       </stringresponse>
     </problem>
@@ -396,7 +405,8 @@ together with the text that you want to use inside the ``textline`` element.
 
     <problem>
       <stringresponse answer="Ashmun" type="ci">
-        <label>What Pennsylvania school was founded in 1854 to provide educational opportunities for African-Americans?</label>
+        <label>What Pennsylvania school was founded in 1854 to provide
+         educational opportunities for African-Americans?</label>
         <textline size="20" trailing_text="Institute"/>
       </stringresponse>
     </problem>
@@ -463,9 +473,9 @@ default, the value for this attribute is set to ``20``. An example follows.
 
     <problem>
       <stringresponse answer="Democratic Republic of the Congo" type="ci">
-      .
-      .
-      .
+        .
+        .
+        .
         <textline size="20"/>
       </stringresponse>
     </problem>
@@ -477,9 +487,9 @@ attribute.
 
     <problem>
       <stringresponse answer="Democratic Republic of the Congo" type="ci">
-      .
-      .
-      .
+        .
+        .
+        .
         <textline size="40"/>
       </stringresponse>
     </problem>
@@ -506,9 +516,9 @@ sensitive answer. An example follows.
 
     <problem>
       <stringresponse answer="string pattern" type="regexp ci">
-      .
-      .
-      .
+        .
+        .
+        .
       </stringresponse>
     </problem>
 
@@ -534,13 +544,13 @@ Template
 
   <problem>
     <stringresponse answer="Correct answer 1" type="ci regexp">
-    <label>Question text</label>
-    <description>Optional tip</description>
+      <label>Question text</label>
+      <description>Optional tip</description>
       <correcthint>Provides feedback when learners submit the correct response.</correcthint>
-        <additional_answer answer="Correct answer 2"/>
-        <additional_answer answer="Correct answer 3"/>
-        <stringequalhint answer="Incorrect answer 1">Provides feedback when learners submit the specified incorrect response.</stringequalhint>
-        <stringequalhint answer="Incorrect answer 2">Provides feedback when learners submit the specified incorrect response.</stringequalhint>
+      <additional_answer answer="Correct answer 2"/>
+      <additional_answer answer="Correct answer 3"/>
+      <stringequalhint answer="Incorrect answer 1">Provides feedback when learners submit the specified incorrect response.</stringequalhint>
+      <stringequalhint answer="Incorrect answer 2">Provides feedback when learners submit the specified incorrect response.</stringequalhint>
       <textline size="20"/>
     </stringresponse>
     <demandhint>
@@ -553,24 +563,31 @@ Template
 Tags
 =======
 
-* ``<stringresponse>``: Indicates that the problem is a text input problem.
+For text input problems, the ``<problem>`` element has this hierarchy of child
+elements.
 
-* ``<label>`` (required): Identifies the question or prompt.
+.. code-block:: xml
 
-* ``<description>`` (optional): Provides clarifying information about how to
-  answer the question.
+  <stringresponse>
+      <label>
+      <description>
+      <additional_answer>
+      <correcthint>
+      <stringequalhint>
+      <textline>
+      <solution>
+  <demandhint>
+      <hint>
 
-* ``<solution>`` (optional): Identifies the explanation or solution for the
-  problem.
+In addition, standard HTML tags can be used to format text.
 
-* ``<demandhint>`` (optional): Specifies hints for the learner.
+``<stringresponse>``
+*********************
 
+Required. Indicates that the problem is a text input problem.
 
-**Tag:** ``<stringresponse>``
-
-Indicates that the problem is a text input problem.
-
-  Attributes
+Attributes
+==========
 
   .. list-table::
      :widths: 20 80
@@ -596,18 +613,55 @@ Indicates that the problem is a text input problem.
          example, ``<stringresponse type="regexp cs">`` specifies that the
          problem allows regular expressions and is case sensitive.
 
-  Children
+Children
+========
 
-  * ``<textline />`` (required)
-  * ``<additional_answer />`` (optional)
-  * ``<correcthint>`` (optional)
-  * ``<stringequalhint>`` (optional)
+* ``<label>``
+* ``<description>``
+* ``<textline />``
+* ``<additional_answer />``
+* ``<correcthint>``
+* ``<stringequalhint>``
+* ``<solution>``
 
-**Tag:** ``<textline />``
+``<label>``
+***********
 
-Creates a response field in the LMS where the learner enters a text string.
+Required. Identifies the question or prompt.
 
-  Attributes
+Attributes
+==========
+
+None.
+
+Children
+========
+
+None.
+
+``<description>``
+*****************
+
+Optional. Provides clarifying information about how to answer the question.
+
+Attributes
+==========
+
+None.
+
+Children
+========
+
+None.
+
+``<textline />``
+****************
+
+Required. Creates a response field in the LMS where the learner enters a text
+string.
+
+Attributes
+==========
 
   .. list-table::
      :widths: 20 80
@@ -626,74 +680,113 @@ Creates a response field in the LMS where the learner enters a text string.
 
 .. reviewers, note that I could not get "correct_answer" to work ^^. The answer attribute of stringresponse is required and overrides whatever I put in here. Can this attribute be removed or marked as deprecated? - Alison 10 Aug
 
-  Children
+Children
+========
 
-  (none)
+None.
 
-**Tag:** ``<additional_answer />``
+``<additional_answer />``
+*************************
 
-Specifies an additional correct answer for the problem. A problem can contain
-an unlimited number of additional answers.
+Optional. Specifies an additional correct answer for the problem. A problem can
+contain an unlimited number of additional answers.
 
-  Attributes
+Attributes
+==========
+
 
   .. list-table::
      :widths: 20 80
 
      * - Attribute
        - Description
-     * - ``answer`` (required)
-       - The text of the alternative correct answer.
+     * - ``answer``
+       - Required. The text of the alternative correct answer.
 
-  Children
+Children
+========
 
-  (none)
+None.
 
 **Tag:** ``<correcthint>``
 
-Specifies feedback to appear after the learner submits a correct answer.
+Optional. Specifies feedback to appear after the learner submits a correct
+answer.
 
-  Attributes
-
-  (none)
-
-  Children
-
-  (none)
-
-**Tag:** ``<stringequalhint>``
-
-Specifies feedback to appear after the learner submits an incorrect answer.
-
-  Attributes
+Attributes
+==========
 
   .. list-table::
      :widths: 20 80
 
      * - Attribute
        - Description
-     * - ``answer`` (required)
-       - The text of the incorrect answer.
+     * - ``label``
+       - Optional. The text of the custom feedback label.
 
-  Children
+Children
+========
 
-  (none)
+None.
 
-**Tag:** ``<demandhint>``
+``<stringequalhint>``
+*********************
 
-Specifies hints for the learner.
+Optional. Specifies feedback to appear after the learner submits an incorrect
+answer.
 
-  Children
+Attributes
+==========
 
-  ``<hint>``
+  .. list-table::
+     :widths: 20 80
 
-**Tag:** ``<hint>``
+     * - Attribute
+       - Description
+     * - ``answer``
+       - Required. The text of the incorrect answer.
+     * - ``label``
+       - Optional. The text of the custom feedback label.
 
-Specifies a hint available to the learner.
+Children
+========
 
-  Children
+None.
 
-  (none)
+``<solution>``
+**************
+
+Optional. Identifies the explanation or solution for the problem, or for one of
+the questions in the problem.
+
+This element contains an HTML divider ``<div>`` and one or more paragraphs
+``<p>`` of explanatory text.
+
+``<demandhint>``
+****************
+
+Optional. Specifies hints for the learner. For problems that include multiple
+questions, the hints apply to the entire problem.
+
+Attributes
+==========
+
+None.
+
+Children
+========
+
+``<hint>``
+
+``<hint>``
+**********
+
+Required. Specifies a hint available to the learner.
+
+Children
+========
+
+None.
 
 .. reviewers esp. Shelby, can we take this opportunity to remove this last section? V - Alison 10 Aug
 
