@@ -523,11 +523,20 @@ Template
 Tags
 ======
 
-For multiple choice problems, the ``<problem>`` element has these child
+For multiple choice problems, the ``<problem>`` element this hierarchy of child
 elements.
 
-* ``<multiplechoiceresponse>``
-* ``<demandhint>``
+.. code-block:: xml
+
+  <multiplechoiceresponse>
+      <label>
+      <description>
+      <choicegroup>
+            <choice>
+                <choicehint>
+      <solution>
+  <demandhint>
+      <hint>
 
 In addition, standard HTML tags can be used to format text.
 
