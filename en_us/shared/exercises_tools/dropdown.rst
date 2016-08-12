@@ -51,17 +51,20 @@ editor in Studio.
 
   >>Age:<<
   [[Nominal, Discrete, (Continuous)]]
+  ---
   >>Age, rounded to the nearest year:<<
   [[
   Nominal
   (Discrete)
   Continuous
   ]]
+  ---
   >>Life stage - infant, child, and adult:<<
   [[(Nominal), Discrete, Continuous]]
 
-.. note:: You can separate the answer options with either comma (,) characters
-  or new lines.
+.. note:: You can separate the answer options with either comma (``,``)
+  characters or new lines. You separate questions in a problem component with
+  three hyphen (``---``) characters.
 
 The OLX markup for this example problem follows.
 
@@ -204,8 +207,8 @@ Feedback**. This template has example feedback syntax that you can replace.
   (Correct Answer) {{Feedback for learners who select this answer.}}
   ]]
 
-.. note:: When you include feedback, you might find it more convenient use new
-  lines to to separate the answer options.
+.. note:: When you include feedback, you might find it more convenient to use
+  new lines to to separate the answer options.
 
 For example, the following problem has feedback for each possible answer.
 
@@ -410,8 +413,9 @@ elements.
   <optionresponse>
       <label>
       <description>
-      <option>
-            <optionhint>
+      <optioninput>
+            <option>
+                <optionhint>
       <solution>
   <demandhint>
       <hint>
@@ -433,7 +437,7 @@ Children
 
 * ``<label>``
 * ``<description>``
-* ``<option>``
+* ``<optioninput>``
 * ``<solution>``
 
 
@@ -467,7 +471,7 @@ Children
 
 None.
 
-``<option>``
+``<optioninput>``
 *******************
 
 Required. Designates an answer option.
@@ -480,15 +484,42 @@ Attributes
 
      * - Attribute
        - Description
+     * - ``options``
+       - Either this attribute or a set of ``<option>`` child elements for
+         ``<optioninput>`` is required. Accepts a comma separated list of
+         values in the following format.
+         ``options="('Answer1','Answer2','Answer3')"``
      * - ``correct``
-       - Required. Indicates whether an answer is correct. Possible values are
-         ``"true"`` and ``"false"``. Only one ``correct`` attribute can be set
-         to ``"true"``.
+       - Used only if the ``options`` attribute is set. Required. Indicates
+         which of the answer options is correct.
 
 Children
 ========
 
-``<optionhint>``
+* ``<option>``
+* ``<optionhint>``
+
+``<option>``
+**************
+
+Designates an answer option. Either a set of ``<option>`` child elements or the
+``options`` attribute for ``<optioninput>`` is required.
+
+Attributes
+==========
+
+  .. list-table::
+     :widths: 20 80
+
+     * - Attribute
+       - Description
+     * - ``correct``
+       - Required. Indicates whether the answer option is correct or incorrect.
+         When set to ``"true"``, the choice is a correct answer. At least one
+         required. When set to ``"false"``, the choice is an incorrect answer.
+
+If the ``<option>`` element is used, ``<optionhint>`` is a child of
+``<option>``.
 
 ``<optionhint>``
 ****************
