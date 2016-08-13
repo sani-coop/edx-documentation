@@ -75,7 +75,8 @@ editor to enter the following text and Markdown formatting.
    The decimal numeral system is base ten.
    [explanation]
 
-The OLX (open learning XML) markup for this example text input problem follows.
+The OLX (open learning XML) markup for this example numerical input problem
+follows.
 
 .. code-block:: xml
 
@@ -189,81 +190,111 @@ is shown in the example above.)
 For more information about including a Python script in a problem, see
 :ref:`Write Your Own Grader`.
 
-.. _Use the Simple Editor to Create a Numerical Input Problem:
-
-========================================================================
+========================================================
 Use the Simple Editor to Add a Numerical Input Problem
-========================================================================
+========================================================
 
-To use the :ref:`simple editor<Simple Editor>` to create a numerical input
-problem, follow these steps.
+When you add a numerical input problem, you can choose one of these templates.
 
-#. In the unit where you want to create the problem, under **Add New
-   Component** select **Problem**.
+* **Numerical Input**
 
-#. From the list of **Common Problem Types**, select one of these problem
-   types.
+* **Numerical Input with Hints and Feedback**
 
-   * **Numerical Input**
+These templates include the Markdown formatting that you use in the simple
+editor to add a problem without, or with, hints and feedback.
 
-   * **Numerical Input with Hints and Feedback**
+.. include:: ../../../shared/exercises_tools/Section_simple_editor.rst
 
-   Studio adds a problem of the selected type to the unit.
+=========================================================
+Use the Advanced Editor to Add a Numerical Input Problem
+=========================================================
 
-#. Select **Edit**. The simple editor opens to a template that shows the
-   Markdown formatting that you can use for this problem type.
+You can use the advanced editor to identify the elements of a numerical input
+problem with OLX. For more information, see :ref:`Checkbox Problem XML`.
 
-#. Replace the guidance provided by the template to add your own text for the
-   prompt, answer or answers, explanation, and so on.
+.. include:: ../../../shared/exercises_tools/Section_advanced_editor.rst
 
-   You can specify a margin of error or tolerance for learner responses. You
-   can specify a percentage, number, or range.
+********************
+Adding a Tolerance
+********************
 
-   * To specify a percentage on either side of the correct answer, after the
-     answer add ``+-{number}%``. For example, to include a 2% tolerance, add
-     ``+-2%``.
+You can specify a margin of error or tolerance for learner responses. You
+can specify a percentage, number, or range.
 
-   * To specify a number on either side of the correct answer, after the answer
-     add ``+-{number}``. For example, to include a tolerance of 5, add ``+-5``.
+========================================
+Add a Tolerance in the Simple Editor
+========================================
 
-   * To specify a range, provide the starting and ending value separated by a
-     comma and then surround the range with bracket (``[ ]``) or parentheses
-     (``( )``) characters. Use a bracket to include the number next to it in
-     the range, and a parenthesis to exclude the number from the range. For
-     example, if you specify ``[5,8)``, correct answers can be 5, 6, and 7, but
-     not 8. Likewise, if you specify ``(5,8]``, correct answers can be 6, 7,
-     and 8, but not 5.
+To add a tolerance in the simple editor you use the following Markdown
+formatting.
 
-#. Select **Settings** to provide an identifying **Display Name** and define
-   settings for the problem. For more information, see :ref:`Problem Settings`.
+* To specify a number on either side of the correct answer, after the answer
+  value add ``+-{number}``. For example, to include a tolerance of 5, add
+  ``+-5``.
 
-#. Select **Save**.
+* To specify a percentage on either side of the correct answer, after the
+  answer value add ``+-{number}%``. For example, to include a 2% tolerance, add
+  ``+-2%``.
 
-.. _Use the Advanced Editor to Create a Numerical Input Problem:
+========================================
+Add a Tolerance in the Advanced Editor
+========================================
 
-========================================================================
-Use the Advanced Editor to Create a Numerical Input Problem
-========================================================================
+To add a tolerance in the advanced editor you include a ``<responseparam>``
+element with a ``type="tolerance"`` attribute and a default attribute set to
+either a number or a percentage value.
 
-To use the advanced editor to edit a numerical input problem, follow these
-steps.
+The following example shows a problem with a decimal tolerance.
 
-#. Follow steps 1-3 for creating the problem in the :ref:`simple editor<Use
-   the Simple Editor to Create a Numerical Input Problem>`.
+.. code-block:: xml
 
-#. Select **Advanced Editor**. The advanced editor opens the template and
-   shows the OLX markup that you can use for this problem type.
+  <problem>
+    <numericalresponse answer="ANSWER (NUMBER)">
+      <label>Question text</label>
+      <responseparam type="tolerance" default=".02" />
+      <formulaequationinput />
+    </numericalresponse>
+  </problem>
 
-#. Replace the guidance provided by the template to add your own text for the
-   label, answer or answers, solution, and so on.
+The following example shows a problem with a percentage tolerance.
 
-#. Update the OLX to use any additional tags and attributes in your problem.
-   For more information, see :ref:`Numerical Input Problem XML`.
+.. code-block:: xml
 
-#. Select **Settings** to provide an identifying **Display Name** and define
-   settings for the problem. For more information, see :ref:`Problem Settings`.
+  <problem>
+    <numericalresponse answer="ANSWER (NUMBER)">
+      <label>Question text</label>
+      <responseparam type="tolerance" default="3%" />
+      <formulaequationinput />
+    </numericalresponse>
+  </problem>
 
-#. Select **Save**.
+**************************
+Specifying an Answer Range
+**************************
+
+You can specify an answer range so that any learner response within that range
+is marked correct. To format an answer range, you provide the starting and
+ending values and then separate them with a comma character (``,``). You then
+surround the range with bracket (``[ ]``) or parentheses characters (``( )``),
+or a combination of one bracket and one parenthesis.
+
+* Use a bracket to include the number next to it in the range, as in a less
+  than or equal to, or greater than or equal to inequality.
+
+* Use a parenthesis to exclude the number from the range, as in a less than or
+  greater than inequality.
+
+For example, to identify the correct answers as 5, 6, or 7, but not 8, specify
+``[5,8)``. To identify the correct answers as 6, 7, and 8, but not 5, specify
+``(5,8]``.
+
+To specify a range in the simple editor, you enter the complete, formatted
+range after the equals sign: ``=[5,8)`` or ``=(5,8]``.
+
+To specify a range in the advanced editor, you enter the complete, formatted
+range in the ``<numericalresponse<`` element as the value for the ``answer``
+attribute: ``<numericalresponse answer="[5,8)">`` or ``<numericalresponse
+answer="(5,8]">``
 
 .. _Use Feedback in a Numerical Input Problems:
 
@@ -286,7 +317,7 @@ at the correct answer.
 Configure Feedback in the Simple Editor
 =======================================
 
-You can configure feedback in the simple editor. When you add a text input
+You can configure feedback in the simple editor. When you add a numerical input
 problem, select the template **Numerical Input with Hints and Feedback**. This
 template has example formatted feedback that you can replace with your own
 text.
@@ -603,8 +634,7 @@ Numerical Input Problem OLX Reference
 Templates
 =========
 
-The following templates represent problems with and without a decimal or
-percentage tolerance.
+The following templates represent problems without and with a Python script.
 
 Problem with No Tolerance
 ***************************
@@ -615,48 +645,6 @@ Problem with No Tolerance
     <numericalresponse answer="ANSWER (NUMBER)">
       <label>Question text</label>
       <description>Optional tip</description>
-      <formulaequationinput />
-      <correcthint>Feedback for the correct answer.</correcthint>
-      <solution>
-        <div class="detailed-solution">
-          <p>Explanation</p>
-          <p>TEXT OF SOLUTION</p>
-        </div>
-      </solution>
-    </numericalresponse>
-  </problem>
-
-Problem with a Decimal Tolerance
-************************************
-
-.. code-block:: xml
-
-  <problem>
-    <numericalresponse answer="ANSWER (NUMBER)">
-      <label>Question text</label>
-      <description>Optional tip</description>
-      <responseparam type="tolerance" default=".02" />
-      <formulaequationinput />
-      <correcthint>Feedback for the correct answer.</correcthint>
-      <solution>
-        <div class="detailed-solution">
-          <p>Explanation</p>
-          <p>TEXT OF SOLUTION</p>
-        </div>
-      </solution>
-    </numericalresponse>
-  </problem>
-
-Problem with a Percentage Tolerance
-************************************
-
-.. code-block:: xml
-
-  <problem>
-    <numericalresponse answer="ANSWER (NUMBER)">
-      <label>Question text</label>
-      <description>Optional tip</description>
-      <responseparam type="tolerance" default="3%" />
       <formulaequationinput />
       <correcthint>Feedback for the correct answer.</correcthint>
       <solution>
