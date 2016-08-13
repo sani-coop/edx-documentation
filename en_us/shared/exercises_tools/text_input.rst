@@ -101,63 +101,29 @@ the prompt and the acceptable answer or answers.
   switch to the advanced editor. However, after you save any changes you make
   in the advanced editor, you cannot switch back to the simple editor.
 
-.. _Use the Simple Editor to Create a Text Input Problem:
-
-========================================================================
+====================================================
 Use the Simple Editor to Add a Text Input Problem
-========================================================================
+====================================================
 
-To use the :ref:`simple editor<Simple Editor>` to create a text input problem,
-follow these steps.
+When you add a text input problem, you can choose one of these templates.
 
-#. In the unit where you want to create the problem, under **Add New
-   Component** select **Problem**.
+* **Text Input**
 
-#. From the list of **Common Problem Types**, select one of these problem
-   types.
+* **Text Input with Hints and Feedback**
 
-  * **Text Input**
+These templates include the Markdown formatting that you use in the simple
+editor to add a problem without, or with, hints and feedback.
 
-  * **Text Input with Hints and Feedback**
+.. include:: ../../../shared/exercises_tools/Section_simple_editor.rst
 
-   Studio adds a problem of the selected type to the unit.
-
-#. Select **Edit**. The simple editor opens to a template that shows the
-   markdown that you can use for this problem type.
-
-#. Replace the guidance provided by the template to add your own text for the
-   prompt, answer or answers, explanation, and so on.
-
-   You can identify more than one correct answer. For more information, see
-   :ref:`Multiple Responses in Text Input Problems`.
-
-#. Select **Settings** to provide an identifying **Display Name** and define
-   settings for the problem. For more information, see :ref:`Problem Settings`.
-
-#. Select **Save**.
-
-========================================================================
+=====================================================
 Use the Advanced Editor to Add a Text Input Problem
-========================================================================
+=====================================================
 
-To use the advanced editor to edit a text input problem, follow these steps.
+You can use the advanced editor to identify the elements of a text input
+problem with OLX. For more information, see :ref:`Checkbox Problem XML`.
 
-#. Follow steps 1-3 for creating the problem in the :ref:`simple editor<Use
-   the Simple Editor to Create a Text Input Problem>`.
-
-#. Select **Advanced Editor**. The advanced editor opens the template and
-   shows the OLX markup that you can use for this problem type.
-
-#. Replace the guidance provided by the template to add your own text for the
-   label, answer or answers, solution, and so on.
-
-#. Update the OLX to use any additional tags and attributes in your problem.
-   For more information, see :ref:`Text Input Problem XML`.
-
-#. Select **Settings** to provide an identifying **Display Name** and define
-   settings for the problem. For more information, see :ref:`Problem Settings`.
-
-#. Select **Save**.
+.. include:: ../../../shared/exercises_tools/Section_advanced_editor.rst
 
 .. _Multiple Responses in Text Input Problems:
 
