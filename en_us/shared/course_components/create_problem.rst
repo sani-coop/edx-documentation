@@ -98,8 +98,8 @@ The Simple Editor
 ==================
 
 When you edit one of the :ref:`common problem types<Adding a Problem>`, the
-simple editor opens with a template that you can use as a template for
-adding Markdown formatting.
+simple editor opens with a template that you can use as a guideline for
+adding Markdown formatting. The following templates are available.
 
 *  :ref:`Checkbox` and Checkboxes with Hints and Feedback
 
@@ -111,8 +111,8 @@ adding Markdown formatting.
 
 *  :ref:`Text Input` and Text Input with Hints and Feedback
 
-Blank common problems do not provide an example problem, but they also open in
-the simple editor by default.
+Blank common problems also open in the simple editor but they do not provide a
+template.
 
 ==========================
 Adding Markdown Formatting
@@ -171,23 +171,10 @@ follow.
 
 #. **Question Mark** icon: Opens a list of formatting hints.
 
-#. **Accessible Label**: Identifies the prompt, or question, that learners need
+#. **Question or Prompt**: Identifies the question that learners need
    to answer. The toolbar does not have an option that provides this
    formatting, so you add two pairs of inward-pointing angle brackets (``>>
    <<``) around the question text. For example, ``>>Is this the question?<<``.
-
-   Optionally, you can add guidance that helps learners answer the question as
-   part of the accessible label. For example, when you add a checkbox problem
-   that is only correct when learners select three of the answer options, you
-   might include the tip "Be sure to select all that apply." To add this
-   description, you include it after the question within the angle brackets,
-   and then you separate the question and the description by inserting a pair
-   of pipe symbols (``||``) between them. For example, ``>>Which of the
-   following choices is correct? ||Be sure to select all that apply.<<``.
-
-   * Screen readers read all of the text that you supply for the problem, and
-     then repeat the text that is identified as the accessible label
-     immediately before reading the answer choices for the problem.
 
    * The :ref:`Student_Answer_Distribution` report uses the text with this
      formatting to identify each problem.
@@ -195,16 +182,34 @@ follow.
    * Insights also uses the text with this formatting to identify each problem.
      For more information, see `Using edX Insights`_.
 
-When you enter text, note that the simple editor cannot interpret certain
-symbol characters correctly. These symbols are reserved HTML characters:
-greater than (>), less than (<), and ampersand (&). If you enter text that
-includes these characters, the simple editor cannot save your edits. To resolve
-this problem, replace these characters in your problem text with the HTML
-entities that represent them.
+#. **Description**: Identifies optional guidance that helps learners answer the
+   question. For example, when you add a checkbox problem that is only correct
+   when learners select three of the answer options, you might include the
+   description "Be sure to select all that apply." The toolbar does not have an
+   option that provides this formatting, so you add it after the question
+   within the angle brackets, and then you separate the question and the
+   description by inserting a pair of pipe symbols (``||``) between them. For
+   example, ``>>Which of the following choices is correct? ||Be sure to select
+   all that apply.<<``.
+
+You can also add text, without formatting, to a problem. Note that screen
+readers read all of the text that you supply for the problem, and then repeat
+the text that is identified as the question or prompt immediately before
+reading the answer choices for the problem.
+
+When you enter unformatted text, note that the simple editor cannot interpret
+certain symbol characters correctly. These symbols are reserved HTML
+characters: greater than (>), less than (<), and ampersand (&). If you enter
+text that includes these characters, the simple editor cannot save your edits.
+To resolve this problem, replace these characters in your problem text with the
+HTML entities that represent them.
 
 * To enter >, type ``&gt;``.
 * To enter <, type ``&lt;``.
 * To enter &, type ``&amp;``.
+
+For problems that require descriptions or other text, you might consider adding
+an HTML component for the text immediately before the problem component.
 
 .. _Advanced Editor:
 
