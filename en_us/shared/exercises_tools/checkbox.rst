@@ -129,61 +129,29 @@ prompt and the answer options.
   switch to the advanced editor. However, after you save any changes you make
   in the advanced editor, you cannot switch back to the simple editor.
 
-.. _Use the Simple Editor to Create a Checkbox Problem:
-
 ======================================================
 Use the Simple Editor to Add a Checkbox Problem
 ======================================================
 
-To use the :ref:`simple editor<Simple Editor>` to add a checkbox problem,
-follow these steps.
+When you add a checkbox problem, you can choose one of these templates.
 
-#. In the unit where you want to create the problem, under **Add New
-   Component** select **Problem**.
+* **Checkboxes**
 
-#. From the list of **Common Problem Types**, select one of these problem
-   types.
+* **Checkboxes with Hints and Feedback**
 
-  * **Checkboxes**
+These templates include the Markdown formatting that you use to add a problem
+without, or with, hints and feedback.
 
-  * **Checkboxes with Hints and Feedback**
-
-   Studio adds a problem of the selected type to the unit.
-
-#. Select **Edit**. The simple editor opens to a template that shows the
-   markdown that you can use for this problem type.
-
-#. Replace the guidance provided by the template to add your own text for the
-   prompt, answer options, explanation, and so on.
-
-#. Select **Settings** to provide an identifying **Display Name** and define
-   settings for the problem. For more information, see :ref:`Problem Settings`.
-
-#. Select **Save**.
+.. include:: ../../../shared/exercises_tools/Section_simple_editor.rst
 
 ==================================================
 Use the Advanced Editor to Add a Checkbox Problem
 ==================================================
 
-To use the :ref:`advanced editor<Advanced Editor>` to add a checkbox
-problem, follow these steps.
+You can use the advanced editor to identify the elements of a checkbox problem
+with OLX. For more information, see :ref:`Checkbox Problem XML`.
 
-#. Follow steps 1-3 for creating the problem in the :ref:`simple editor<Use
-   the Simple Editor to Create a Checkbox Problem>`.
-
-#. Select **Advanced Editor**. The advanced editor opens the template and
-   shows the OLX markup that you can use for this problem type.
-
-#. Replace the guidance provided by the template to add your own text for the
-   prompt, answer options, explanation, and so on.
-
-#. Update the OLX to use any additional tags and attributes in your problem.
-   For more information, see :ref:`Checkbox Problem XML`.
-
-#. Select **Settings** to provide an identifying **Display Name** and define
-   settings for the problem. For more information, see :ref:`Problem Settings`.
-
-#. Select **Save**.
+.. include:: ../../../shared/exercises_tools/Section_advanced_editor.rst
 
 .. _Use Feedback in a Checkbox Problem:
 
