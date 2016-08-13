@@ -139,8 +139,8 @@ When you add a checkbox problem, you can choose one of these templates.
 
 * **Checkboxes with Hints and Feedback**
 
-These templates include the Markdown formatting that you use to add a problem
-without, or with, hints and feedback.
+These templates include the Markdown formatting that you use in the simple
+editor to add a problem without, or with, hints and feedback.
 
 .. include:: ../../../shared/exercises_tools/Section_simple_editor.rst
 
