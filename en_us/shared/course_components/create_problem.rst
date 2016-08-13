@@ -176,6 +176,10 @@ follow.
    formatting, so you add two pairs of inward-pointing angle brackets (``>>
    <<``) around the question text. For example, ``>>Is this the question?<<``.
 
+   * You must identify a question or prompt in every problem component. If you
+     do not, the component adds, "Formatting error: You must explicitly specify
+     the question text" for you.
+
    * The :ref:`Student_Answer_Distribution` report uses the text with this
      formatting to identify each problem.
 
@@ -195,7 +199,9 @@ follow.
 You can also add text, without formatting, to a problem. Note that screen
 readers read all of the text that you supply for the problem, and then repeat
 the text that is identified as the question or prompt immediately before
-reading the answer choices for the problem.
+reading the answer choices for the problem. For problems that require
+descriptions or other text, you might consider adding an HTML component for the
+text immediately before the problem component.
 
 When you enter unformatted text, note that the simple editor cannot interpret
 certain symbol characters correctly. These symbols are reserved HTML
@@ -207,9 +213,6 @@ HTML entities that represent them.
 * To enter >, type ``&gt;``.
 * To enter <, type ``&lt;``.
 * To enter &, type ``&amp;``.
-
-For problems that require descriptions or other text, you might consider adding
-an HTML component for the text immediately before the problem component.
 
 .. _Advanced Editor:
 
