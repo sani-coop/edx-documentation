@@ -487,12 +487,12 @@ Template
   </demandhint>
   </problem>
 
-======
-Tags
-======
+=========
+Elements
+=========
 
-For multiple choice problems, the ``<problem>`` element this hierarchy of child
-elements.
+For multiple choice problems, the ``<problem>`` element can include this
+hierarchy of child elements.
 
 .. code-block:: xml
 
@@ -651,10 +651,10 @@ None.
 **************
 
 Optional. Identifies the explanation or solution for the problem, or for one of
-the questions in the problem.
+the questions in a problem that includes multiple questions.
 
-This element contains an HTML divider ``<div>`` and one or more paragraphs
-``<p>`` of explanatory text.
+This element contains an HTML divider ``<div>``. The divider contains one or
+more paragraphs ``<p>`` of explanatory text.
 
 ``<demandhint>``
 ****************
@@ -675,7 +675,7 @@ Children
 ``<hint>``
 **********
 
-Required. Specifies a hint available to the learner.
+Required. Specifies additional information that learners can access if needed.
 
 Children
 ========
