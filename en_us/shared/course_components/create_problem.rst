@@ -114,16 +114,15 @@ adding Markdown formatting. The following templates are available.
 Blank common problems also open in the simple editor but they do not provide a
 template.
 
-==========================
 Adding Markdown Formatting
-==========================
+***************************
 
-The following image shows a multiple choice problem in the simple
+The following image shows the multiple choice template in the simple
 editor.
 
 .. image:: ../../../shared/images/MultipleChoice_SimpleEditor.png
- :alt: An example multiple choice problem in the simple editor, with numbered
-   callouts for each formatting option.
+ :alt: A template of required formatting for multiple choice problems, with
+     numbered callouts for each formatting option.
  :width: 600
 
 The simple editor includes a toolbar with options that provide the required
@@ -156,8 +155,8 @@ follow.
    line.
 
 #. **Dropdown**: Identifies a comma-separated list of values as the set of
-   answer options for a dropdown problem by adding two pairs of brackets (``[[
-   ]]``) around the list. To identify the correct answer option, you add
+   answer options for a dropdown problem by adding two pairs of brackets
+   (``[[ ]]``) around the list. To identify the correct answer option, you add
    parentheses (``( )``) around that option.
 
 #. **Explanation**: Identifies the explanation for the correct answer by adding
@@ -169,16 +168,16 @@ follow.
 #. **Advanced Editor** link: Opens the problem in the :ref:`advanced
    editor<Advanced Editor>`, which shows the OLX markup for the problem.
 
-#. **Question Mark** icon: Opens a list of formatting hints.
+#. **Toggle Cheatsheet**: Opens a list of formatting hints.
 
 #. **Question or Prompt**: Identifies the question that learners need
    to answer. The toolbar does not have an option that provides this
    formatting, so you add two pairs of inward-pointing angle brackets (``>>
    <<``) around the question text. For example, ``>>Is this the question?<<``.
 
-   * You must identify a question or prompt in every problem component. If you
-     do not, the component adds, "Formatting error: You must explicitly specify
-     the question text" for you.
+   * You must identify a question or prompt in every problem component. In
+     problems that include :ref:`multiple questions<Multiple Problems in One
+     Component>`, each one must be identified.
 
    * The :ref:`Student_Answer_Distribution` report uses the text with this
      formatting to identify each problem.
@@ -195,6 +194,9 @@ follow.
    description by inserting a pair of pipe symbols (``||``) between them. For
    example, ``>>Which of the following choices is correct? ||Be sure to select
    all that apply.<<``.
+
+Adding Text, Symbols, and Mathematics
+**************************************
 
 You can also add text, without formatting, to a problem. Note that screen
 readers read all of the text that you supply for the problem, and then repeat
@@ -213,6 +215,10 @@ HTML entities that represent them.
 * To enter >, type ``&gt;``.
 * To enter <, type ``&lt;``.
 * To enter &, type ``&amp;``.
+
+To add mathematics, you can use LaTeX, MathML, or AsciiMath notation. Studio
+uses MathJax to render equations. For more information, see :ref:`MathJax in
+Studio`.
 
 .. _Advanced Editor:
 
@@ -663,26 +669,29 @@ In the advanced editor, the problem has the following OLX markup.
 
   <problem>
     <stringresponse answer="Caesar Cardini" type="ci">
-    <label>Who invented the Caesar salad?</label>
-    <description>Be sure to check your spelling.</description>
+      <label>Who invented the Caesar salad?</label>
+      <description>Be sure to check your spelling.</description>
       <textline size="20"/>
-    <solution>
-      <div class="detailed-solution">
-      <p>Explanation</p>
-      <p>Caesar Cardini is credited with inventing this salad and received a U.S. trademark for his salad dressing recipe.</p>
-      </div>
-    </solution>
+      <solution>
+        <div class="detailed-solution">
+          <p>Explanation</p>
+          <p>Caesar Cardini is credited with inventing this salad and received
+           a U.S. trademark for his salad dressing recipe.</p>
+        </div>
+      </solution>
     </stringresponse>
 
     <numericalresponse answer="1924">
-    <label>In what year?</label>
+      <label>In what year?</label>
       <formulaequationinput/>
-    <solution>
-      <div class="detailed-solution">
-      <p>Explanation</p>
-      <p>Cardini invented the dish at his restaurant on 4 July 1924 after the rush of holiday business left the kitchen with fewer supplies than usual.</p>
-      </div>
-    </solution>
+      <solution>
+        <div class="detailed-solution">
+          <p>Explanation</p>
+          <p>Cardini invented the dish at his restaurant on 4 July 1924 after
+           the rush of holiday business left the kitchen with fewer supplies
+           than usual.</p>
+        </div>
+      </solution>
     </numericalresponse>
   </problem>
 
