@@ -42,9 +42,9 @@ complete a checkbox problem. An example of a completed checkbox problem
 follows.
 
 .. image:: ../../../shared/images/CheckboxExample.png
- :alt: An incorrectly answered checkbox problem shown in the LMS. Of the
-     answer options, one of them was incorrectly checked rather than being left
-     unchecked. An explanation appears below the answer options.
+ :alt: An incorrectly answered checkbox problem shown in the LMS. Of the answer
+     options, only two of the three required answer options was  checked. An
+     explanation appears below the answer options.
 
 To add the example problem illustrated above, in Studio you use the simple
 editor to enter the following text and Markdown formatting.
@@ -374,7 +374,8 @@ In the advanced editor, you define compound feedback by adding a
           .
           .
         </choice>
-        <compoundhint value="Answer Combination">Feedback when learner selects this combination of answers.</compoundhint>
+        <compoundhint value="Answer Combination">Feedback when learner selects
+         this combination of answers.</compoundhint>
       </checkboxgroup>
 
 For example, the following compound feedback is used when learners select
@@ -727,12 +728,13 @@ Template
     </demandhint>
   </problem>
 
-======
-Tags
-======
+=========
+Elements
+=========
 
-For checkbox problems, the ``<problem>`` element has this hierarchy of child
-elements.
+For checkbox problems, the ``<problem>`` element can include this hierarchy of
+child elements.
+
 
 .. code-block:: xml
 
@@ -894,10 +896,11 @@ None.
 **************
 
 Optional. Identifies the explanation or solution for the problem, or for one of
-the questions in the problem.
+the questions in a problem that contains more than one question.
 
-This element contains an HTML divider ``<div>`` and one or more paragraphs
-``<p>`` of explanatory text.
+This element contains an HTML divider ``<div>``. The divider contains one or
+more paragraphs ``<p>`` of explanatory text.
+
 
 ``<demandhint>``
 ****************
@@ -918,7 +921,12 @@ Children
 ``<hint>``
 **********
 
-Required. Specifies a hint available to the learner.
+Required. Specifies additional information that learners can access if needed.
+
+Attributes
+==========
+
+None.
 
 Children
 ========
