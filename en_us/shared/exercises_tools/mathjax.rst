@@ -1,12 +1,13 @@
 .. _MathJax in Studio:
 
-###############
-Using MathJax for
-###############
+##############################
+Using MathJax for Mathematics
+##############################
 
-To write clear and professional-looking symbols and equations, edX uses a
-LaTeX-like language called `MathJax <https://www.mathjax.org/>`_. You can use
-MathJax to format text into beautiful math in HTML and problem components.
+To produce clear and professional-looking symbols and equations in web browser,
+edX uses `MathJax <https://www.mathjax.org/>`_. MathJax authomatically formats
+the mathematical symbols and equations that you enter in HTML and problem
+components using LaTeX notation into beautiful math.
 
 This topic provides some pointers to get you started. Many resources for
 learning and using MathJax are available online, including the official
