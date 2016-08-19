@@ -23,9 +23,9 @@ Overview
 **********
 
 In numerical input problems, learners enter numbers or specific and relatively
-simple mathematical expressions to answer a question. The answer that a learner
-enters is converted to a symbolic expression that appears below the response
-field.
+simple mathematical expressions to answer a question. The LMS automatically
+converts the answer that learners enter into a symbolic expression that appears
+below the response field.
 
 Responses for numerical input problems can include integers, fractions, and
 constants such as pi and *g*. Responses can also include text representing
@@ -40,11 +40,15 @@ learner and the numerical expression that results.
      the n minus 1 power.
 
 For more information about how learners enter expressions, see
-:ref:`openlearners:Math Formatting`.
+:ref:`learners:Math Formatting` in the *EdX Learner's Guide* or
+:ref:`openlearners:Math Formatting` in the *Open edX Learner's Guide*.
 
-You can specify a margin of error, or tolerance, for the answers to numerical
-input problems so that learners' responses do not have to be exact. You can
-specify a correct answer explicitly or use a Python script.
+Some of the options for numerical input problems include the following.
+
+* You can specify a correct answer explicitly or use a Python script.
+
+* You can specify a margin of error, or tolerance, for the answers to numerical
+  input problems so that learners' responses do not have to be exact.
 
 .. note::
   You can make a calculator tool available to your learners on every unit
@@ -55,12 +59,10 @@ Example Numerical Input Problem
 ================================
 
 In the LMS, learners enter a value into a response field to complete a
-numerical input problem. An example of a completed numerical input problem that
-includes two questions follows.
+numerical input problem. An example of a completed numerical input problem  follows.
 
 .. image:: ../../../shared/images/NumericalInputExample.png
- :alt: A problem with two questions, one answered correctly and one
-     incorrectly in the LMS.
+ :alt: A problem with one question, answered correctly, in the LMS.
 
 To add the example problem illustrated above, in Studio you use the simple
 editor to enter the following text and Markdown formatting.
@@ -93,19 +95,61 @@ follows.
     </numericalresponse>
   </problem>
 
-An additional example that contains two questions, one that uses a Python
-script and the other that uses special character formatting, follows.
+===================================================
+Analyzing Performance on Numerical Input Problems
+===================================================
+
+For the numerical input problems in your course, you can use edX Insights to
+review aggregated learner performance data and examine submitted answers. For
+more information, see :ref:`insights:Using edX Insights`.
+
+***********************************
+Adding a Numerical Input Problem
+***********************************
+
+You add numerical input problems in Studio by selecting the **Problem**
+component type and then using either the simple editor or the advanced editor
+to specify the prompt and the acceptable answer or answers.
+
+.. contents::
+  :local:
+  :depth: 1
+
+.. note:: You can begin work on the problem in the simple editor, and then
+  switch to the advanced editor. However, after you save any changes you make
+  in the advanced editor, you cannot switch back to the simple editor.
+
+Before you add a numerical input problem, consider the following features and
+limitations of the simple and advanced editors.
+
+* If your problem text contains italics, bold, or special characters, the
+  simple editor does not support these values. Use the advanced editor to add
+  an HTML paragraph (``<p>``) element and HTML formatting as needed.
+
+* If your problem contains a Python script, use the advanced editor.
+
+For example, you must use the advanced editor to define the following numerical
+input problem. It contains two questions, one of which relies on character
+formatting, and the other that uses a Python script.
+
+.. image:: ../../../shared/images/NumericalInput_Complex.png
+ :alt: A problem with two questions, both answered correctly in the LMS. One
+   question uses italics and superscript in the question, and the other uses a
+   script to determine the correct answer.
+
+The OLX for this example follows.
 
 .. note:: The second question in the following example includes a Python
   script. When you add a script to a problem component, make sure that it is
-  not indented.
+  not indented. A "jailed code" error message appears when you save the problem
+  in Studio if the script element is indented.
 
 .. code-block:: xml
 
   <problem>
     <numericalresponse answer="9.80665">
-        <p>What is the value of the standard gravity constant<i>g</i>,
-         measured in m/s<sup>2</sup>?</p>
+        <p>Enter the value of the standard gravity constant <i>g</i>,
+         measured in m/s<sup>2</sup>.</p>
         <label>What is the answer to the question above?</label>
         <description>Give your answer to at least two decimal places.</description>
         <responseparam type="tolerance" default="0.01" />
@@ -144,49 +188,6 @@ script and the other that uses special character formatting, follows.
     </numericalresponse>
   </problem>
 
-===================================================
-Analyzing Performance on Numerical Input Problems
-===================================================
-
-For the numerical input problems in your course, you can use edX Insights to
-review aggregated learner performance data and examine submitted answers. For
-more information, see :ref:`insights:Using edX Insights`.
-
-***********************************
-Adding a Numerical Input Problem
-***********************************
-
-You add numerical input problems in Studio by selecting the **Problem**
-component type and then using either the simple editor or the advanced editor
-to specify the prompt and the acceptable answer or answers.
-
-.. contents::
-  :local:
-  :depth: 1
-
-.. note:: You can begin work on the problem in the simple editor, and then
-  switch to the advanced editor. However, after you save any changes you make
-  in the advanced editor, you cannot switch back to the simple editor.
-
-Before you add a numerical input problem, consider the following features and
-limitations of the simple and advanced editors.
-
-* If your problem text contains italics, bold, or special characters, the
-  simple editor does not support these values. Use the advanced editor to add
-  an HTML paragraph (``<p>``) element and HTML formatting as needed.
-
-* If your problem contains a Python script, use the advanced editor.
-
-For example, you must use the advanced editor to define this numerical input
-problem. It contains two questions, one of which relies on character
-formatting, and the other that uses a Python script. (The OLX for this problem
-is shown in the example above.)
-
-.. image:: ../../../shared/images/NumericalInput_Complex.png
- :alt: A problem with two questions, both answered correctly in the LMS. One
-   question uses italics and superscript in the question, and the other uses a
-   script to determine the correct answer.
-
 For more information about including a Python script in a problem, see
 :ref:`Write Your Own Grader`.
 
@@ -210,7 +211,7 @@ Use the Advanced Editor to Add a Numerical Input Problem
 =========================================================
 
 You can use the advanced editor to identify the elements of a numerical input
-problem with OLX. For more information, see :ref:`Checkbox Problem XML`.
+problem with OLX. For more information, see :ref:`Numerical Input Problem XML`.
 
 .. include:: ../../../shared/exercises_tools/Section_advanced_editor.rst
 
@@ -241,8 +242,8 @@ Add a Tolerance in the Advanced Editor
 ========================================
 
 To add a tolerance in the advanced editor you include a ``<responseparam>``
-element with a ``type="tolerance"`` attribute and a default attribute set to
-either a number or a percentage value.
+element with a ``type="tolerance"`` attribute and a ``default`` attribute set
+to either a number or a percentage value.
 
 The following example shows a problem with a decimal tolerance.
 
@@ -279,7 +280,7 @@ surround the range with bracket (``[ ]``) or parentheses characters (``( )``),
 or a combination of one bracket and one parenthesis.
 
 * Use a bracket to include the number next to it in the range, as in a less
-  than or equal to, or greater than or equal to inequality.
+  than or equal to, or greater than or equal to, inequality.
 
 * Use a parenthesis to exclude the number from the range, as in a less than or
   greater than inequality.
@@ -292,7 +293,7 @@ To specify a range in the simple editor, you enter the complete, formatted
 range after the equals sign: ``=[5,8)`` or ``=(5,8]``.
 
 To specify a range in the advanced editor, you enter the complete, formatted
-range in the ``<numericalresponse<`` element as the value for the ``answer``
+range in the ``<numericalresponse>`` element as the value for the ``answer``
 attribute: ``<numericalresponse answer="[5,8)">`` or ``<numericalresponse
 answer="(5,8]">``
 
@@ -310,8 +311,8 @@ answers.
   You cannot provide feedback for incorrect answers in numerical input
   problems.
 
-Use feedback for numerical input problems to reinforce the process for arriving
-at the correct answer.
+Use feedback for numerical input problems to reinforce the process used to
+arrive at the correct answer.
 
 =======================================
 Configure Feedback in the Simple Editor
@@ -333,8 +334,7 @@ For example, the following problem has feedback for the correct answer.
 
 ::
 
-  >>What is the arithmetic mean for the following set of numbers?
-    (1, 5, 6, 3, 5)<<
+  >>What is the arithmetic mean for the following set of numbers? (1, 5, 6, 3, 5)<<
 
   =4 {{The mean for this set of numbers is 20 / 5 which equals 4.}}
 
@@ -387,9 +387,8 @@ can configure a custom label for the answer.
 
   Good job: The mean for this set of numbers is 20 / 5 which equals 4.
 
-
 .. note::
-  The default label **Correct** displays in the learner's requested language.
+  The default label, **Correct**, displays in the learner's requested language.
   If you provide a custom label, it displays as you define it to all learners.
   It is not translated into different languages.
 
@@ -469,13 +468,15 @@ correct answer and received partial credit.
 For an overview of partial credit in problems, see
 :ref:`Awarding Partial Credit for a Problem`.
 
-There are two ways to award partial credit in a numerical input problem.
+You can use the following methods to award partial credit in a numerical input
+problem.
 
 .. contents::
   :local:
   :depth: 1
 
-.. Note:: You can use these ways of awarding partial credit in combination.
+.. note:: You can use these methods of awarding partial credit individually or
+ in combination.
 
 ==========================
 Identifying Close Answers
@@ -601,7 +602,8 @@ together with the symbol or text that you want to use inside the
 questions that use this attribute.
 
 .. note:: You can use MathJax inside the ``trailing_text`` attribute, as the
- third example shows. You cannot use HTML inside this attribute.
+ third question in this example shows. You cannot use HTML inside this
+ attribute.
 
 .. code-block:: xml
 
@@ -660,7 +662,9 @@ Answer Created Using a Script
 ******************************
 
 .. note:: The following example includes a Python script. When you add a
-  script to a problem component, make sure it is not indented.
+  script to a problem component, make sure that it is not indented. A "jailed
+  code" error message appears when you save the problem in Studio if the script
+  element is indented.
 
 .. code-block:: xml
 
@@ -683,19 +687,19 @@ Answer Created Using a Script
     </numericalresponse>
   </problem>
 
-====
-Tags
-====
+=========
+Elements
+=========
 
-For numerical input problems, the ``<problem>`` element has this hierarchy of
-child elements.
+For numerical input problems, the ``<problem>`` element can include this
+hierarchy of child elements.
 
 .. code-block:: xml
 
   <numericalresponse>
       <label>
       <description>
-      <formulaequationinput />
+      <formulaequationinput>
       <correcthint>
       <responseparam>
       <script>
@@ -710,42 +714,43 @@ In addition, standard HTML tags can be used to format text.
 
 Required. Indicates that the problem is a numerical input problem.
 
-The ``<numericalresponse>`` tag is similar to the ``<formularesponse>`` tag
-used by the :ref:`math expression input<Math Expression Input>` problem type,
-but the ``<numericalresponse>`` tag does not allow unspecified variables.
+The ``<numericalresponse>`` element is similar to the ``<formularesponse>``
+element used by the :ref:`math expression input<Math Expression Input>` problem
+type, but the ``<numericalresponse>`` element does not allow unspecified
+variables.
 
 Attributes
 ==========
 
-  .. list-table::
-     :widths: 20 80
-     :header-rows: 1
+.. list-table::
+  :widths: 20 80
+  :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - ``answer`` (required)
-       - The correct answer to the problem, given as a mathematical
-         expression.
-     * - ``partial_credit`` (optional)
-       - Specifies the type of partial credit given. ``close``, ``list``, or a
-         combination of both in any order separated by a comma (,).
+ * - Attribute
+   - Description
+  * - ``answer``
+    - Required. The correct answer to the problem, given as a mathematical
+      expression.
+  * - ``partial_credit``
+    - Optional. Specifies the type of partial credit given. ``close``,
+      ``list``, or a combination of both in any order separated by a comma (,).
 
-  .. note:: If you include a variable name preceded with a dollar sign
-   ($) in the problem ``answer``, you can include a script in the problem that
-   computes the expression in terms of that variable.
+.. note:: If you include a variable name preceded with a dollar sign
+ ($) in the problem ``answer``, you can include a script in the problem that
+ computes the expression in terms of that variable.
 
-  The grader evaluates the answer that you provide and the learner's response
-  in the same way. The grader also automatically simplifies any numeric
-  expressions that you or a learner provides. Answers can include simple
-  expressions such as "0.3" and "42", or more complex expressions such as
-  "1/3" and "sin(pi/5)".
+The grader evaluates the answer that you provide and the learner's response
+in the same way. The grader also automatically simplifies any numeric
+expressions that you or a learner provides. Answers can include simple
+expressions such as "0.3" and "42", or more complex expressions such as
+"1/3" and "sin(pi/5)".
 
 Children
 ========
 
 * ``<label>``
 * ``<description>``
-* ``<formulaequationinput />``
+* ``<formulaequationinput>``
 * ``<responseparam>``
 * ``<correcthint>``
 * ``<script>``
@@ -787,25 +792,25 @@ None.
 Required. Creates a response field in the LMS where learners enter a response.
 
 .. note::
-    Some older problems use a ``<textline math="1" />`` tag instead of the
-    ``<formulaequationinput />``. However, the ``<textline math="1" />`` tag
-    has been deprecated. All new problems should use the
-    ``<formulaequationinput />`` tag.
+    Some older problems use a ``<textline math="1" />`` element instead of
+    ``<formulaequationinput>``. However, the ``<textline math="1" />``
+    element has been deprecated. All new problems should use the
+    ``<formulaequationinput>`` element.
 
 Attributes
 ==========
 
-  .. list-table::
-     :widths: 20 80
-     :header-rows: 1
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - ``size``
-       - Optional. Defines the width, in characters, of the response field in
-         the LMS.
-     * - ``trailing_text`` (optional)
-       - Specified text to appear immediately after the response field.
+   * - Attribute
+     - Description
+   * - ``size``
+     - Optional. Defines the width, in characters, of the response field in
+       the LMS.
+   * - ``trailing_text`` (optional)
+     - Specified text to appear immediately after the response field.
 
 Children
 ========
@@ -820,22 +825,22 @@ Specifies a tolerance, or margin of error, for an answer.
 Attributes
 ==========
 
-  .. list-table::
-     :widths: 20 80
-     :header-rows: 1
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - ``type``
-       - Optional. ``"tolerance"`` defines a tolerance for a number.
-     * - ``default``
-       - Optional. A number or a percentage specifying a numerical or percent
-         tolerance.
-     * - ``partial_range``
-       - Optional. For partial credit problems of ``type="close"``, a
-         multiplier for the tolerance. Default is 2.
-     * - ``partial_answers``
-       - Optional. For partial credit problems of ``type="list"``, a comma-
+   * - Attribute
+     - Description
+   * - ``type``
+     - Optional. ``"tolerance"`` defines a tolerance for a number.
+   * - ``default``
+      - Optional. A number or a percentage specifying a numerical or percent
+        tolerance.
+   * - ``partial_range``
+     - Optional. For partial credit problems of ``type="close"``, a
+       multiplier for the tolerance. Default is 2.
+   * - ``partial_answers``
+     - Optional. For partial credit problems of ``type="list"``, a comma-
          separated list of values that are to receive 50% credit.
 
 Children
@@ -852,13 +857,13 @@ answer.
 Attributes
 ==========
 
-  .. list-table::
-     :widths: 20 80
+.. list-table::
+   :widths: 20 80
 
-     * - Attribute
-       - Description
-     * - ``label``
-       - Optional. The text of the custom feedback label.
+   * - Attribute
+     - Description
+   * - ``label``
+     - Optional. The text of the custom feedback label.
 
 Children
 ========
@@ -869,23 +874,25 @@ None.
 *************
 
 Optional. Specifies a script that the grader uses to evaluate a learner's
-response. A problem behaves as if all of the code in all of the script tags
-were in a single script tag. Specifically, any variables that are used in
-multiple ``<script>`` tags share a namespace and can be overridden.
+response. A problem behaves as if all of the code in all of the ``<script>``
+elements were in a single ``<script>`` element. Specifically, any variables
+that are used in multiple ``<script>`` elements share a namespace and can be
+overridden.
 
 As with all Python, indentation matters, even though the code is embedded in
 XML.
 
-  Attributes
+Attributes
+===========
 
-  .. list-table::
-     :widths: 20 80
-     :header-rows: 1
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - ``type``
-       - Required. Must be set to "loncapa/python".
+   * - Attribute
+     - Description
+   * - ``type``
+     - Required. Must be set to "loncapa/python".
 
 Children
 ========
@@ -896,10 +903,10 @@ None.
 **************
 
 Optional. Identifies the explanation or solution for the problem, or for one of
-the questions in the problem.
+the questions in a problem that contains more than one question.
 
-This element contains an HTML divider ``<div>`` and one or more paragraphs
-``<p>`` of explanatory text.
+This element contains an HTML divider ``<div>``. The divider contains one or
+more paragraphs ``<p>`` of explanatory text.
 
 ``<demandhint>``
 ****************
@@ -920,10 +927,14 @@ Children
 ``<hint>``
 **********
 
-Required. Specifies a hint available to the learner.
+Required. Specifies additional information that learners can access if needed.
+
+Attributes
+==========
+
+None.
 
 Children
 ========
 
 None.
-
