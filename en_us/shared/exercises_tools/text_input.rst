@@ -38,22 +38,23 @@ input problem. An example of a completed text input problem follows.
 
 .. image:: ../../../shared/images/TextInputExample.png
  :alt: A correctly answered text input problem shown in the LMS. The text
-  entered by the learner exactly matches one of two acceptable answer options,
-  which appear below the response.
+  entered by the learner exactly matches one of the acceptable answer options,
+  which appear below the response along with the explanation.
 
 To add the example problem illustrated above, in Studio you use the simple
 editor to enter the following text and Markdown formatting.
 
 ::
 
-    >>What was the first post-secondary school in China to allow both male and female students?<<
+    >>What was the first post-secondary school in China to allow both male and female students?||Answer with a name from the modern period.<<
 
-    = Nanjing Higher Normal Institute
+    = Nanjing University
     or= National Central University
-    or= Nanjing University
+    or= Nanjing Higher Normal Institute
+    or= Nanking University
 
     [explanation]
-    Nanjing Higher Normal Institute first admitted female students in 1920.
+    Nanjing University first admitted female students in 1920.
     [explanation]
 
 The OLX (open learning XML) markup for this example text input problem follows.
@@ -61,17 +62,18 @@ The OLX (open learning XML) markup for this example text input problem follows.
 .. code-block:: xml
 
   <problem>
-    <stringresponse answer="Nanjing Higher Normal Institute" type="ci" >
+    <stringresponse answer="Nanjing University" type="ci">
       <label>What was the first post-secondary school in China to allow both
        male and female students?</label>
+      <description>Answer with a name from the modern period.</description>
       <additional_answer answer="National Central University"/>
-      <additional_answer answer="Nanjing University"/>
+      <additional_answer answer="Nanjing Higher Normal Institute"/>
+      <additional_answer answer="Nanking University"/>
       <textline size="20"/>
       <solution>
         <div class="detailed-solution">
           <p>Explanation</p>
-          <p>Nanjing Higher Normal Institute first admitted female students
-           in 1920.</p>
+          <p>Nanjing University first admitted female students in 1920.</p>
         </div>
       </solution>
     </stringresponse>
@@ -321,8 +323,13 @@ For example, the following feedback is configured to use custom labels.
 
 .. code-block:: xml
 
-  <correcthint label="Right you are">Alaska is the largest state in the U.S. in terms of not only land area, but also total area and water area. Alaska is 576,400 square miles, more than double the land area of the second largest state, Texas.</correcthint>
-  <stringequalhint answer="Texas" label="Close but wrong">While many people think Texas is the largest state in terms of land area, it is actually the second largest of the 50 U.S. states containing 261,797 square miles.</stringequalhint>
+  <correcthint label="Right you are">Alaska is the largest state in the U.S.
+   in terms of not only land area, but also total area and water area. Alaska
+   is 576,400 square miles, more than double the land area of the second
+   largest state, Texas.</correcthint>
+  <stringequalhint answer="Texas" label="Close but wrong">While many people
+   think Texas is the largest state in terms of land area, it is actually the
+   second largest of the 50 U.S. states containing 261,797 square miles.</stringequalhint>
 
 .. _Use Hints in a Text Input Problem:
 
@@ -393,14 +400,14 @@ insensitive". An example follows.
 .. code-block:: xml
 
     <problem>
-      <stringresponse answer="Michigan" type="ci">
+      <stringresponse answer="Paris" type="ci">
       .
       .
       .
       </stringresponse>
     </problem>
 
-Learners who submit an answer of either "Michigan" or "michigan" are scored
+Learners who submit an answer of either "Paris" or "paris" are scored
 as correct.
 
 To make the response case sensitive, change the value of the ``type``
@@ -409,15 +416,15 @@ attribute to ``cs``.
 .. code-block:: xml
 
     <problem>
-      <stringresponse answer="Michigan" type="cs">
+      <stringresponse answer="Paris" type="cs">
       .
       .
       .
       </stringresponse>
     </problem>
 
-Learners who submit an answer of "Michigan" are scored as correct, but
-learners who submit an answer of "michigan" are scored as incorrect.
+Learners who submit an answer of "Paris" are scored as correct, but
+learners who submit an answer of "paris" are scored as incorrect.
 
 *************************************************
 Response Field Length in Text Input Problems
@@ -456,7 +463,7 @@ attribute.
         .
         .
         .
-        <textline size="40"/>
+        <textline size="40" />
       </stringresponse>
     </problem>
 
@@ -512,12 +519,15 @@ Template
     <stringresponse answer="Correct answer 1" type="ci regexp">
       <label>Question text</label>
       <description>Optional tip</description>
-      <correcthint>Provides feedback when learners submit the correct response.</correcthint>
+      <correcthint>Provides feedback when learners submit the correct
+       response.</correcthint>
       <additional_answer answer="Correct answer 2"/>
       <additional_answer answer="Correct answer 3"/>
-      <stringequalhint answer="Incorrect answer 1">Provides feedback when learners submit the specified incorrect response.</stringequalhint>
-      <stringequalhint answer="Incorrect answer 2">Provides feedback when learners submit the specified incorrect response.</stringequalhint>
-      <textline size="20"/>
+      <stringequalhint answer="Incorrect answer 1">Provides feedback when
+       learners submit the specified incorrect response.</stringequalhint>
+      <stringequalhint answer="Incorrect answer 2">Provides feedback when
+       learners submit the specified incorrect response.</stringequalhint>
+      <textline size="20" />
     </stringresponse>
     <demandhint>
       <hint>The first text string to display when learners request a hint.</hint>
@@ -525,12 +535,12 @@ Template
     </demandhint>
   </problem>
 
-=======
-Tags
-=======
+=========
+Elements
+=========
 
-For text input problems, the ``<problem>`` element has this hierarchy of child
-elements.
+For text input problems, the ``<problem>`` element can include this
+hierarchy of child elements.
 
 .. code-block:: xml
 
@@ -584,8 +594,8 @@ Children
 
 * ``<label>``
 * ``<description>``
-* ``<textline />``
-* ``<additional_answer />``
+* ``<textline>``
+* ``<additional_answer>``
 * ``<correcthint>``
 * ``<stringequalhint>``
 * ``<solution>``
@@ -620,7 +630,7 @@ Children
 
 None.
 
-``<textline />``
+``<textline>``
 ****************
 
 Required. Creates a response field in the LMS where the learner enters a text
@@ -629,20 +639,20 @@ string.
 Attributes
 ==========
 
-  .. list-table::
-     :widths: 20 80
+.. list-table::
+   :widths: 20 80
 
-     * - Attribute
-       - Description
-     * - ``size`` (optional)
-       - Specifies the size, in characters, of the response field in the LMS.
-         Defaults to 20.
-     * - ``hidden`` (optional)
-       - If set to "true", learners cannot see the response field.
-     * - ``correct_answer`` (optional)
-       - Lists the correct answer to the problem.
-     * - ``trailing_text`` (optional)
-       - Specified text to appear immediately after the response field.
+   * - Attribute
+     - Description
+   * - ``size``
+     - Optional. Specifies the size, in characters, of the response field in
+       the LMS. Defaults to 20.
+   * - ``hidden``
+     - Optional. If set to "true", learners cannot see the response field.
+   * - ``correct_answer``
+     - Optional. Lists the correct answer to the problem.
+   * - ``trailing_text``
+     - Optional. Specifies text to appear immediately after the response field.
 
 .. reviewers, note that I could not get "correct_answer" to work ^^. The answer attribute of stringresponse is required and overrides whatever I put in here. Can this attribute be removed or marked as deprecated? - Alison 10 Aug
 
@@ -651,7 +661,7 @@ Children
 
 None.
 
-``<additional_answer />``
+``<additional_answer>``
 *************************
 
 Optional. Specifies an additional correct answer for the problem. A problem can
@@ -660,21 +670,21 @@ contain an unlimited number of additional answers.
 Attributes
 ==========
 
+.. list-table::
+   :widths: 20 80
 
-  .. list-table::
-     :widths: 20 80
-
-     * - Attribute
-       - Description
-     * - ``answer``
-       - Required. The text of the alternative correct answer.
+   * - Attribute
+     - Description
+   * - ``answer``
+     - Required. The text of the alternative correct answer.
 
 Children
 ========
 
 None.
 
-**Tag:** ``<correcthint>``
+``<correcthint>``
+*****************
 
 Optional. Specifies feedback to appear after the learner submits a correct
 answer.
@@ -682,13 +692,13 @@ answer.
 Attributes
 ==========
 
-  .. list-table::
-     :widths: 20 80
+.. list-table::
+   :widths: 20 80
 
-     * - Attribute
-       - Description
-     * - ``label``
-       - Optional. The text of the custom feedback label.
+   * - Attribute
+     - Description
+   * - ``label``
+     - Optional. The text of the custom feedback label.
 
 Children
 ========
@@ -704,15 +714,15 @@ answer.
 Attributes
 ==========
 
-  .. list-table::
-     :widths: 20 80
+.. list-table::
+   :widths: 20 80
 
-     * - Attribute
-       - Description
-     * - ``answer``
-       - Required. The text of the incorrect answer.
-     * - ``label``
-       - Optional. The text of the custom feedback label.
+   * - Attribute
+     - Description
+   * - ``answer``
+     - Required. The text of the incorrect answer.
+   * - ``label``
+     - Optional. The text of the custom feedback label.
 
 Children
 ========
@@ -723,10 +733,11 @@ None.
 **************
 
 Optional. Identifies the explanation or solution for the problem, or for one of
-the questions in the problem.
+the questions in a problem that contains more than one question.
 
-This element contains an HTML divider ``<div>`` and one or more paragraphs
-``<p>`` of explanatory text.
+This element contains an HTML divider ``<div>``. The divider contains one or
+more paragraphs ``<p>`` of explanatory text.
+
 
 ``<demandhint>``
 ****************
@@ -747,7 +758,12 @@ Children
 ``<hint>``
 **********
 
-Required. Specifies a hint available to the learner.
+Required. Specifies additional information that learners can access if needed.
+
+Attributes
+==========
+
+None.
 
 Children
 ========
@@ -773,7 +789,7 @@ documented above.
       <label>Question text</label>
       <additional_answer>Correct answer 2</additional_answer>
       <additional_answer>Correct answer 3</additional_answer>
-      <textline size="20" label="label text"/>
+      <textline size="20" />
     <hintgroup>
       <stringhint answer="Incorrect answer A" type="ci" name="hintA" />
         <hintpart on="hintA">
