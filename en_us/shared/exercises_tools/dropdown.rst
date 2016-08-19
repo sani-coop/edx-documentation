@@ -72,18 +72,21 @@ The OLX markup for this example problem follows.
 .. code-block:: xml
 
   <problem>
-    <p>What type of data are the following?</p>
     <optionresponse>
+      <p>What type of data are the following?</p>
       <label>Age:</label>
-      <optioninput options="('Nominal','Discrete','Continuous')" correct="Continuous"></optioninput>
+      <optioninput options="('Nominal','Discrete','Continuous')"
+       correct="Continuous"></optioninput>
     </optionresponse>
     <optionresponse>
       <label>Age, rounded to the nearest year:</label>
-      <optioninput options="('Nominal','Discrete','Continuous')" correct="Discrete"></optioninput>
+      <optioninput options="('Nominal','Discrete','Continuous')"
+       correct="Discrete"></optioninput>
       </optionresponse>
     <optionresponse>
       <label>Life stage - infant, child, and adult:</label>
-      <optioninput options="('Nominal','Discrete','Continuous')" correct="Nominal"></optioninput>
+      <optioninput options="('Nominal','Discrete','Continuous')"
+       correct="Nominal"></optioninput>
     </optionresponse>
   </problem>
 
@@ -176,7 +179,7 @@ Feedback**. This template has example feedback syntax that you can replace.
   ]]
 
 .. note:: When you include feedback, you might find it more convenient to use
-  new lines to to separate the answer options.
+  new lines to separate the answer options.
 
 For example, the following problem has feedback for each possible answer.
 
@@ -206,7 +209,7 @@ syntax.
 .. code-block:: xml
 
     <option correct="False">Option Label
-      <optionhint>Feedback for when learner selects this answer.</optionhint>
+      <optionhint>Feedback for when a learner selects this incorrect answer.</optionhint>
     </option>
 
 For example, the following problem has feedback for each answer.
@@ -276,7 +279,7 @@ labels with the following syntax.
 ::
 
   [[
-  (Correct Answer) {{Label:: Feedback for learners who select this answer.}}
+  Incorrect Answer {{Label:: Feedback for learners who select this answer.}}
   .
   .
   .
@@ -361,7 +364,7 @@ Template
           <p>Explanation or solution text</p>
         </div>
       </solution>
-      </optionresponse>
+    </optionresponse>
     <demandhint>
       <hint>Hint 1</hint>
       <hint>Hint 2</hint>
@@ -369,12 +372,12 @@ Template
     </demandhint>
   </problem>
 
-========
-Tags
-========
+=========
+Elements
+=========
 
-For checkbox problems, the ``<problem>`` element has this hierarchy of child
-elements.
+For dropdown problems, the ``<problem>`` element can include this
+hierarchy of child elements.
 
 .. code-block:: xml
 
@@ -456,9 +459,11 @@ Attributes
        - Either this attribute or a set of ``<option>`` child elements for
          ``<optioninput>`` is required. Accepts a comma separated list of
          values in the following format.
+
          ``options="('Answer1','Answer2','Answer3')"``
+
      * - ``correct``
-       - Used only if the ``options`` attribute is set. Required. Indicates
+       - Used if the ``options`` attribute is set. Required. Indicates
          which of the answer options is correct.
 
 Children
@@ -508,10 +513,10 @@ None.
 **************
 
 Optional. Identifies the explanation or solution for the problem, or for one of
-the questions in the problem.
+the questions in a problem that contains more than one question.
 
-This element contains an HTML divider ``<div>`` and one or more paragraphs
-``<p>`` of explanatory text.
+This element contains an HTML divider ``<div>``. The divider contains one or
+more paragraphs ``<p>`` of explanatory text.
 
 ``<demandhint>``
 ****************
@@ -532,10 +537,14 @@ Children
 ``<hint>``
 **********
 
-Required. Specifies a hint available to the learner.
+Required. Specifies additional information that learners can access if needed.
+
+Attributes
+==========
+
+None.
 
 Children
 ========
 
 None.
-
