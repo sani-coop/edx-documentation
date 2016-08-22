@@ -6,7 +6,7 @@ Checkbox Problem
 
 .. note:: EdX offers full support for this problem type.
 
-The checkbox problem type is a core problem type that can be added to every
+The checkbox problem type is a core problem type that can be added to any
 course. At a minimum, checkbox problems include a question or prompt and
 several answer options. By adding hints, feedback, or both, you can give
 learners guidance and help when they work on a problem.
@@ -759,14 +759,14 @@ Required. Indicates that the problem is a checkbox problem.
 Attributes
 ==========
 
-  .. list-table::
-     :widths: 20 80
-     :header-rows: 1
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - ``partial_credit`` (optional)
-       - Specifies the type of partial credit given. ``EDC`` or ``halves``.
+   * - Attribute
+     - Description
+   * - ``partial_credit`` (optional)
+     - Specifies the type of partial credit given. ``EDC`` or ``halves``.
 
 Children
 ========
@@ -830,17 +830,18 @@ Required. Designates an answer option.
 Attributes
 ==========
 
-  .. list-table::
-     :widths: 20 80
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - ``correct``
-       - Indicates a correct or incorrect answer.
+   * - Attribute
+     - Description
+   * - ``correct``
+     - Indicates a correct or incorrect answer.
 
-         * When set to ``"true"``, the choice is a correct answer. At least one
-           required.
-         * When set to ``"false"``, the choice is an incorrect answer.
+       * When set to ``"true"``, the choice is a correct answer. At least one
+         required.
+       * When set to ``"false"``, the choice is an incorrect answer.
 
 Children
 ========
@@ -855,14 +856,15 @@ Optional. Specifies feedback for the answer.
 Attributes
 ==========
 
-  .. list-table::
-     :widths: 20 80
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - ``selected`` (required)
-       - ``true`` or ``false``. Indicates if the feedback is given when the
-         answer option is selected, or when it is not selected.
+   * - Attribute
+     - Description
+   * - ``selected`` (required)
+     - ``true`` or ``false``. Indicates if the feedback is given when the
+       answer option is selected, or when it is not selected.
 
 Children
 ========
@@ -877,15 +879,16 @@ Optional. Specifies feedback for a specific combination of answers.
 Attributes
 ==========
 
-  .. list-table::
-     :widths: 20 80
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - ``value`` (at least one required)
-       - Indicates the combination of selected answers that triggers this
-         feedback. Answers are identified by uppercase letters, in ascending
-         alphabetical order.
+   * - Attribute
+     - Description
+   * - ``value`` (at least one required)
+     - Indicates the combination of selected answers that triggers this
+       feedback. Answers are identified by uppercase letters, in ascending
+       alphabetical order.
 
 Children
 ========
