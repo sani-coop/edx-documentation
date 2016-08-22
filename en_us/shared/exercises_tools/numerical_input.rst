@@ -7,7 +7,7 @@ Numerical Input Problem
 .. note:: EdX offers full support for this problem type.
 
 The numerical input problem type is a core problem type that can be added to
-every course. At a minimum, numerical input problems include a question or
+any course. At a minimum, numerical input problems include a question or
 prompt and a response field for a numeric answer. By adding hints, feedback, or
 both, you can give learners guidance and help when they work on a problem.
 
