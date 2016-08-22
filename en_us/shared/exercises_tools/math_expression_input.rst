@@ -7,7 +7,7 @@ Math Expression Input Problems
 .. note:: EdX offers full support for this problem type.
 
 The math expression input problem type is a core problem type that can be added
-to every course. At a minimum, math expression problems include a question or
+to any course. At a minimum, math expression problems include a question or
 prompt and a response field for a numeric answer.
 
 .. contents::
@@ -41,8 +41,8 @@ provide, to a specified numerical tolerance. You specify the allowed variables
 in the expression as well as the range of values for each variable.
 
 When you create a math expression input problem in Studio, you use `MathJax
-<http://www.mathjax.org>`_ to change your plain text into "beautiful math."
-For more information about how to use MathJax in Studio, see :ref:`MathJax in
+<http://www.mathjax.org>`_ to format text strings into "beautiful math." For
+more information about how to use MathJax in Studio, see :ref:`MathJax in
 Studio`.
 
 .. note:: Math expression input problems currently cannot include negative
@@ -55,15 +55,15 @@ Example Math Expression Input Problem
 ======================================
 
 In the LMS, learners enter a value into a response field to complete a math
-expression input problem. An example of a completed math expression input
-problem that contains two questions follows.
+expression input problem. The following example shows a completed math
+expression input problem that contains two questions.
 
 .. image:: ../../../shared/images/MathExpressionInputExample.png
  :alt: A problem shown in the LMS that requests the symbolic expressions for
    displacement and for elongation of a blade. Both questions were answered
-   correctly.
+   correctly. The solutions are not shown.
 
-The OLX (open learning XML) markup for this example math expression input
+The open learning XML (OLX) markup for this example math expression input
 problem follows.
 
 .. code-block:: xml
@@ -138,10 +138,11 @@ To create a math expression input problem, follow these steps.
 #. Select **Edit**. The advanced editor opens the template and shows the OLX
    markup that you can use for this problem type.
 
-#. Replace the guidance provided by the template to add your own text for the
-   question or prompt, answer options, explanation, and so on.
+#. Replace the guidance provided by the template to add your own text. For
+   example, replace the question or prompt, answer options, and solution.
 
-#. Update the OLX to use any additional tags and attributes in your problem.
+#. Update the OLX to use any additional elements and attributes in your
+   problem.
 
 #. Select **Settings** to provide an identifying **Display Name** and define
    settings for the problem. For more information, see :ref:`Problem Settings`.
@@ -182,22 +183,23 @@ Template
     </formularesponse>
   </problem>
 
-====
-Tags
-====
+========
+Elements
+========
 
-For math expression input problems, the ``<problem>`` element has this
+For math expression input problems, the ``<problem>`` element can include this
 hierarchy of child elements.
 
 .. code-block:: xml
 
-  <formularesponse>
-      <label>
-      <description>
-      <formulaequationinput />
-      <responseparam>
-      <script>
-      <solution>
+  <problem>
+      <formularesponse>
+          <label>
+          <description>
+          <formulaequationinput>
+          <responseparam>
+          <script>
+          <solution>
 
 In addition, standard HTML tags can be used to format text.
 
@@ -213,52 +215,53 @@ used  by :ref:`numerical input<Numerical Input>` problem types, but
 Attributes
 ==========
 
-  .. list-table::
-     :widths: 20 80
-     :header-rows: 1
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - ``type``
-       - Can be "cs" for case sensitive, which is the default, or "ci" for case
-         insensitive, so that capitalization does not matter in variable names.
-     * - ``answer``
-       - The correct answer to the problem, given as a mathematical expression.
+   * - Attribute
+     - Description
+   * - ``type``
+     - Can be ``"cs"`` for case sensitive, which is the default, or ``"ci"``
+       for case insensitive, so that capitalization does not matter in variable
+       names.
+   * - ``answer``
+     - The correct answer to the problem, given as a mathematical expression.
 
-         If you precede a variable name in the problem with a dollar sign ($),
-         you can include a script in the problem that computes the expression
-         in terms of that variable.
+       If you precede a variable name in the problem with a dollar sign ($),
+       you can include a script in the problem that computes the expression
+       in terms of that variable.
 
-     * - ``samples``
-       - Specifies important information about the problem in the following
-         lists.
+   * - ``samples``
+     - Specifies important information about the problem in the following
+       lists.
 
-         * ``variables``: A set of variables that learners can enter.
-         * ``lower_bounds``: For every defined variable, a lower bound on the
-           numerical tests to use for that variable.
-         * ``upper_bounds``: For every defined variable, an upper bound on the
-           numerical tests to use for that variable.
-         * ``num_samples``: The number of times to test the expression.
+       * ``variables``: A set of variables that learners can enter.
+       * ``lower_bounds``: For every defined variable, a lower bound on the
+         numerical tests to use for that variable.
+       * ``upper_bounds``: For every defined variable, an upper bound on the
+         numerical tests to use for that variable.
+       * ``num_samples``: The number of times to test the expression.
 
-         Commas separate items inside each of the four individual lists. The at
-         sign (@), colon (:), and pound sign (#) characters separate the lists.
-         An example of the format follows.
+       Commas separate items inside each of the four individual lists. The at
+       sign (@), colon (:), and hash tag (#) characters separate the lists.
+       An example of the format follows.
 
-         ``"variables@lower_bounds:upper_bounds#num_samples"``
+       ``"variables@lower_bounds:upper_bounds#num_samples"``
 
-         For example, a ``<formularesponse>`` tag that includes the ``samples``
-         attribute might look like either of the following.
+       For example, a ``<formularesponse>`` element that includes the
+       ``samples`` attribute might look like either of the following.
 
-         ``<formularesponse samples="x,n@1,2:3,4#10">``
+       ``<formularesponse samples="x,n@1,2:3,4#10">``
 
-         ``<formularesponse samples="R_1,R_2,R_3@1,2,3:3,4,5#10">``
+       ``<formularesponse samples="R_1,R_2,R_3@1,2,3:3,4,5#10">``
 
 Children
 ========
 
 * ``<label>``
 * ``<description>``
-* ``<formulaequationinput />``
+* ``<formulaequationinput>``
 * ``<responseparam>``
 * ``<script>``
 * ``<solution>``
@@ -306,15 +309,15 @@ grading.
 Attributes
 ==========
 
-  .. list-table::
-     :widths: 20 80
-     :header-rows: 1
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - ``size``
-       - Optional. Defines the width, in characters, of the response field in
-         the LMS.
+   * - Attribute
+     - Description
+   * - ``size``
+     - Optional. Defines the width, in characters, of the response field in
+       the LMS.
 
 Children
 ========
@@ -330,20 +333,20 @@ approximate a test for equality.
 Attributes
 ==========
 
-  .. list-table::
-     :widths: 20 80
-     :header-rows: 1
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - ``type``
-       - ``"tolerance"`` defines a tolerance for a number.
-     * - ``default``
-       - Required. A number or a percentage specifying how close the learner
-         and grader expressions must be. If you do not include a tolerance, the
-         expression is vulnerable to rounding errors during sampling. The
-         result of such unavoidable errors is that the grader can mark some
-         learner input as incorrect, even if it is algebraically equivalent.
+   * - Attribute
+     - Description
+   * - ``type``
+     - ``"tolerance"`` defines a tolerance for a number.
+   * - ``default``
+     - Required. A number or a percentage specifying how close the learner
+       and grader expressions must be. If you do not include a tolerance, the
+       expression is vulnerable to rounding errors during sampling. The
+       result of such unavoidable errors is that the grader can mark some
+       learner input as incorrect, even if it is algebraically equivalent.
 
 Children
 ========
@@ -354,23 +357,24 @@ None.
 *************
 
 Optional. Specifies a script that the grader uses to evaluate a learner's
-response. A problem behaves as if all of the code in all of the script tags
-were in a single script tag. Specifically, any variables that are used in
-multiple ``<script>`` tags share a namespace and can be overridden.
+response. A problem behaves as if all of the code in all of the script elements
+were in a single script element. Specifically, any variables that are used in
+multiple ``<script>`` elements share a namespace and can be overridden.
 
-As with all Python, indentation matters, even though the code is embedded in
-XML.
+As with all Python code, indentation matters, even though the code is embedded
+in XML.
 
-  Attributes
+Attributes
+==========
 
-  .. list-table::
-     :widths: 20 80
-     :header-rows: 1
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - ``type``
-       - Required. Must be set to "loncapa/python".
+   * - Attribute
+     - Description
+   * - ``type``
+     - Required. Must be set to ``"loncapa/python"``.
 
 Children
 ========
@@ -381,7 +385,7 @@ None.
 **************
 
 Optional. Identifies the explanation or solution for the problem, or for one of
-the questions in the problem.
+the questions in a problem that contains more than one question.
 
-This element contains an HTML divider ``<div>`` and one or more paragraphs
-``<p>`` of explanatory text.
+This element contains an HTML divider ``<div>``. The divider contains one or
+more paragraphs ``<p>`` of explanatory text.
