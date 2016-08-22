@@ -6,7 +6,7 @@ Text Input Problem
 
 .. note:: EdX offers full support for this problem type.
 
-The text input problem type is a core problem type that can be added to every
+The text input problem type is a core problem type that can be added to any
 course. At a minimum, text input problems include a question or prompt and a
 response field for free form answer text. By adding hints, feedback, or both,
 you can give learners guidance and help when they work on a problem.
@@ -159,7 +159,7 @@ Add Multiple Correct Responses in the Advanced Editor
 ======================================================
 
 To specify an additional correct response in the advanced editor, within the
-``<stringresponse>`` tags add the ``<additional_answer />`` element with an
+``<stringresponse>`` elements add the ``<additional_answer />`` element with an
 ``answer=""`` attribute value.
 
 .. code-block:: xml
@@ -565,29 +565,30 @@ Required. Indicates that the problem is a text input problem.
 Attributes
 ==========
 
-  .. list-table::
-     :widths: 20 80
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - ``answer`` (required)
-       - Specifies the correct answer.
+   * - Attribute
+     - Description
+   * - ``answer`` (required)
+     - Specifies the correct answer.
 
-         Note that if you do not also add the ``type`` attribute and set it to
-         ``regexp``, the learner's answer must match the value for this
-         attribute exactly.
+       Note that if you do not also add the ``type`` attribute and set it to
+       ``regexp``, the learner's answer must match the value for this
+       attribute exactly.
 
-     * - ``type`` (optional)
-       - Specifies whether the problem requires a case sensitive response and
-         if it allows regular expressions.
+   * - ``type`` (optional)
+     - Specifies whether the problem requires a case sensitive response and
+       if it allows regular expressions.
 
-         * If ``type="ci"``, the problem is not case sensitive.
-         * If ``type="cs"``, the problem is case sensitive.
-         * If ``type="regexp"``, the problem allows regular expressions.
+       * If ``type="ci"``, the problem is not case sensitive.
+       * If ``type="cs"``, the problem is case sensitive.
+       * If ``type="regexp"``, the problem allows regular expressions.
 
-         You can also combine these values in a space separated list. For
-         example, ``<stringresponse type="regexp cs">`` specifies that the
-         problem allows regular expressions and is case sensitive.
+       You can also combine these values in a space separated list. For
+       example, ``<stringresponse type="regexp cs">`` specifies that the
+       problem allows regular expressions and is case sensitive.
 
 Children
 ========
@@ -641,6 +642,7 @@ Attributes
 
 .. list-table::
    :widths: 20 80
+   :header-rows: 1
 
    * - Attribute
      - Description
@@ -672,6 +674,7 @@ Attributes
 
 .. list-table::
    :widths: 20 80
+   :header-rows: 1
 
    * - Attribute
      - Description
@@ -694,6 +697,7 @@ Attributes
 
 .. list-table::
    :widths: 20 80
+   :header-rows: 1
 
    * - Attribute
      - Description
@@ -716,6 +720,7 @@ Attributes
 
 .. list-table::
    :widths: 20 80
+   :header-rows: 1
 
    * - Attribute
      - Description
