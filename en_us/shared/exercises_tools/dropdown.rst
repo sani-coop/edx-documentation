@@ -6,7 +6,7 @@ Dropdown Problem
 
 .. note:: EdX offers full support for this problem type.
 
-The dropdown problem type is a core problem type that can be added to every
+The dropdown problem type is a core problem type that can be added to any
 course. At a minimum, dropdown problems include a question or prompt and
 several answer options. By adding hints, feedback, or both, you can give
 learners guidance and help when they work on a problem.
@@ -450,21 +450,22 @@ Required. Designates an answer option.
 Attributes
 ==========
 
-  .. list-table::
-     :widths: 20 80
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - ``options``
-       - Either this attribute or a set of ``<option>`` child elements for
-         ``<optioninput>`` is required. Accepts a comma separated list of
-         values in the following format.
+   * - Attribute
+     - Description
+   * - ``options``
+     - Either this attribute or a set of ``<option>`` child elements for
+       ``<optioninput>`` is required. Accepts a comma separated list of
+       values in the following format.
 
-         ``options="('Answer1','Answer2','Answer3')"``
+       ``options="('Answer1','Answer2','Answer3')"``
 
-     * - ``correct``
-       - Used if the ``options`` attribute is set. Required. Indicates
-         which of the answer options is correct.
+   * - ``correct``
+     - Used if the ``options`` attribute is set. Required. Indicates
+       which of the answer options is correct.
 
 Children
 ========
@@ -481,15 +482,16 @@ Designates an answer option. Either a set of ``<option>`` child elements or the
 Attributes
 ==========
 
-  .. list-table::
-     :widths: 20 80
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - ``correct``
-       - Required. Indicates whether the answer option is correct or incorrect.
-         When set to ``"true"``, the choice is a correct answer. At least one
-         required. When set to ``"false"``, the choice is an incorrect answer.
+   * - Attribute
+     - Description
+   * - ``correct``
+     - Required. Indicates whether the answer option is correct or incorrect.
+       When set to ``"true"``, the choice is a correct answer. At least one
+       required. When set to ``"false"``, the choice is an incorrect answer.
 
 If the ``<option>`` element is used, ``<optionhint>`` is a child of
 ``<option>``.
