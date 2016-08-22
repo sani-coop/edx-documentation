@@ -7,7 +7,7 @@ Multiple Choice Problem
 .. note:: EdX offers full support for this problem type.
 
 The multiple choice problem type is a core problem type that can be added to
-every course. At a minimum, multiple choice problems include a question or
+any course. At a minimum, multiple choice problems include a question or
 prompt and several answer options. By adding hints, feedback, or both, you can
 give learners guidance and help when they work on a problem.
 
@@ -71,7 +71,7 @@ and Markdown formatting in the simple editor in Studio.
     lateral inhibition using horseshoe crabs.
     [Explanation]
 
-The OLX (open learning XML) markup for this example problem follows.
+The open learning XML (OLX) markup for this example problem follows.
 
 .. code-block:: xml
 
@@ -572,17 +572,17 @@ Required. Indicates the beginning of the list of answer options.
 Attributes
 ==========
 
-  .. list-table::
-     :widths: 20 80
-     :header-rows: 1
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - ``type``
-       - Required. Must be set to ``"MultipleChoice"``.
+   * - Attribute
+     - Description
+   * - ``type``
+     - Required. Must be set to ``"MultipleChoice"``.
 
-  Additional attributes are available to support
-  :ref:`advanced options<Multiple Choice Advanced Options>`.
+Additional attributes are available to support
+:ref:`advanced options<Multiple Choice Advanced Options>`.
 
 Children
 ========
@@ -597,35 +597,35 @@ Required. Lists an answer option.
 Attributes
 ==========
 
-  .. list-table::
-     :widths: 20 80
-     :header-rows: 1
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - ``correct``
-       - Indicates a correct, incorrect, or partially
-         correct answer.
+   * - Attribute
+     - Description
+   * - ``correct``
+     - Indicates a correct, incorrect, or partially
+       correct answer.
 
-         * When set to ``"true"``, the choice is a correct answer. At least one
-           required.
-         * When set to ``"false"``, the choice is an incorrect answer.
-         * When set to ``"partial"``, the learner receives partial credit for
-           selecting the answer.
+       * When set to ``"true"``, the choice is a correct answer. At least one
+         required.
+       * When set to ``"false"``, the choice is an incorrect answer.
+       * When set to ``"partial"``, the learner receives partial credit for
+         selecting the answer.
 
-         You can specify more than one correct or partially correct answer,
-         but learners can select only one choice to submit as their answer.
+       You can specify more than one correct or partially correct answer,
+       but learners can select only one choice to submit as their answer.
 
-     * - ``point_value``
-       - When ``correct="partial"``, indicates the percentage, as a decimal, of
-         the points the learner receives for selecting this option. If
-         ``point_value`` is not specified for a partial credit answer, 50% is
-         used by default.
-     * - ``name``
-       - A unique name that is used internally to refer to the choice.
+   * - ``point_value``
+     - When ``correct="partial"``, indicates the percentage, as a decimal, of
+       the points the learner receives for selecting this option. If
+       ``point_value`` is not specified for a partial credit answer, 50% is
+       used by default.
+   * - ``name``
+     - A unique name that is used internally to refer to the choice.
 
-  Additional attributes are available to support
-  :ref:`advanced options<Multiple Choice Advanced Options>`.
+Additional attributes are available to support
+:ref:`advanced options<Multiple Choice Advanced Options>`.
 
 Children
 ========
@@ -844,7 +844,8 @@ the :ref:`advanced editor<Advanced Editor>`.
   element, with no value: ``<multiplechoiceresponse targeted-feedback="">``.
 
 * Add an ``explanation-id`` attribute with a unique value to each of the
-  ``<choice>`` tags: ``<choice correct="false" explanation-id="feedback1">``.
+  ``<choice>`` elements: ``<choice correct="false"
+  explanation-id="feedback1">``.
 
 * Add a ``<targetedfeedbackset>`` element before the ``<solution>`` element.
 
@@ -937,7 +938,7 @@ problem in the :ref:`advanced editor<Advanced Editor>`.
 
 * If you include more than one correct answer among the options, for each
   correct answer add an ``explanation-id`` attribute with a unique value to the
-  ``<choice>`` tag: ``<choice correct="false" explanation-id="correct1">``.
+  ``<choice>`` element: ``<choice correct="false" explanation-id="correct1">``.
 
 * If you include more than one correct answer among the options, for each
   ``<solution>`` element, add an ``explanation-id`` attribute and a value that
