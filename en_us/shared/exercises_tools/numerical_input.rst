@@ -726,8 +726,8 @@ Attributes
   :widths: 20 80
   :header-rows: 1
 
- * - Attribute
-   - Description
+  * - Attribute
+    - Description
   * - ``answer``
     - Required. The correct answer to the problem, given as a mathematical
       expression.
