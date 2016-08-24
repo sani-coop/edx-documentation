@@ -50,7 +50,7 @@ following settings.
   :depth: 1
 
 This section describes the OLX elements and attributes that you define for the
-problem settings. For detailed descriptions of each setting, see
+problem settings. For a detailed description of each setting, see
 :ref:`opencoursestaff:Problem Settings`.
 
 ===============
@@ -105,9 +105,9 @@ element.
 You can specify the following values.
 
 * always
-* onreset
+* on_reset
 * never
-* perstudent
+* per_student
 
 .. _Show Answer:
 
@@ -128,9 +128,9 @@ You can specify the following values.
 * answered
 * attempted
 * closed
-* correctorpastdue
+* correct_or_past_due
 * finished
-* past due
+* past_due
 * never
 
 .. _Show Reset Button:
