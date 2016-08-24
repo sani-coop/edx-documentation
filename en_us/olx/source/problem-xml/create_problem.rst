@@ -57,7 +57,8 @@ problem settings. For detailed descriptions of each setting, see
 Display Name
 ===============
 
-With OLX, you set the display name as an attribute of the ``problem`` element.
+With OLX, you set the display name as an attribute of the ``<problem>``
+element.
 
 .. code-block:: xml
 
@@ -67,7 +68,7 @@ With OLX, you set the display name as an attribute of the ``problem`` element.
 Maximum Attempts
 ==============================
 
-With OLX, you set the maximum attempts as an attribute of the ``problem``
+With OLX, you set the maximum attempts as an attribute of the ``<problem>``
 element.
 
 .. code-block:: xml
@@ -81,8 +82,8 @@ element.
 Problem Weight
 ==============================
 
-With OLX, you set the component weight as an attribute of the
-``problem`` element.
+With OLX, you set the component weight as an attribute of the ``<problem>``
+element.
 
 .. code-block:: xml
 
@@ -94,19 +95,19 @@ With OLX, you set the component weight as an attribute of the
 Randomization
 ===============
 
-With OLX, you set value randomization as an attribute of the ``problem``
+With OLX, you set value randomization as an attribute of the ``<problem>``
 element.
 
 .. code-block:: xml
 
   <problem rerandomize="always"></problem>
 
-You can choose the following options.
+You can specify the following values.
 
 * always
-* on reset
+* onreset
 * never
-* per student
+* perstudent
 
 .. _Show Answer:
 
@@ -115,19 +116,19 @@ Show Answer
 ===============
 
 With OLX, you set the show answer preference as an attribute of the
-``problem`` element.
+``<problem>`` element.
 
 .. code-block:: xml
 
   <problem showanswer="correct_or_past_due"></problem>
 
-You can choose the following options.
+You can specify the following values.
 
 * always
 * answered
 * attempted
 * closed
-* correct or past due
+* correctorpastdue
 * finished
 * past due
 * never
@@ -139,7 +140,7 @@ Show Reset Button
 =================
 
 With OLX, you set the show reset button preference as an attribute of the
-``problem`` element.
+``<problem>`` element.
 
 .. code-block:: xml
 
@@ -205,21 +206,22 @@ Multiple Problems in One Component
 
 You might want to create a problem that has more than one response type. For
 example, you might want to create a numerical input problem and then include a
-multiple choice problem about that numerical input problem. Or, you might
-want a learner to be able to check the answers to many problems at one time. To
-do this, you can include multiple problems inside a single ``problem`` element.
+multiple choice problem about that numerical input problem. Or, you might want
+a learner to be able to check the answers to many problems at one time. To do
+this, you can include multiple problems inside a single ``<problem>`` element.
 The problems can be different types.
 
-.. note::
-  You cannot use a :ref:`Custom JavaScript` in a component that contains more
-  than one problem. Each custom JavaScript problem must be in its own
-  component.
+Each question and its answer options are enclosed by the element that
+identifies the type of problem, such as ``<multiplechoiceresponse>`` for a
+multiple choice question or ``<formularesponse>`` for a math expression input
+question.
 
-To create multiple problems in one component, create a new Blank Advanced
-problem component, and then add the XML for each problem in the component
-editor. You only need to include the XML for the problem and its answers. You
-do not have to include the code for other elements, such as the **Check**
-button.
+You can provide a different explanation for each question with the
+``<solution>`` element.
+
+As a best practice, edX recommends that you avoid including unformatted
+paragraph text between the questions. Screen readers can skip over text that is
+inserted among multiple questions.
 
 Elements such as the **Check**, **Show Answer**, and **Reset** buttons, as well
 as the settings that you select for the problem component, apply to all of the
@@ -229,6 +231,11 @@ component as a whole rather than three attempts to answer each problem
 individually. If a learner selects **Check**, the LMS scores all of the
 problems in the component at once. If a learner selects **Show Answer**, the
 answers for all the problems in the component appear.
+
+.. note::
+  You cannot use a :ref:`Custom JavaScript` in a component that contains more
+  than one problem. Each custom JavaScript problem must be in its own
+  component.
 
 .. include:: ../../../shared/exercises_tools/Section_adding_hints.rst
 
@@ -252,7 +259,7 @@ content libraries. For more information, see :ref:`Randomized Content Blocks`.
    versions to different learners, whereas the **Randomization** setting
    controls when a Python script randomizes the variables within a single
    problem. For more information about the **Randomization** setting, see
-   :ref:`Randomization`.
+   :ref:`opencoursestaff:Randomization`.
 
 
 .. _Create Randomized Problems:
