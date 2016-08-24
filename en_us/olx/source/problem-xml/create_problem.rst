@@ -49,19 +49,13 @@ following settings.
   :local:
   :depth: 1
 
+This section describes the OLX elements and attributes that you define for the
+problem settings. For detailed descriptions of each setting, see
+:ref:`opencoursestaff:Problem Settings`.
+
 ===============
 Display Name
 ===============
-
-This setting indicates the name of your problem. This name appears as a heading
-above the problem in the LMS, and it identifies the problem for you in
-Insights.
-
-Unique, descriptive display names help you and your learners identify problems
-quickly and accurately.
-
-For more information about metrics for your course's problem components, see
-`Using edX Insights`_.
 
 With OLX, you set the display name as an attribute of the ``problem`` element.
 
@@ -72,17 +66,6 @@ With OLX, you set the display name as an attribute of the ``problem`` element.
 ==============================
 Maximum Attempts
 ==============================
-
-This setting specifies the number of times a learner is allowed to attempt
-answering the problem. By default, the course-wide **Maximum Attempts**
-advanced setting is null, meaning that the maximum number of attempts for
-problems is unlimited. If the course-wide **Maximum Attempts** setting is
-changed to a specific number, the **Maximum Attempts** setting for individual
-problems defaults to that number, and cannot be set to unlimited.
-
-.. note:: Only questions that have a **Maximum Attempts** setting of 1 or
- higher are included on the Learner Answer Distribution report that you can
- download during your course.
 
 With OLX, you set the maximum attempts as an attribute of the ``problem``
 element.
@@ -98,161 +81,18 @@ element.
 Problem Weight
 ==============================
 
-.. note:: The LMS stores scores for all problems, but scores only count
-          toward a learner's final grade if they are in a subsection that is
-          graded.
-
-This setting specifies the maximum number of points possible for the
-problem. The problem weight appears next to the problem title.
-
-.. image:: ../../../shared/images/ProblemWeight_DD.png
- :alt: Image of a problem from a learner's point of view, with the possible
-       points circled.
- :width: 500
-
-By default, each response field, or "answer space", in a problem component is
-worth one point. Any problem component can have multiple response fields. For
-example, the problem component above contains one dropdown problem that has
-three separate questions, and also has three response fields.
-
-With OLX, you set a different component weight as an attribute of the
+With OLX, you set the component weight as an attribute of the
 ``problem`` element.
 
 .. code-block:: xml
 
   <problem weight="2.0"></problem>
 
-Computing Scores
-****************
-
-The score that a learner earns for a problem is the result of the
-following formula.
-
-**Score = Weight × (Correct answers / Response fields)**
-
-*  **Score** is the point score that the learner receives.
-
-*  **Weight** is the problem's maximum possible point score.
-
-*  **Correct answers** is the number of response fields that contain correct
-   answers.
-
-*  **Response fields** is the total number of response fields in the problem.
-
-**Examples**
-
-The following are some examples of computing scores.
-
-*Example 1*
-
-A problem's **Weight** setting is left blank. The problem has two
-response fields. Because the problem has two response fields, the
-maximum score is 2.0 points.
-
-If one response field contains a correct answer and the other response
-field contains an incorrect answer, the learner's score is 1.0 out of 2
-points.
-
-*Example 2*
-
-A problem's weight is set to 12. The problem has three response fields.
-
-If a learner's response includes two correct answers and one incorrect
-answer, the learner's score is 8.0 out of 12 points.
-
-*Example 3*
-
-A problem's weight is set to 2. The problem has four response fields.
-
-If a learner's response contains one correct answer and three incorrect
-answers, the learner's score is 0.5 out of 2 points.
-
 .. _Randomization:
 
 ===============
 Randomization
 ===============
-
-.. note:: The **Randomization** setting serves a different purpose from
- "problem randomization". The **Randomization** setting affects how numeric
- values or multiple choice options are randomized within a single problem.
- Problem randomization offers different problems or problem versions to
- different learners. For more information, see :ref:`Problem Randomization`.
-
-For problems that include a Python script to generate numbers randomly, this
-setting specifies how frequently the values in the problem change: each time a
-different learner accesses the problem, each time a single learner tries to
-answer the problem, both, or never.
-
-.. note:: This setting should only be set to an option other than **Never**
- for problems that are configured to do random number generation or shuffle
- multiple choice answers.
-
-For example, in this problem, the highlighted values change every time a
-learner submits an answer to the problem.
-
-.. image:: ../../../shared/images/Rerandomize.png
- :alt: An image of the same problem shown twice, with color highlighting on
-   values that change.
- :width: 800
-
-If you want to randomize numeric values in a problem, you complete both of
-these steps.
-
-* Make sure that you edit your problem to include a Python script that randomly
-  generates numbers.
-
-* Select **Edit** and then **Settings** for the problem to specify an option
-  other than **Never** for the **Randomization** setting.
-
-If you want to shuffle answers in a multiple choice problem, you complete both
-of these steps.
-
-* Set up your problem to :ref:`shuffle
-  answers<Shuffle Answers in a Multiple Choice Problem>`.
-
-* Select an option
-  other than **Never** for the **Randomization** setting.
-
-..  For more information, see :ref:`Use Randomization in a Numerical Input Problem`.
-..  ^^ add back to first bullet when DOC-2175 gets done - Alison 30 Jul 15
-
-The edX Platform has a 20-seed maximum for randomization. This means that
-learners see up to 20 different problem variants for every problem that has
-**Randomization** set to an option other than **Never**. It also means that
-every answer for the 20 different variants is reported by the Answer
-Distribution report and edX Insights. Limiting the number of variants to a
-maximum of 20 allows for better analysis of learner submissions by allowing you
-to detect common incorrect answers and usage patterns for such answers.
-
-For more information, see :ref:`opencoursestaff:Student_Answer_Distribution`,
-or `Review Answers to Graded Problems`_ or `Review Answers to Ungraded
-Problems`_ in *Using edX Insights*.
-
-You can choose the following options for the **Randomization** setting.
-
-.. list-table::
-   :widths: 15 70
-   :header-rows: 1
-
-   * - Option
-     - Description
-   * - **Always**
-     - Learners see a different version of the problem each time they select
-       Check.
-   * - **On Reset**
-     - Learners see a different version of the problem each time they select
-       Reset.
-   * - **Never**
-     - All learners see the same version of the problem. For most courses, this
-       option is supplied by default. Select this option for every problem in
-       your course that does not include a Python script to generate random
-       numbers.
-   * - **Per Student**
-     - Individual learners see the same version of the problem each time they
-       look at it, but that version is different from the version that other
-       learners see.
-
 
 With OLX, you set value randomization as an attribute of the ``problem``
 element.
@@ -261,71 +101,18 @@ element.
 
   <problem rerandomize="always"></problem>
 
+You can choose the following options.
 
+* always
+* on reset
+* never
+* per student
 
 .. _Show Answer:
 
 ===============
 Show Answer
 ===============
-
-This setting defines when the problem shows the answer to the learner.
-This setting has the following options.
-
-+-------------------+--------------------------------------+
-| **Always**        | Always show the answer when the      |
-|                   | learner selects the **Show Answer**  |
-|                   | button.                              |
-+-------------------+--------------------------------------+
-| **Answered**      | Show the answer after the learner    |
-|                   | tries to answer the problem.         |
-|                   |                                      |
-|                   | If the question can be, and is,      |
-|                   | reset, the answer                    |
-|                   | is not shown until the learner tries |
-|                   | the problem again. (When a learner   |
-|                   | answers a question, the question is  |
-|                   | considered to be                     |
-|                   | both attempted and answered. When    |
-|                   | the question is reset, the question  |
-|                   | is still attempted, but not yet      |
-|                   | answered.)                           |
-+-------------------+--------------------------------------+
-| **Attempted**     | Show the answer after the learner    |
-|                   | tries to answer the problem.         |
-|                   |                                      |
-|                   | If the question can be, and is,      |
-|                   | reset, the answer                    |
-|                   | *continues to show*.                 |
-|                   | (When a learner answers a question,  |
-|                   | the question is considered to be     |
-|                   | both attempted and                   |
-|                   | answered. When the question is       |
-|                   | reset, the question is still         |
-|                   | attempted, but not yet answered.)    |
-+-------------------+--------------------------------------+
-| **Closed**        | Show the answer after the learner    |
-|                   | has used up all his attempts to      |
-|                   | answer the problem or the due date   |
-|                   | has passed.                          |
-+-------------------+--------------------------------------+
-| **Finished**      | Show the answer after the learner    |
-|                   | has answered the problem correctly,  |
-|                   | the learner has no attempts left, or |
-|                   | the problem due date has passed.     |
-+-------------------+--------------------------------------+
-| **Correct or      | Show the answer after the learner    |
-| Past Due**        | has answered the problem correctly   |
-|                   | or the problem due date has passed.  |
-+-------------------+--------------------------------------+
-| **Past Due**      | Show the answer after the due date   |
-|                   | for the problem has passed.          |
-+-------------------+--------------------------------------+
-| **Never**         | Never show the answer. In this case, |
-|                   | the **Show Answer** button does not  |
-|                   | appear next to the problem in Studio |
-|                   | or in the LMS.                       |
-+-------------------+--------------------------------------+
 
 With OLX, you set the show answer preference as an attribute of the
 ``problem`` element.
@@ -334,23 +121,22 @@ With OLX, you set the show answer preference as an attribute of the
 
   <problem showanswer="correct_or_past_due"></problem>
 
+You can choose the following options.
+
+* always
+* answered
+* attempted
+* closed
+* correct or past due
+* finished
+* past due
+* never
+
 .. _Show Reset Button:
 
 =================
 Show Reset Button
 =================
-
-This setting defines whether a **Reset** button is visible on the problem.
-Learners can select **Reset** to clear any input that has not yet been
-submitted, and try again to answer the problem. If the learner has already
-submitted an answer, selecting **Reset** clears the submission and, if the
-problem contains randomized variables and randomization is set to **On Reset**,
-changes the values the learner sees in the problem. If the number of maximum
-attempts that was set for this problem has been reached, the **Reset** button
-is not visible.
-
-This problem-level setting overrides the course-level **Show Reset Button for
-Problems** setting.
 
 With OLX, you set the show reset button preference as an attribute of the
 ``problem`` element.
