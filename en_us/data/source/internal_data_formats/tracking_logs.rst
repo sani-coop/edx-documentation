@@ -2596,7 +2596,10 @@ This section includes descriptions of the following events.
   :depth: 1
 
 Problem interaction events are emitted by the server or the browser to capture
-information about interactions with problems.
+information about interactions with core problem types. For more information
+about using problem components to add problems, see
+:ref:`partnercoursestaff:Working with Problem Components` in the *Building and
+Running an edX Course* guide.
 
 These events were designed for the problem types implemented in the edX
 platform by the ``capa_module.py`` XBlock. Problem types that are implemented
@@ -2789,18 +2792,23 @@ field.
      - object
      - Provides data about the response made.
 
-       For components that include multiple problems, a separate submission
-       object is provided for each one.
+       For problem components that include multiple questions, a separate
+       ``submission`` object is provided for each one.
 
        * ``answer``: string; The value that the student entered, or the display
          name of the value selected.
-       * ``correct``: Boolean; 'true', 'false'
+       * ``correct``: Boolean; 'true', 'false'.
+       * ``group_label``: string; Present only for questions that have multiple
+         input types, such as a multiple choice problem that includes a text
+         input field for learners to provide a rationale for their choice,
+         within the response type. Presents the question or prompt from the
+         ``<label>`` element.
        * ``input_type``: string; The type of value that the student supplies
          for the ``response_type``. Based on the XML element names used in the
          advanced editor. Examples include 'checkboxgroup', 'radiogroup',
          'choicegroup', and 'textline'.
        * ``question``: string; Provides the text of the question.
-       * ``response_type``: string; The type of problem. Based on the XML
+       * ``response_type``: string; The type of problem. Based on the OLX
          element names used in the advanced editor. Examples include
          'choiceresponse', 'optionresponse', and 'multiplechoiceresponse'.
        * ``variant``: number; For problems that use problem randomization
