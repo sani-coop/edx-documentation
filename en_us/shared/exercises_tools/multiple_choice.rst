@@ -25,7 +25,7 @@ Overview
 In multiple choice problems, learners select one option from a list of answer
 options. Unlike :ref:`dropdown<Dropdown>` problems, where the answer choices
 do not appear until the learner selects the dropdown arrow, answer choices for
-multiple choice problems are always visible directly below the question.
+multiple choice problems are immediately visible directly below the question.
 
 Multiple choice problems can also have several advanced options, such as
 reordering, or shuffling, the set of answer choices for each learner. For more
@@ -185,8 +185,9 @@ When you add a multiple choice problem, you can choose one of these templates.
 
 * **Multiple Choice with Hints and Feedback**
 
-These templates include the Markdown formatting that you use in the simple
-editor to add a problem without, or with, hints and feedback.
+These templates include the Markdown formatting that you use in the
+:ref:`simple editor<Simple Editor>` to add a problem without, or with, hints
+and feedback.
 
 .. include:: ../../../shared/exercises_tools/Section_simple_editor.rst
 
@@ -194,8 +195,9 @@ editor to add a problem without, or with, hints and feedback.
 Use the Advanced Editor to Add a Multiple Choice Problem
 ========================================================================
 
-You can use the advanced editor to identify the elements of a multiple choice
-problem with OLX. For more information, see :ref:`Checkbox Problem XML`.
+You can use the :ref:`advanced editor<Advanced Editor>` to identify the
+elements of a multiple choice problem with OLX. For more information, see
+:ref:`Multiple Choice Problem XML`.
 
 .. include:: ../../../shared/exercises_tools/Section_advanced_editor.rst
 
@@ -256,8 +258,7 @@ For example, the following problem has feedback for every answer option.
 Configuring Feedback in the Advanced Editor
 ============================================
 
-In the :ref:`advanced editor<Advanced Editor>`, you configure feedback
-with the following syntax.
+In the advanced editor, you configure feedback with the following syntax.
 
 .. code-block:: xml
 
@@ -271,7 +272,7 @@ For example, the following problem has feedback for each answer.
 
   <problem>
     <multiplechoiceresponse>
-      <label="Which of the following is an example of a vegetable?"</label>
+      <label>Which of the following is an example of a vegetable?</label>
       <description>You can select only one option.</description>
       <choicegroup type="MultipleChoice">
         <choice correct="false">apple
@@ -386,9 +387,8 @@ Awarding Partial Credit in a Multiple Choice Problem
 ****************************************************
 
 You can configure a multiple choice problem so that specific incorrect answers
-award learners partial credit for the problem. You must use the `advanced
-editor <Use the Advanced Editor to Edit a Multiple Choice Problem>`_ to
-configure partial credit.
+award learners partial credit for the problem. You must use the :ref:`advanced
+editor<Advanced Editor>` to configure partial credit.
 
 .. only:: Partners
 
@@ -803,7 +803,7 @@ To add shuffling to a problem, you add ``shuffle="true"`` to the
 To make the location of an answer fixed in a shuffled list, add
 ``fixed="true"`` to the ``choice`` element for the answer.
 
-.. I removed the "rerandomize" attribute as it does not get added to the OLX when changed in settings (but it does work). Tested on Edge as well as the  sandbox. - Alison 4 Aug 2016
+.. I removed the "rerandomize="always" attribute from the <problem> element as it does not work. Looks like you must set this in settings now? Tested on Edge as well as the  sandbox. - Alison 4 Aug 2016
 
 .. code-block:: xml
 
@@ -847,7 +847,10 @@ the :ref:`advanced editor<Advanced Editor>`.
   ``<choice>`` elements: ``<choice correct="false"
   explanation-id="feedback1">``.
 
-* Add a ``<targetedfeedbackset>`` element before the ``<solution>`` element.
+* You can use the ``<solution>`` element for the correct answer.
+
+* Add a ``<targetedfeedbackset>`` element after the
+  ``<multiplechoiceresponse>`` element.
 
 * Within ``<targetedfeedbackset>``, add one or more ``<targetedfeedback>``
   elements.
@@ -859,10 +862,9 @@ the :ref:`advanced editor<Advanced Editor>`.
 * Within each ``<targetedfeedback>`` element use HTML formatting, such as
   ``<p></p>`` tags, to enter your explanation for the specified answer option.
 
-* You can use the ``<solution>`` element for the correct answer.
-
 For example, the OLX for a multiple choice problem follows, showing a unique ID
-for each answer choice.
+for each answer choice. This is immediately followed by OLX that defines the
+targeted feedback.
 
 .. code-block:: xml
 
@@ -875,20 +877,19 @@ for each answer choice.
         <choice correct="true" explanation-id="correct">The iPod</choice>
         <choice correct="false" explanation-id="feedback3">The vegetable peeler</choice>
       </choicegroup>
+      <solution explanation-id="correct">
+        <div class="detailed-solution">
+          <p>The iPod directly competed with portable CD players.</p>
+        </div>
+      </solution>
     </multiplechoiceresponse>
-
-
-This is immediately followed by OLX that defines the targeted feedback.
-
-.. code-block:: xml
-
     <targetedfeedbackset>
       <targetedfeedback explanation-id="feedback1">
         <div class="detailed-targeted-feedback">
           <p>Targeted Feedback</p>
-          <p>The iPad came out later and did not directly compete with portable
-            CD players.</p>
-        </div>
+          <p>The iPad came out later and did not directly compete with
+           portable CD players.</p>
+         </div>
       </targetedfeedback>
       <targetedfeedback explanation-id="feedback2">
         <div class="detailed-targeted-feedback">
@@ -903,11 +904,6 @@ This is immediately followed by OLX that defines the targeted feedback.
         </div>
       </targetedfeedback>
     </targetedfeedbackset>
-    <solution explanation-id="correct">
-      <div class="detailed-solution">
-        <p>The iPod directly competed with portable CD players.</p>
-      </div>
-    </solution>
   </problem>
 
 .. _Answer Pools in a Multiple Choice Problem:
@@ -942,8 +938,8 @@ problem in the :ref:`advanced editor<Advanced Editor>`.
 
 * If you include more than one correct answer among the options, for each
   ``<solution>`` element, add an ``explanation-id`` attribute and a value that
-  maps back to a specific correct answer. For example, ``<solution explanation-
-  id="correct1">``.
+  maps back to a specific correct answer. For example, ``<solution
+  explanation-id="correct1">``.
 
 * Place the ``<solution>`` elements within a ``<solutionset>`` element.
 
@@ -971,22 +967,20 @@ explanation ID.
         <choice correct="false">The iMac</choice>
         <choice correct="true" explanation-id="iPhone">The iPhone</choice>
       </choicegroup>
+      <solutionset>
+        <solution explanation-id="iPod">
+          <div class="detailed-solution">
+            <p>Explanation</p>
+            <p>The iPod is Apple's portable digital music player.</p>
+          </div>
+        </solution>
+        <solution explanation-id="iPhone">
+          <div class="detailed-solution">
+            <p>Explanation</p>
+            <p>In addition to being a cell phone, the iPhone can store and play
+             your digital music.</p>
+          </div>
+        </solution>
+      </solutionset>
     </multiplechoiceresponse>
-    <solutionset>
-      <solution explanation-id="iPod">
-        <div class="detailed-solution">
-          <p>Explanation</p>
-          <p>Yes, the iPod is Apple's portable digital music player.</p>
-        </div>
-      </solution>
-      <solution explanation-id="iPhone">
-        <div class="detailed-solution">
-          <p>Explanation</p>
-          <p>In addition to being a cell phone, the iPhone can store and play
-           your digital music.</p>
-        </div>
-      </solution>
-    </solutionset>
   </problem>
-
-.. I was not able to get this to work. - Alison 11 Aug 2016
