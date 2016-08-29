@@ -23,14 +23,14 @@ Creating Graded or Ungraded Problems
 =====================================
 
 All problems receive a point score. However, when you establish the grading
-policy for your course, you sepcify the assignment types that will count toward
+policy for your course, you specify the assignment types that will count toward
 learners' grades; for example, homework, lab, midterm, and final.
 
 As you develop your course, you can add problem components to the units in any
 subsection. The problem components that you add automatically inherit the
 assignment type that is defined at the subsection level. You can only set
-assignment types at the subsection level, not for units or individual problem
-components.
+assignment types at the subsection level, not at the unit or individual
+component level.
 
 For more information, see :ref:`Grading Policy`.
 
@@ -57,7 +57,7 @@ problem settings. For a detailed description of each setting, see
 Display Name
 ===============
 
-With OLX, you set the display name as an attribute of the ``<problem>``
+Using OLX, you set the display name as an attribute of the ``<problem>``
 element.
 
 .. code-block:: xml
@@ -68,7 +68,7 @@ element.
 Maximum Attempts
 ==============================
 
-With OLX, you set the maximum attempts as an attribute of the ``<problem>``
+Using OLX, you set the maximum attempts as an attribute of the ``<problem>``
 element.
 
 .. code-block:: xml
@@ -82,7 +82,7 @@ element.
 Problem Weight
 ==============================
 
-With OLX, you set the component weight as an attribute of the ``<problem>``
+Using OLX, you set the component weight as an attribute of the ``<problem>``
 element.
 
 .. code-block:: xml
@@ -95,14 +95,14 @@ element.
 Randomization
 ===============
 
-With OLX, you set value randomization as an attribute of the ``<problem>``
+Using OLX, you set value randomization as an attribute of the ``<problem>``
 element.
 
 .. code-block:: xml
 
   <problem rerandomize="always"></problem>
 
-You can specify the following values.
+You can specify the following values for this attribute.
 
 * always
 * on_reset
@@ -115,14 +115,14 @@ You can specify the following values.
 Show Answer
 ===============
 
-With OLX, you set the show answer preference as an attribute of the
+Using OLX, you set the show answer preference as an attribute of the
 ``<problem>`` element.
 
 .. code-block:: xml
 
   <problem showanswer="correct_or_past_due"></problem>
 
-You can specify the following values.
+You can specify the following values for this attribute.
 
 * always
 * answered
@@ -139,7 +139,7 @@ You can specify the following values.
 Show Reset Button
 =================
 
-With OLX, you set the show reset button preference as an attribute of the
+Using OLX, you set the show reset button preference as an attribute of the
 ``<problem>`` element.
 
 .. code-block:: xml
@@ -204,19 +204,19 @@ ask your learners to go back and resubmit answers to a problem.
 Multiple Problems in One Component
 ***********************************
 
-You might want to create a problem that has more than one response type. For
+You can create a problem that includes more than one response type. For
 example, you might want to create a numerical input problem and then include a
-multiple choice problem about that numerical input problem. Or, you might want
-a learner to be able to check the answers to many problems at one time. To do
-this, you can include multiple problems inside a single ``<problem>`` element.
-The problems can be different types.
+multiple choice problem that refers to the numerical input problem. Or,
+you might want a learner to be able to check the answers to many problems at
+one time. To do this, you can include multiple problems inside a single
+``<problem>`` element. The problems can be different types.
 
 Each question and its answer options are enclosed by the element that
 identifies the type of problem, such as ``<multiplechoiceresponse>`` for a
 multiple choice question or ``<formularesponse>`` for a math expression input
 question.
 
-You can provide a different explanation for each question with the
+You can provide a different explanation for each question by using the
 ``<solution>`` element.
 
 As a best practice, edX recommends that you avoid including unformatted
