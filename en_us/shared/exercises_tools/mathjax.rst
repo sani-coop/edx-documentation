@@ -11,16 +11,12 @@ components using LaTeX notation into beautiful math.
 
 This topic provides some pointers to get you started. Many resources for
 learning and using MathJax are available online, including the official
-`MathJax Documentation<http://docs.mathjax.org/en/latest/index.html>`_ . A
-tutorial is available on the `Mathematics
-meta<http://meta.math.stackexchange.com/questions/5020/mathjax- basic-tutorial-
-and-quick-reference>`_ stack exchange. Additional documentation, with a testing
-tool, is available on the `Tree of
-Math<http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm>`_
-site.
+`MathJax Documentation`_ . A tutorial is available on the `Mathematics meta`_
+stack exchange. Additional documentation, with a testing tool, is available on
+the `Tree of Math`_ site.
 
-A MathJax equation can appear with other text in the paragraph (inline) or on
-its own dedicated line (display).
+A MathJax equation can appear with other text in the paragraph (inline format)
+or on its own dedicated line (display format).
 
 - For inline equations, you can do either of the following.
 
@@ -72,3 +68,7 @@ appears on its own line (display).
  :alt: A composite image of four views of the same multiple choice problem. The
      simple editor Markdown and advanced editor OLX are shown at the top, with
      the rendered problem on the Studio unit page and in the LMS below.
+
+.. _MathJax Documentation: http://docs.mathjax.org/en/latest/index.html
+.. _Mathematics meta: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
+.. _Tree of Math: http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm
