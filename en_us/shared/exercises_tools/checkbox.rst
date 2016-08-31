@@ -765,8 +765,9 @@ Attributes
 
    * - Attribute
      - Description
-   * - ``partial_credit`` (optional)
-     - Specifies the type of partial credit given. ``EDC`` or ``halves``.
+   * - ``partial_credit``
+     - Optional. Specifies the type of partial credit given. ``EDC`` or
+       ``halves``.
 
 Children
 ========
@@ -862,9 +863,9 @@ Attributes
 
    * - Attribute
      - Description
-   * - ``selected`` (required)
-     - ``true`` or ``false``. Indicates if the feedback is given when the
-       answer option is selected, or when it is not selected.
+   * - ``selected``
+     -  Required. ``true`` or ``false``. Indicates if the feedback is given
+        when the answer option is selected, or when it is not selected.
 
 Children
 ========
