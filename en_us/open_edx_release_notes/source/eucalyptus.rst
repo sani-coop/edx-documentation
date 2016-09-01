@@ -121,7 +121,7 @@ retrieval, the Open edX platform now uses the Django file storage API. In
 addition to S3, you can now configure an OpenStack Swift Object Store as the
 cloud storage provider for certain system features.
 
-For more information, see the `Configuring Data Storage`_ wiki page..
+For more information, see the `Configuring Data Storage`_ wiki page.
 
 .. _Configuring Data Storage: https://openedx.atlassian.net/wiki/display/OpenOPS/Configuring+Data+Storage
 
