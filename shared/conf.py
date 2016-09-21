@@ -29,7 +29,7 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
     'sphinx.ext.coverage',
-    'sphinx.ext.pngmath',
+    # 'sphinx.ext.imgmath',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.extlinks',
@@ -88,7 +88,7 @@ FEEDBACK_FORM_FMT = "https://docs.google.com/forms/d/1T5QGnYb_QnQoMO7T_eatq02miP
 
 def feedback_form_url(project, page):
     """Create a URL for feedback on a particular page in a project."""
-    return FEEDBACK_FORM_FMT.format(pageid=urllib.quote("{}: {}".format(project, page)))
+    return FEEDBACK_FORM_FMT.format(pageid=urllib.parse.quote("{}: {}".format(project, page)))
 
 # We want the feedback_form_url function available in HTML templates, but it
 # makes html_context un-JSON-able, so don't add it if we are doing JSON.
