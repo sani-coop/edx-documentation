@@ -121,20 +121,22 @@ retrieval, the Open edX platform now uses the Django file storage API. In
 addition to S3, you can now configure an OpenStack Swift Object Store as the
 cloud storage provider for certain system features.
 
-Documentation updates for this feature are currently in progress.
+For more information, see the `Configuring Data Storage`_ wiki page.
 
-.. For more information, see TBD.
+.. _Configuring Data Storage: https://openedx.atlassian.net/wiki/display/OpenOPS/Configuring+Data+Storage
 
 ==========================
 Themes for Multiple Sites
 ==========================
 
-With this release, it is now possible to configure themes for multiple sites
-in a single installation of the Open edX platform.
+With this release, it is now possible to configure themes for multiple sites in
+a single installation of the Open edX platform. For more information about how
+to configure multiple sites for your installation, see
+:ref:`installation:Configuring Open edX Sites`.
 
-Documentation updates for this feature are currently in progress. For real time
-conversations about theming, join our community `Slack`_ team on the #theming
-channel.
+Documentation updates for the theming feature are currently in progress. For
+real time conversations about theming, join our community `Slack`_ team on the
+#theming channel.
 
 .. _Slack: https://openedx-slack-invite.herokuapp.com/
 
@@ -550,6 +552,26 @@ account.
 Changes listed for 13 July 2016 and before are included in the Eucalyptus
 release of Open edX.
 
+
+**************
+Patch Releases
+**************
+
+==============================
+2 September 2016: Eucalyptus.2
+==============================
+
+* A problem that caused the Django Debug Toolbar to raise a "process() takes
+  exactly 3 arguments (2 given)" exception has been fixed.
+
+* Course discussion performance has been improved. (:jira:`TNL-5173`)
+
+* Learners can now correctly add a comment to a response in inline course
+  discussions.  (:jira:`TNL-5389`)
+
+* Links to vertical blocks have been fixed. (:jira:`TNL-5003`)
+
+* The install_stack.sh file now creates directories differently.
+
 .. include:: links.rst
 .. include:: ../../links/links.rst
-

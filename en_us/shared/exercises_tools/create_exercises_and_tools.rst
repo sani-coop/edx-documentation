@@ -37,6 +37,8 @@ supported or provisionally supported exercises, problem types, or tools are
 available for adding to your course. To add unsupported problem types and
 tools, see :ref:`Add_Unsupported_Exercises_Problems`.
 
+.. Internal note: For the OLX Guide there is a separate levels_of_support.rst file under olx/source/problem-xml that contains the levels of support info
+
 
 .. list-table::
    :widths: 25 60
@@ -375,10 +377,7 @@ tools that you can add to your course.
      - Word clouds arrange text that learners enter in response to a question
        into a colorful graphic.
      - Provisional support
-   * - :ref:`Zooming Image`
-     - Learners can view sections of an image in detail. You specify the
-       sections in an image that can be enlarged.
-     - Full support
+
 
 
 .. _Unsupported Additional Exercises and Tools:
@@ -462,6 +461,10 @@ tools available in Studio. For more information, see
        team and learners to work together to maintain the list of resources.
        For example, team members and learners can suggest new resources, vote
        for useful ones, or flag abuse and spam.
+     - Not supported
+   * - :ref:`Zooming Image`
+     - Learners can view sections of an image in detail. You specify the
+       sections in an image that can be enlarged.
      - Not supported
 
 
