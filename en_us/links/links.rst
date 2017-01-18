@@ -4,6 +4,8 @@
 
 .. EdX Links
 
+.. _Math Formatting in Course Discussions: https://courses.edx.org/courses/edX/DemoX.1/2014/wiki/edX.DemoX.1.2014/math-formatting-course-discussions/
+
 .. _change log for the Backbone.js library: https://github.com/jashkenas/backbone/blob/master/index.html#L4299
 
 .. _Query string syntax: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax
@@ -256,7 +258,7 @@
 .. _MOOCdb project: http://moocdb.csail.mit.edu/
 .. _MOOCczar project: https://github.com/UQ-UQx
 .. _Google Calendar website: https://www.google.com/calendar
-
+.. _Adobe Flash Player: https://get.adobe.com/flashplayer/
 .. _Oppia XBlock: https://github.com/oppia/xblock
 
 .. _Durham University Alt Text Checker: https://www.dur.ac.uk/cis/web/accessibility/tools/alttext/
@@ -450,6 +452,8 @@
 .. _Verified Certificates: https://www.edx.org/verified-certificate
 
 .. _XSeries Programs: https://www.edx.org/xseries
+
+.. _MicroMasters Programs: https://www.edx.org/micromasters
 
 .. _financial assistance application: https://courses.edx.org/financial-assistance
 

@@ -11,6 +11,12 @@ This topic describes how to add, edit, and delete contributions to discussions.
   :local:
   :depth: 1
 
+.. note::
+  You might want to enter mathematical or scientific expressions in a
+  discussion. For information about how to enter plain text so that it will
+  appear as a formatted mathematical expression, see `Math Formatting in Course
+  Discussions`_.
+
 .. _Add a Post:
 
 **************
@@ -71,6 +77,9 @@ information, see :ref:`Explore Posts`.
 After you decide on a post type and topic, you can add your post on the
 **Discussion** page or in the body of the course.
 
+
+.. _Add a post on discussion page:
+
 ************************************
 Add a Post on the Discussion Page
 ************************************
@@ -93,14 +102,24 @@ topics on the **Discussion** page.
 #. Enter the text of your post. To format the text or to add links or
    images, use the formatting options above the text box.
 
-   .. note:: Any text formatting or images that you add are only visible when
-      others read your post in a web browser. The edX mobile app currently does
-      not currently display text formatting or images.
+   Any text formatting or images that you add are only visible when others
+   read your post in a web browser. The edX mobile app currently does
+   not display added formatting or images.
 
-In some courses, you can add posts, responses, and comments anonymously. In such
-courses, a **Post Anonymously** check box appears under the field where you
-enter your text. When you post anonymously, the discussion moderation team can
-see your username, but other learners cannot.
+   .. note:: If you include an image with your post, include a description so
+      that learners who use screen readers to access the course can understand
+      the image's content and purpose. The description also displays in place
+      of the image if problems occur with the image file. If the image has no
+      functional purpose, leave the **Description** field empty and select
+      **This image is for decorative purposes only and does not require a
+      description**.
+
+      The maximum size for an uploaded file is 1 MB.
+
+In some courses, you can add posts, responses, and comments anonymously. If
+this is the case, a **Post Anonymously** option is available under the field
+where you enter your text. When you post anonymously, the discussion
+moderation team can see your username, but other learners cannot.
 
 
 ************************************
@@ -115,37 +134,30 @@ The following steps apply only to content-specific discussions.
 
 #. Select **Course**.
 
-#. Open the unit in the course that includes the discussion topic that you want
-   to add to.
+#. Open the unit in the course that includes the discussion topic that you
+   want to add a post to.
 
 #. Select **Show Discussion** to read what others have already contributed to
    the conversation.
 
-   You can scroll through the posts that have already been added: the title
-   and the first few lines of each post appear. To read an entire post, view
-   the responses to it, and see any comments, select **Expand discussion**.
+   The title and the first line of each post is shown in the list of posts.
 
-#. Select **Add a Post** to contribute to the discussion.
+   To read an entire post and view its responses and comments, select any part
+   of the post preview.
 
-#. Select **Question** or **Discussion** to select the type of post you want to
-   create.
+#. To contribute a new post to the discussion, select **Add a Post** and follow
+   the steps that you use to add a post to the discussion page. For more
+   information, see :ref:`Add a post on discussion page`.
 
-#. In the **Title** field, enter a short, descriptive identifier for your post.
-   The title is the part of your post that others see when they are browsing on
-   the **Discussion** page or scrolling through one of the content-specific
-   topics.
+   To respond to an existing post or comment on an existing response, follow
+   the steps described in :ref:`Add Response`.
 
-#. Enter the text of your post. Select the buttons above the text field to see
-   options for formatting the text and for adding links or images.
+.. note:: In some courses, you can add posts, responses, and comments
+   anonymously. If this is the case, a **Post Anonymously** option is
+   available under the field where you enter your text. When you post
+   anonymously, the discussion moderation team can see your username, but
+   other learners cannot.
 
-   .. note:: Any text formatting or images that you add are only visible when
-      others read your post in a web browser. The edX mobile app currently does
-      not currently display added formatting or images.
-
-In some courses, you can add posts, responses, and comments anonymously. If
-this is the case, a **Post Anonymously** check box appears under the field
-where you enter your text. When you post anonymously, the discussion
-moderation team can see your username, but other learners cannot.
 
 .. _Add Response:
 
@@ -192,10 +204,8 @@ topic inside the course.
 #. In the unit that contains the discussion topic where you want to make
    your contribution, select **Show Discussion**.
 
-#. Scroll to the post that you want to contribute to. To help you decide
+#. Select the post that you want to contribute to. To help you decide
    where to add your thoughts, review the current responses and their comments.
-
-#. Under the text of the post, select **Expand discussion**.
 
 #. Add a response or comment.
 
@@ -217,7 +227,7 @@ edit or delete contributions from other learners.
 #. Locate the contribution that you want to edit or delete, either in the body
    of the course or on the **Discussion** page.
 
-#. In the upper-right corner of the contribution, select the "More" icon (...).
+#. In the upper corner of the contribution, select the "More" icon (...).
    A menu opens.
 
    .. image:: ../../../shared/students/Images/Disc_EditDelete.png
@@ -233,4 +243,6 @@ edit or delete contributions from other learners.
     of the post.
 
   * To delete the contribution, select **Delete**, and then select **OK** in
-    the pop-up confirmation box.
+    the confirmation box.
+
+.. include:: ../../../links/links.rst

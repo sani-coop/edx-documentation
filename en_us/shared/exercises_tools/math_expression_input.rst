@@ -62,6 +62,7 @@ expression input problem that contains two questions.
  :alt: A problem shown in the LMS that requests the symbolic expressions for
    displacement and for elongation of a blade. Both questions were answered
    correctly. The solutions are not shown.
+ :width: 500
 
 The open learning XML (OLX) markup for this example math expression input
 problem follows.
@@ -277,7 +278,8 @@ Children
 ``<label>``
 ***********
 
-Required. Identifies the question or prompt.
+Required. Identifies the question or prompt. You can include HTML tags within
+this element.
 
 Attributes
 ==========
@@ -292,7 +294,8 @@ None.
 ``<description>``
 *****************
 
-Optional. Provides clarifying information about how to answer the question.
+Optional. Provides clarifying information about how to answer the question. You
+can include HTML tags within this element.
 
 Attributes
 ==========

@@ -1,46 +1,46 @@
 .. _Certificates:
 
-#############################
-Receiving Your Certificate
-#############################
+###############################
+Receiving Your edX Certificate
+###############################
 
 .. The Open edX Learner's Guide also includes a Certificates topic, but it has
 .. no shared content with this topic and there is no "Certificates" file in the
 .. Shared folder.
 
-This topic describes edX certificates and how to access them.
+EdX awards certificates for courses that have a verified track and for edX
+programs such as XSeries and MicroMasters programs. Most certificates are web
+certificates that you can save, share, and print.
+
+To receive a certificate for an edX course, you enroll in the :ref:`verified
+track<SFD Verified Track>` for the course, pay the certificate fee,
+:ref:`verify your identity<SFD Verify Your Identity>` with a webcam and a
+government-issued ID, and earn a passing grade.
+
+To receive a certificate for a program, you must receive a verified certificate
+for each course in the series of courses that make up the program. Some
+programs might have additional requirements.
+
+This section describes edX certificates and how you access them.
 
 .. contents::
  :local:
  :depth: 1
 
-**********
-Overview
-**********
-
-EdX awards certificates for courses that have a verified track and for edX
-programs, such as XSeries programs. Most certificates are web certificates that
-you can save or print.
-
-To receive a certificate, you must enroll in the verified track for a
-course, verify your identity, and earn a passing grade.
-
-Transcripts are not available for edX course work.
-
 .. note::
-    Some edX courses offer academic credit. These courses have different
-    requirements and steps for earning certificates. For more information, see
-    :ref:`SFD Academic Course Credit Index`.
+    Some edX courses offer academic credit. If you are taking a course for
+    academic credit, different requirements and steps for earning certificates
+    apply. For more information, see :ref:`SFD Academic Course Credit Index`.
 
 .. _SFD Certificate Types:
 
 ****************************
-Certificate Types
+About Certificate Types
 ****************************
 
-EdX currently offers the following types of certificates: a verified
-certificate for a single course, and an XSeries certificate for a series of
-courses. Not all courses offer certificates.
+EdX currently offers the following types of certificates: verified certificates
+for single courses, and program certificates for a series of courses. Not all
+courses offer certificates.
 
 .. contents::
   :local:
@@ -50,28 +50,27 @@ courses. Not all courses offer certificates.
 
   In the past, edX also offered free honor code certificates. These
   certificates are no longer available for most new courses. If you earned an
-  honor code certificate in a previous course, you still have access to your
-  certificate through your dashboard.
+  honor code certificate in a previous course, you can still access your
+  certificate through your :ref:`dashboard<SFD Learner Dashboard>`.
 
   For more information, see `News About edX Certificates`_.
 
 .. _SFD Verified Certificates:
 
-======================
-Verified Certificates
-======================
+==============================
+About Verified Certificates
+==============================
 
 A verified certificate shows not only that you successfully completed your edX
-course, but also that you verified your identity by using a webcam and an
-official government-issued photo ID from your country or region.
+course, but also that you :ref:`verified your identity<SFD Verify Your
+Identity>` by using a webcam and an official government-issued photo ID.
 
 Verified certificates include the following information.
 
-* The name that you entered as your full name in your account settings.
+* The name that you entered as your full name when you created your account.
 
-  To make sure that the name on your certificate is correct, you can check the
-  name in your account settings before your course ends. For more information,
-  see :ref:`SFD Basic Information`.
+  To verify or change your full name before the course ends, check your account
+  settings. For more information, see :ref:`SFD Basic Information`.
 
 * The name of the course.
 * The edX partner institution that created the course.
@@ -88,8 +87,8 @@ Verified certificates include the following information.
   need a record of your grade, you can print your **Progress** page or
   dashboard.
 
-For more information about enrolling in a course and working toward a verified
-certificate, see :ref:`SFD Verified Track`.
+For more information about enrolling in the verified track for a course and
+working toward a verified certificate, see :ref:`Enroll in the Verified Track`.
 
 For more information about the benefits of verified certificates, and to see an
 example of a verified certificate, see `Verified Certificates`_.
@@ -99,35 +98,38 @@ catalog`_.
 
 .. _SFD XSeries Certificates:
 
-=========================
-XSeries Certificates
-=========================
+=======================================================
+About XSeries and MicroMasters Program Certificates
+=======================================================
 
-XSeries certificates show that you have successfully earned a verified
-certificate for each course in a series of courses that make up an XSeries
-program.
+Certificates for XSeries and MicroMasters programs show that you have
+successfully earned a verified certificate for each course in the series of
+courses that make up the program.
 
-XSeries certificates include the following information.
+XSeries and MicroMasters program certificates include the following
+information.
 
 * Your name.
-* The name of the XSeries program.
-* The edX partner institution that created the XSeries program.
-* The names and signatures of one or more members of the XSeries team.
+* The name of the program.
+* The edX partner institution that created the program.
+* The names and signatures of one or more members of the program team.
 * The month and year when the certificate was issued.
 * A certificate ID that others can use to validate the certificate.
 
 For more information about XSeries programs, see `XSeries Programs`_.
 
-For a list of all courses that are part of an XSeries program, see the `edX
-course catalog`_.
+For more information about MicroMasters programs, see `MicroMasters Programs`_.
+
+For a list of all courses that are part of an XSeries or MicroMasters program,
+see the `edX course catalog`_.
 
 *************************
 Receiving a Certificate
 *************************
 
-Certificates for instructor-paced courses and for many self-paced courses are
-distributed automatically after a course or XSeries ends. In this case, you do
-not have to complete any additional steps to receive your certificate.
+In instructor-paced courses and in many self-paced courses, certificates are
+distributed automatically after a course or program ends. In these cases, you
+do not have to complete any additional steps to receive your certificate.
 
 In an instructor-paced course, the course team sets specific due dates for
 assignments and exams, and you complete the course within a defined time
@@ -139,16 +141,17 @@ course work before the course ends.
 
 .. contents::
   :local:
-  :depth: 1
+  :depth: 3
 
 ====================================================
 Receive a Certificate for an Instructor-Paced Course
 ====================================================
 
-Most courses distribute certificates within two weeks after the course ends.
+Most instructor-paced courses distribute certificates within two weeks after
+the course ends.
 
-When your certificate is ready, a link to your certificate is visible on your
-dashboard, along with your final grade.
+When your certificate for a course is ready, a link to the certificate and your
+final grade are visible on the course card on your dashboard.
 
 .. image:: ../../shared/students/Images/SFD_Cert_web.png
    :width: 600
@@ -158,11 +161,10 @@ Select **View Certificate** to open the certificate in your browser. You can
 then share and print the certificate. For more information, see :ref:`SFD
 Sharing or Printing a Certificate`.
 
-.. note::
-  As of September 2015, edX verified certificates are web certificates. If you
-  completed a course before September 2015, the certificate is in PDF format.
-  Instead of a **View Certificate** option, you see a **Download Certificate
-  (PDF)** option for these certificates.
+.. note::   As of September 2015, edX verified certificates are web
+   certificates. If you completed a course before September 2015, the
+   certificate is in PDF format. You see a **Download Certificate (PDF)** option
+   instead of a **View Certificate** option for PDF certificates.
 
 If your certificate is not yet ready, you see the following message under the
 course name on your dashboard.
@@ -262,20 +264,21 @@ these steps.
    * To download your certificate from your dashboard, select **Download Your
      Certificate** next to the name of your course.
 
-==============================
-Receive an XSeries Certificate
-==============================
+======================================================
+Receive an XSeries or MicroMasters Program Certificate
+======================================================
 
-You receive an XSeries certificate automatically after you earn verified
-certificates in all of the individual courses in an XSeries program. XSeries
-certificates are distributed immediately after you receive the verified
-certificate for the final course in the series.
+You receive a certificate for an XSeries or MicroMasters program automatically
+after you earn verified certificates in all of the individual courses in the
+program. Program certificates are distributed immediately after you receive the
+verified certificate for the final course in the program.
 
-XSeries certificates are visible on the **Programs** tab on your dashboard
-dashboard. The list of XSeries certificates that you have earned is one side of
-the page.
+The XSeries and MicroMasters program certificates that you have earned are
+visible on one side of the **Programs** tab on your dashboard.
 
 For more information about XSeries programs, see `XSeries Programs`_.
+
+For more information about MicroMasters programs, see `MicroMasters Programs`_.
 
 .. _SFD Sharing or Printing a Certificate:
 
@@ -283,39 +286,60 @@ For more information about XSeries programs, see `XSeries Programs`_.
 Sharing or Printing a Certificate
 **********************************
 
-You can share and print web certificates and PDF certificates.
+You can print your certificates and share links to them on social media.
+
+.. note:: As of September 2015, edX verified certificates are web
+   certificates. If you completed a course before September 2015, the
+   certificate is in PDF format.
 
 .. contents::
   :local:
   :depth: 1
 
-=======================================
-Share a Web Certificate on Social Media
-=======================================
+.. _Share Certificates on Social Media:
 
-You can share your web certificates on social media sites such as Facebook,
-LinkedIn, and Twitter.
+===============================================
+Share Your Certificates on Social Media
+===============================================
+
+You can share your web or PDF certificates on social media sites such as
+Facebook, LinkedIn, and Twitter.
 
 .. note::
- You can use these steps to share course and XSeries certificates on most
+ You can use these steps to share course and program certificates on most
  social media sites. To share an XSeries certificate on LinkedIn, see
  :ref:`Share an XSeries Certificate on LinkedIn`.
 
-#. Ensure you are logged in to the social site on which you want to share your
+#. Sign in to the social media site on which you want to share your
    certificate.
 
-#. On your dashboard, select one of the social media icons at the top of
-   each certificate.
+#. From your dashboard, find the course whose certificate you want to share.
+
+#. Select **View Certificate**, and then on the certificate page, select the
+   social media account that you want to share your certificate to.
+
+   .. note:: For PDF certificates, instead of **View Certificate**, you see
+      the **Download Certificate (PDF)** option.
+
+   To add the edX certification from a PDF certificate to your LinkedIn
+   profile, select **Add to Profile**.
 
    A dialog box for the social media site you selected opens, with the
    certificate URL entered.
 
 #. Complete the steps for the social media site to share your certificate.
 
+   For information about sharing PDF certificates on a social media account
+   other than LinkedIn, see :ref:`Share a PDF Certificate URL`.
+
+
 .. _Share an XSeries Certificate on LinkedIn:
 
 Share an XSeries Certificate on LinkedIn
 ****************************************
+
+.. DOC-3330 calls for an update to this topic for MicroMasters if these steps
+.. apply to MM when certs become available. - Sylvia, 9/16/16
 
 To share an XSeries certificate on LinkedIn, follow these steps.
 
@@ -326,6 +350,7 @@ To share an XSeries certificate on LinkedIn, follow these steps.
 
 #. Follow the steps on the `Adding a Suffix or Certifications to Your Profile
    Name`_ LinkedIn page to open the **Certifications** page on LinkedIn.
+
 #. On the **Certifications** page, enter information in the following fields.
 
    * For **Certification Name**, enter the name of the course.
@@ -333,7 +358,7 @@ To share an XSeries certificate on LinkedIn, follow these steps.
    * For **Certification URL**, enter the URL for your certificate. For more
      information, see :ref:`Share a Web Certificate URL`.
    * (Optional) For **Dates**, enter the month and year when you received your
-     certficiate.
+     certificate.
 
 #. Leave the other fields blank, and then select **Save**.
 
@@ -343,17 +368,17 @@ To share an XSeries certificate on LinkedIn, follow these steps.
 Share a Web Certificate URL
 ===========================
 
-Both course certificates and XSeries certificates have a certificate ID that
-others, such as schools and potential employers, can use to verify that you
-received your certificate. The certificate ID is a 32-digit series of numbers
-and letters that is found at the bottom of the certificate.
+Both course certificates and program certificates have a certificate ID that
+you can share with schools and potential employers so that they can verify
+that you received your certificate. The certificate ID is a 32-digit series of
+numbers and letters that is found at the bottom of the certificate.
 
 To share the certificate URL, you find the certificate URL and then distribute
 the URL using email, social media, or your method of choice.
 
 To find the certificate URL, use one of the following methods.
 
-* Use the address bar.
+* Use the browser address bar.
 
   #. Open the certificate in your browser, and then select the certificate ID.
 
@@ -361,33 +386,85 @@ To find the certificate URL, use one of the following methods.
 
   #. Copy the URL from the browser address bar.
 
+* Get the URL from the certificate ID.
+
+  #. Open the certificate in your browser, and then right-click the certificate
+     ID.
+
+  #. From the menu, select **Copy Link Location**.
+
+     The URL is copied to your computer's clipboard.
+
+  #. Paste the clipboard contents to obtain the certificate URL.
+
 * Create the URL manually.
 
-  #. Open the certificate in your browser.
+  #. Open the certificate in your browser, and then copy the certificate ID.
 
-  #. Locate, but do not select, the certificate ID.
-
-  #. Use the following URL, replacing ``certificate_ID`` with the ID on your
-     certificate.
+  #. Use the following URL, replacing ``certificate_ID`` with the certificate
+     ID that you copied.
 
      ::
 
-       https://credentials.edx.org/credentials/<certificate_ID>
+       https://courses.edx.org/certificates/<certificate_ID>
 
      For example, your certificate URL might resemble the following URL.
 
      ::
 
-       https://credentials.edx.org/credentials/a1b2c3d4e5f6g7h8i9j10k11l12m13n1
+       https://courses.edx.org/certificates/a1b2c3d4e5f6g7h8i9j10k11l12m13n1
+
+
+.. _Share a PDF Certificate URL:
+
+============================
+Share a PDF Certificate URL
+============================
+
+.. note:: If you completed a course before September 2015, your certificate is
+   in PDF format. For PDF certificates, you see a **Download Certificate
+   (PDF)** option instead of a **View Certificate** option.
+
+    For information about adding your edX certification from a PDF certificate to
+    LinkedIn, see :ref:`Share Certificates on Social Media`.
+
+Like web certificates, PDF certificates have a certificate URL that you can
+share with schools and potential employers so that they can verify that you
+received your certificate.
+
+To share the URL for a PDF certificate, follow these steps.
+
+#. On your learner dashboard, locate the course whose certificate you want to
+   share.
+
+#. Select **Download Certificate (PDF)**.
+
+   The certificate opens.
+
+#. Select and copy the URL near the bottom of the certificate. For example, a
+   certificate URL might resemble this one:
+
+   ``https://verify.edx.org/cert/76558cdc28204605809a99a9dd8bafaf``
+
+#. Paste this URL within social media messages or email messages to share your
+   edX achievement.
+
 
 .. _Print a Web Certificate:
 
 =======================
-Print a Web Certificate
+Print a Certificate
 =======================
 
-To print a web certificate, open the certificate and select **Print
-Certificate**.
+To print a web certificate, select **View Certificate** to open the certificate,
+then select **Print Certificate**.
+
+.. note:: If you completed a course before September 2015, your certificate is
+   in PDF format. For PDF certificates, you see a **Download Certificate
+   (PDF)** option instead of a **View Certificate** option.
+
+To print a PDF certificate, select **Download Certificate (PDF)** to open the
+certificate, then select the "Print" icon.
 
 To print your certificate in the most professional looking format, follow these
 guidelines.
@@ -408,17 +485,27 @@ guidelines.
   similar option. Select that option and follow the onscreen instructions to
   print your certificate as a PDF.
 
-=======================
-Share a PDF Certificate
-=======================
 
-You can share your PDF certificates on LinkedIn.
+.. _Getting a Transcript:
 
-On your learner dashboard, select **Add to profile** under the course.
+====================
+Getting a Transcript
+====================
 
-Your profile page in LinkedIn opens, with a prompt to confirm the addition of
-your certificate.
+EdX does not provide course transcripts. EdX certificates do not include your
+final course grade.
 
+However, your final course grade appears with other course information on your
+dashboard of courses, and a complete record of your scores on all course
+assignments and exams appears on the course **Progress** page. If you need a
+record of your performance in a course, use your web browser to print one of
+these pages.
+
+* To access your dashboard, on the edx.org website select your public edX
+  username. Your dashboard opens with a list of your courses.
+
+* To access your **Progress** page for a course, select **View Course** on your
+  dashboard, and then select **Progress**.
 
 
 .. include:: ../../links/links.rst

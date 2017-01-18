@@ -11,7 +11,7 @@ Studio. This section describes the specifications met by successful video
 files, the steps to upload the files, and how you monitor video processing
 at edX.
 
-.. removed "how course teams enable the video upload process in Studio, "
+.. removed "how course teams enable the video upload process in Studio", which is commented out below in this file.
 
 * :ref:`Specifications for Successful Video Files`
 
@@ -175,10 +175,38 @@ partner support team. See :ref:`Create YouTube Channels`.
 .. important:: You must leave the **Video Uploads** page open in your
    browser until the upload process is complete for all files.
 
-When the status of an uploaded file changes to Ready, the file upload process
-is successful. If the status changes to Failed, the file upload process is not
-successful. You can monitor file progress on the **Video Uploads** page or
-download a report.
+When the status of an uploaded file changes to "Ready", the file upload
+process is successful. If the status of an upload is "Failed", the file upload
+process was not successful. You can monitor file progress on the **Video
+Uploads** page or download a report.
+
+
+.. _Delete Videos from Upload Page:
+
+==================================================
+Remove Videos from the Video Uploads Page
+==================================================
+
+A list of every file that you uploaded to the edX servers appears in the
+**Previous Uploads** section of the **Video Uploads** page. You can remove
+videos from the **Previous Uploads** list without affecting course content
+that uses the video ID of successfully uploaded videos.
+
+To remove a video from the **Previous Uploads** list, follow these steps.
+
+#. Open the course in Studio.
+
+#. Select **Content**, then **Video Uploads**.
+
+#. In the **Previous Uploads** list, locate the row for the video that you
+   want to remove, then select the "X" icon in the **Action** column.
+
+#. In the confirmation dialog box that appears, select **Remove** to remove
+   the video.
+
+   The selected video is removed from the **Previous Uploads** list. Course
+   content that uses the video ID of the removed video is not affected.
+
 
 .. _Monitor Video Processing:
 
@@ -210,6 +238,8 @@ The encoding and hosting process assigns these statuses to video files.
   .mp4 or .mov format and meets the other specifications for successful video
   processing. See :ref:`Specifications for Successful Video Files`. Then try
   uploading the file (or its replacement) again.
+
+* **Uploaded** files have successfully completed uploading to the edX servers.
 
 * **In Progress** files are undergoing processing to create additional file
   formats or waiting for successful transfer to the host sites.

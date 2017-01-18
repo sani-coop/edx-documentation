@@ -23,8 +23,8 @@ Overview
 **********
 
 In checkbox problems, learners select one or more options from a list of
-possible answers. To answer the problem correctly, a learner must select all of
-the options that are correct answers, and none of the options that are
+possible answers. To answer the problem correctly, a learner must select all
+of the options that are correct answers, and none of the options that are
 incorrect. The course team must set up each checkbox problem to have at least
 one correct answer.
 
@@ -36,15 +36,20 @@ learners, especially if the problems have a limited number of attempts.
 Example Checkbox Problem
 =============================
 
-In the LMS, learners both check answer options that they believe are correct
-and leave unchecked the answer options that they believe are incorrect to
-complete a checkbox problem. An example of a completed checkbox problem
-follows.
+In the LMS, learners complete a checkbox problem by selecting the answer
+options that they believe are correct as well as leaving unselected the answer
+options that they believe are incorrect. An example of a completed checkbox
+problem follows.
 
 .. image:: ../../../shared/images/CheckboxExample.png
- :alt: An incorrectly answered checkbox problem shown in the LMS. Of the answer
-     options, only two of the three required answer options was checked. An
-     explanation appears below the answer options.
+ :alt: An example checkbox problem in the LMS. This problem was incorrectly
+    answered because the learner selected only two of the three required answer
+    options. An explanation appears below the answer options because the
+    learner also selected "Show Answer".
+
+This problem was incorrectly answered because the learner selected only two of
+the three required answer options. This example also shows that the learner
+selected **Show Answer** to reveal the correct answer and an explanation.
 
 To add the example problem illustrated above, in Studio you use the simple
 editor to enter the following text and Markdown formatting.
@@ -242,7 +247,7 @@ whether learners select a given option or leave it unselected.
 
 ::
 
-  >>Which of the following is an example of a fruit?||Check all that apply.<<
+  >>Which of the following is an example of a fruit?||Select all that apply.<<
 
   [x] apple {{ selected: You are correct that an apple is a fruit because it
   is the fertilized ovary that comes from an apple tree and contains seeds. },
@@ -326,7 +331,7 @@ unselected.
   <problem>
     <choiceresponse>
       <label>Which of the following is an example of a fruit?</label>
-      <description>Check all that apply.</description>
+      <description>Select all that apply.</description>
       <checkboxgroup>
         <choice correct="true">apple
           <choicehint selected="true">You are correct that an apple is a fruit
@@ -510,7 +515,7 @@ updated to provide partial credit.
   <problem>
     <choiceresponse partial_credit="EDC">
       <label>Which of the following is a fruit?</label>
-      <description>Check all that apply.</description>
+      <description>Select all that apply.</description>
       <checkboxgroup>
         <choice correct="true">apple</choice>
         <choice correct="true">pumpkin</choice>
@@ -684,7 +689,7 @@ halves.
   <problem>
     <choiceresponse partial_credit="halves">
       <label>Which of the following is a fruit?</label>
-      <description>Check all that apply.</description>
+      <description>Select all that apply.</description>
       <checkboxgroup>
         <choice correct="true">apple</choice>
         <choice correct="true">pumpkin</choice>
@@ -699,6 +704,10 @@ halves.
 ******************************
 Checkbox Problem OLX Reference
 ******************************
+
+.. note:: You can also set attributes and options by adding a ``<script>`` element.
+ For more information, see :ref:`Using the Script Element<Using the Script
+ Element in Checkbox Problems>`.
 
 ============
 Template
@@ -780,7 +789,8 @@ Children
 ``<label>``
 ***********
 
-Required. Identifies the question or prompt.
+Required. Identifies the question or prompt. You can include HTML tags within
+this element.
 
 Attributes
 ==========
@@ -795,7 +805,8 @@ None.
 ``<description>``
 *****************
 
-Optional. Provides clarifying information about how to answer the question.
+Optional. Provides clarifying information about how to answer the question. You
+can include HTML tags within this element.
 
 Attributes
 ==========
@@ -937,3 +948,68 @@ Children
 
 None.
 
+**************************************
+Advanced Options for Checkbox Problems
+**************************************
+
+.. _Using the Script Element in Checkbox Problems:
+
+========================
+Using the Script Element
+========================
+
+You can use the ``<script>`` element to programmatically set attributes and
+options for your checkbox problems.  You could use this feature to display
+different questions/answers depending on variable factors, like time of day, or
+randomly generated numbers.
+
+Use the Advanced Editor to Configure the Script Element
+*******************************************************
+
+You must use the :ref:`advanced editor<Advanced Editor>` to configure a
+``<script>`` element.
+
+The contents of the ``<script>`` element must be enclosed in ``<![CDATA[`` ...
+``]]>`` markers, to indicate that the enclosed code should not be interpreted
+as XML.
+
+The code in the ``<script>`` element is run on the server before the problem is
+shown to learners.  Note that only Python script types are supported.
+
+The following OLX example uses random numbers to generate different answer
+choices for each learner, and mathematical operators to determine each choice's
+correctness.
+
+.. code-block:: xml
+
+    <problem>
+        <script type="text/python">
+        <![CDATA[
+        random.seed(anonymous_student_id)  # Use different random numbers for each student.
+        a = random.randint(1,10)
+        b = random.randint(1,10)
+        c = a + b
+
+        ok0 = c % 2 == 0 # check remainder modulo 2
+        text0 = "$a + $b is divisible by 2"
+
+        ok1 = c % 3 == 0 # check remainder modulo 3
+        text1 = "$a + $b is divisible by 3"
+
+        ok2 = c % 5 == 0 # check remainder modulo 5
+        text2 = "$a + $b is divisible by 5"
+
+        ok3 = not any([ok0, ok1, ok2])
+        text3 = "None of the above statements is true."
+        ]]>
+        </script>
+        <choiceresponse>
+          <label>Which statements about the number $a+$b are true? Select all that apply.</label>
+          <checkboxgroup direction="vertical">
+            <choice correct="$ok0">$text0 ... (should be $ok0)</choice>
+            <choice correct="$ok1">$text1 ... (should be $ok1)</choice>
+            <choice correct="$ok2">$text2 ... (should be $ok2)</choice>
+            <choice correct="$ok3">$text3 ... (should be $ok3)</choice>
+          </checkboxgroup>
+        </choiceresponse>
+    </problem>

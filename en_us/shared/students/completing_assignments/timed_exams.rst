@@ -61,8 +61,8 @@ To take a timed exam, follow these steps.
 
 #. Select **I am ready to start this timed exam**.
 
-#. Complete the problems in each unit of the exam. Select **Check** to score
-   the problems in the unit. If you do not select **Check**, your responses
+#. Complete the problems in each unit of the exam. Select **Submit** to score
+   the problems in the unit. If you do not select **Submit**, your responses
    will not be scored.
 
 #. Monitor the amount of time remaining in the time display at the top of the
@@ -75,10 +75,9 @@ To take a timed exam, follow these steps.
    My Exam** at the top of the course page. If you run out of time, the exam
    will end automatically.
 
-.. note::
-   You must select **Check** to score the problems in each unit of an exam. If
-   you submit an exam without selecting **Check** in a unit, your exam results
-   will not include scores for any of the problems in that unit.
+.. note::    You must select **Submit** to score the problems in each unit of an
+   exam. If you submit an exam without selecting **Submit** in a unit, your exam
+   results will not include scores for any of the problems in that unit.
 
 .. _requesting_additional_time:
 
@@ -87,7 +86,7 @@ Requesting Additional Time
 **************************
 
 You can request additional time to complete a timed exam. Course teams and
-instructors can increase the time allowed for individual learners to accomodate specific needs.
+instructors can increase the time allowed for individual learners to accommodate specific needs.
 
 You can only request additional time before you begin a timed exam. After you
 start an exam, the course team cannot allow more time for that exam attempt.

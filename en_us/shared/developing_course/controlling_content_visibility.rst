@@ -42,15 +42,18 @@ Prior to release, content is visible to course team members by
 :ref:`previewing the course <Preview Course Content>` or :ref:`viewing the live
 course as staff<View Your Live Course>`.
 
-.. note:: When you set release times in Studio, times are in Coordinated
-   Universal Time (UTC). You might want to verify that you have specified the
-   times that you intend by using a time zone converter such as `Time and Date
-   Time Zone Converter <http://www.timeanddate.com/worldclock/converter.html>`_.
+.. note::
+   When you set release times in Studio, times are in Coordinated Universal
+   Time (UTC). You might want to verify that you have specified the times that
+   you intend by using a time zone converter such as `Time and Date Time Zone
+   Converter <http://www.timeanddate.com/worldclock/converter.html>`_.
 
-   Learners who have specified a time zone in their account settings see
-   course dates and times converted to their specified time zone. Learners who
-   have not specified a time zone in their account settings see course dates
-   and times in UTC.
+   Learners who have specified a time zone in their account settings see course
+   dates and times converted to their specified time zone. Learners who have
+   not specified a time zone in their account settings see course dates and
+   times on their dashboards, in the body of the course, and on their
+   **Progress** pages in the time zone that their browsers specify. Learners
+   see other course dates and times in UTC.
 
 For more information about setting release dates in an instructor-paced course,
 see the following topics.
@@ -203,7 +206,7 @@ earned a minimum score in a prerequisite subsection, follow these steps.
       indicated.
      :width: 600
 
-#. Select the **Access** tab.
+#. Select the **Advanced** tab.
 
 #. Select **Use as a Prerequisite** > **Make this subsection
    available as a prerequisite to other content**.
@@ -213,7 +216,7 @@ earned a minimum score in a prerequisite subsection, follow these steps.
 #. Select the **Configure** icon for the subsection that
    will be hidden until the prerequisite is met.
 
-#. Select the **Access** tab.
+#. Select the **Advanced** tab.
 
 #. In the **Limit Access** > **Prerequisite** menu, select the name of the
    subsection you want to specify as the prerequisite.

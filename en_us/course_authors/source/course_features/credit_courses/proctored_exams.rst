@@ -55,6 +55,8 @@ Minimum Credit Eligible Grade`.
 Learner Requirements for Taking Proctored Exams
 =====================================================
 
+.. note:: Learners cannot complete proctored exams using the edX mobile app.
+
 Learners who agree to take an exam with online proctoring must install
 proctoring software, which checks that the person taking the exam is the same
 person who is taking the course for credit, and also detects any attempts to
@@ -430,6 +432,41 @@ To specify custom proctored exam rules and rule exceptions, follow these steps.
    attempts. Use uncomplicated sentences and words that a global English-
    speaking audience will understand.
 
+.. _Allow Opting Out of Proctored Exams:
+
+*************************************************************
+Allowing Verified Learners to Opt Out of Proctored Exams
+*************************************************************
+
+By default, verified learners can choose to take proctored exams without
+online proctoring, and accept that they are no longer eligible for course
+credit if they make this choice.
+
+If you do not want to give verified learners in your course the choice of
+taking proctored exams without proctoring, you can change a setting on the
+**Advanced Settings** page in Studio.
+
+==============================================================
+Do Not Allow Verified Learners to Opt Out of Proctored Exams
+==============================================================
+
+To remove the option for verified learners to opt out of proctored exams in
+your course, follow these steps.
+
+#. In Studio, select **Settings**, then select **Advanced Settings**.
+
+#. Locate the **Allow Opting Out of Proctored Exams** policy key. The default
+   value is ``true``, which gives verified learners the option of taking
+   proctored exams without proctoring.
+
+#. Change the value of the setting to ``false``.
+
+#. Select **Save Changes**.
+
+After you enable this setting for your course, options for taking exams
+without proctoring are no longer available to verified learners.
+
+
 .. _Respond to Learner Concerns about Proctored Exams:
 
 **********************************************************
@@ -589,8 +626,7 @@ To generate and download a file of proctoring session results, follow these
 steps.
 
 .. important:: Because the proctoring session results file contains
-   confidential, personally identifiable data which might be subject to the
-   Family Educational Rights and Privacy Act (FERPA), be sure to follow your
+   confidential, personally identifiable data, be sure to follow your
    institution's data stewardship policies when you open or save this file.
 
 #. View the live version of your course.

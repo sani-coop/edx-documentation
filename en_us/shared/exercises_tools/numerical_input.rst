@@ -71,11 +71,8 @@ editor to enter the following text and Markdown formatting.
 
    >>In what base is the decimal numeral system?<<
 
-   =10
+   =10 {{The decimal numeral system is in base ten.}}
 
-   [explanation]
-   The decimal numeral system is base ten.
-   [explanation]
 
 The open learning XML (OLX) markup for this example numerical input problem
 follows.
@@ -217,16 +214,29 @@ problem with OLX. For more information, see :ref:`Numerical Input Problem XML`.
 
 .. include:: ../../../shared/exercises_tools/Section_advanced_editor.rst
 
-********************
+************************************************************
+Adding a Tolerance, Multiple Correct Responses, or a Range
+************************************************************
+
+To give learners the option to receive full credit for a close approximation of
+the correct answer, and to support a wide range of possible correct numerical
+answers, you can specify a tolerance for the correct answer, multiple
+individual correct answers, or a range of values to mark as correct for the
+numerical input problem type.
+
+.. contents::
+  :local:
+  :depth: 1
+
+========================
 Adding a Tolerance
-********************
+========================
 
 You can specify a margin of error or tolerance for learner responses. You
 can specify a percentage, number, or range.
 
-========================================
 Add a Tolerance in the Simple Editor
-========================================
+*************************************
 
 To add a tolerance in the simple editor you use the following Markdown
 formatting.
@@ -239,9 +249,8 @@ formatting.
   answer value add ``+-{number}%``. For example, to include a 2% tolerance, add
   ``+-2%``.
 
-========================================
 Add a Tolerance in the Advanced Editor
-========================================
+***************************************
 
 To add a tolerance in the advanced editor you include a ``<responseparam>``
 element with a ``type="tolerance"`` attribute and a ``default`` attribute set
@@ -271,9 +280,55 @@ The following example shows a problem with a percentage tolerance.
     </numericalresponse>
   </problem>
 
-**************************
+.. _Multiple Responses in Numerical Input Problems:
+
+=========================================
+Adding Multiple Correct Responses
+=========================================
+
+You can specify more than one specific, correct response for numerical input
+problems. To do this, you can use the simple editor or the advanced editor.
+
+If you specify multiple correct responses, you cannot also specify a tolerance,
+a range, or a text string as correct answers. For example, when you define
+multiple correct responses, you can specify a numeric value for each correct
+answer but not a tolerance, range, or text string.
+
+
+Add Multiple Correct Responses in the Simple Editor
+****************************************************
+
+To specify additional correct responses in the simple editor, include
+``or=`` before each additional correct response.
+
+::
+
+    >>How many miles away from Earth is the sun?||Use scientific notation to answer.<<
+
+    = 9.3*10^7
+    or= 9.296*10^7
+
+Add Multiple Correct Responses in the Advanced Editor
+******************************************************
+
+To specify an additional correct response in the advanced editor, within the
+``<numericalresponse>`` element add the ``<additional_answer />`` element with
+an ``answer=""`` attribute value.
+
+.. code-block:: xml
+
+  <problem>
+    <numericalresponse answer="9.3*10^7">
+      <label>How many miles away from Earth is the sun?</label>
+      <description>Use scientific notation to answer.</description>
+      <additional_answer answer="9.296*10^7"/>
+      <formulaequationinput/>
+    </numericalresponse>
+  </problem>
+
+===========================
 Specifying an Answer Range
-**************************
+===========================
 
 You can specify an answer range so that any learner response within that range
 is marked correct. To format an answer range, you provide the starting and
@@ -307,13 +362,14 @@ Adding Feedback to a Numerical Input Problem
 
 For an overview of feedback in problems, see :ref:`Adding Feedback and Hints to
 a Problem`. In numerical input problems, you can provide feedback for correct
-answers.
+responses. If you define multiple correct responses, you can define feedback
+for each response.
 
 .. note::
   You cannot provide feedback for incorrect answers in numerical input
   problems.
 
-Use feedback for numerical input problems to reinforce the process used to
+In numerical input problems, use feedback to reinforce the process used to
 arrive at the correct answer.
 
 =======================================
@@ -339,6 +395,9 @@ For example, the following problem has feedback for the correct answer.
   >>What is the arithmetic mean for the following set of numbers? (1, 5, 6, 3, 5)<<
 
   =4 {{The mean for this set of numbers is 20 / 5 which equals 4.}}
+
+If you define multiple correct responses, you can define feedback
+for each response.
 
 =========================================
 Configure Feedback in the Advanced Editor
@@ -369,6 +428,9 @@ For example, the following problem has feedback for the correct answer.
       <correcthint>The mean for this set of numbers is 20 / 5 which equals 4.</correcthint>
     </numericalresponse>
   </problem>
+
+If you define multiple correct responses, you can define feedback
+for each response.
 
 ===========================
 Customizing Feedback Labels
@@ -465,7 +527,7 @@ correct answer and received partial credit.
 
 .. image:: ../../../shared/images/partial_credit_numerical_input.png
  :alt: A numerical input problem with partial credit for a close answer.
- :width: 600
+
 
 For an overview of partial credit in problems, see
 :ref:`Awarding Partial Credit for a Problem`.
@@ -702,6 +764,7 @@ hierarchy of child elements.
       <label>
       <description>
       <formulaequationinput>
+      <additional_answer>
       <correcthint>
       <responseparam>
       <script>
@@ -753,6 +816,7 @@ Children
 * ``<label>``
 * ``<description>``
 * ``<formulaequationinput>``
+* ``<additional_answer>``
 * ``<responseparam>``
 * ``<correcthint>``
 * ``<script>``
@@ -761,7 +825,8 @@ Children
 ``<label>``
 ***********
 
-Required. Identifies the question or prompt.
+Required. Identifies the question or prompt. You can include HTML tags within
+this element.
 
 Attributes
 ==========
@@ -776,7 +841,8 @@ None.
 ``<description>``
 *****************
 
-Optional. Provides clarifying information about how to answer the question.
+Optional. Provides clarifying information about how to answer the question. You
+can include HTML tags within this element.
 
 Attributes
 ==========
@@ -818,6 +884,29 @@ Children
 ========
 
 None.
+
+``<additional_answer>``
+*************************
+
+Optional. Specifies an additional correct answer for the problem. A problem can
+contain an unlimited number of additional answers.
+
+Attributes
+==========
+
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+
+   * - Attribute
+     - Description
+   * - ``answer``
+     - Required. The alternative correct answer.
+
+Children
+========
+
+``correcthint``
 
 ``<responseparam>``
 *******************
